@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemySpawners : MonoBehaviour
 {
+    public GameObject[] EnemySpawnPoints;
     public GameObject EnemyPolice;
     public GameObject EnemyPoliceLevel2;
     public GameObject EnemyPoliceLevel3;
-    public GameObject[] EnemySpawnPoints;
     public float timer = 1;
     //   
     public int EnemyPoliceTimerLevels;
@@ -29,20 +29,19 @@ public class EnemySpawners : MonoBehaviour
         {
             if (EnemyPoliceTimerLevels < 10)
             {
-                EnemySpawnLevel2();
+                EnemySpawn();
                 timer = 1;
             }
             else if (EnemyPoliceTimerLevels > 10)
             {
-                EnemySpawnLevel3();
+                EnemySpawnLevel2();
                 timer = 1;
             }
             else if (EnemyPoliceTimerLevels > 20)
             {
                 timer = 1;
-                EnemySpawn();
+                EnemySpawnLevel3();
             }
-
         }      
     }
     void EnemySpawn()
