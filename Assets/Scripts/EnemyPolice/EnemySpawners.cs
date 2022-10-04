@@ -21,7 +21,7 @@ public class EnemySpawners : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EnemyPoliceTimerLevels = GameObject.Find("CanvasManager").GetComponent<Timer>().timerText;
+        EnemyPoliceTimerLevels = GameObject.Find("Timer").GetComponent<Timer>().timerText;
         // Debug.Log(EnemyPoliceTimerLevels);
    
         timer -= Time.deltaTime;
@@ -39,7 +39,6 @@ public class EnemySpawners : MonoBehaviour
             }
             else if (EnemyPoliceTimerLevels > 20)
             {
-                
                 timer = 1;
                 EnemySpawn();
             }
