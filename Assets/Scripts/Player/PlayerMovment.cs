@@ -21,20 +21,17 @@ public class PlayerMovment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-       
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
         AllMovment();
-
     }
 
     void AllMovment()
     {
-        //transform.Translate(Vector3.forward * speed * Time.deltaTime);
         var v3 = transform.forward * speed;
         v3.y = rb.velocity.y;
         rb.velocity = v3;
