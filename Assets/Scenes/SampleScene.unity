@@ -219,7 +219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626969907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 200, y: 0, z: 0}
+  m_LocalPosition: {x: 300, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -250,7 +250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633156452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalPosition: {x: 0, y: 0, z: -300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -928,17 +928,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aaefc857353c2b449ddc84f944b361f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemySpawnPoints:
+  - {fileID: 1856294438}
+  - {fileID: 626969907}
+  - {fileID: 633156452}
+  - {fileID: 1842359776}
   EnemyPolice: {fileID: 5195657680708682768, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
     type: 3}
   EnemyPoliceLevel2: {fileID: 321259013191435784, guid: d2f14784122506b409ca6690f46583d9,
     type: 3}
   EnemyPoliceLevel3: {fileID: 1135690220698244810, guid: a1a47aa6cd9e0f6488c7c59610328d5e,
     type: 3}
-  EnemySpawnPoints:
-  - {fileID: 1856294438}
-  - {fileID: 626969907}
-  - {fileID: 633156452}
-  - {fileID: 1842359776}
   timer: 1
   EnemyPoliceTimerLevels: 0
 --- !u!1001 &1368136809
@@ -1012,6 +1012,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195657681043212923, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
+        type: 3}
+      propertyPath: speed
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5195657681043212923, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
         type: 3}
@@ -1231,7 +1236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842359776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -200, y: 0, z: 0}
+  m_LocalPosition: {x: -300, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1397,7 +1402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32cd1094388fd394b99e7cd99c4fff48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 35
   angleSpeed: 150
   rb: {fileID: 0}
   currntAngle: 0

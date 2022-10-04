@@ -417,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   rb: {fileID: 321259013191436020}
-  speed: 25
+  speed: 35
   angleSpeed: 3
 --- !u!114 &321259013191435785
 MonoBehaviour:
