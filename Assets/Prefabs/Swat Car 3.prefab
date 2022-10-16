@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 1135690220698244815}
   - component: {fileID: 1135690220698244812}
   - component: {fileID: 1135690220698244813}
+  - component: {fileID: 4088900206602310201}
   m_Layer: 0
   m_Name: Swat Car 3
   m_TagString: EnemyPolice
@@ -502,6 +503,7 @@ MonoBehaviour:
   rb: {fileID: 1135690220698244814}
   speed: 35
   angleSpeed: 3
+  navMesh: {fileID: 0}
 --- !u!114 &1135690220698244813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +522,28 @@ MonoBehaviour:
   explosion: {fileID: 1813018202934516, guid: 6fa2a4846fb21254c946ea9e38bac842, type: 3}
   fire: {fileID: 6981835486604047749}
   smoke: {fileID: 335671575912147974}
+--- !u!195 &4088900206602310201
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135690220698244810}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 5
+  m_Speed: 30
+  m_Acceleration: 100
+  avoidancePriority: 50
+  m_AngularSpeed: 50
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 7
+  m_BaseOffset: 3.3
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &3449416933253156123
 PrefabInstance:
   m_ObjectHideFlags: 0

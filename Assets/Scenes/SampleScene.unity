@@ -292,12 +292,6 @@ Transform:
   m_Father: {fileID: 1916278451}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &739386302 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5195657680708682768, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
-    type: 3}
-  m_PrefabInstance: {fileID: 1368136809}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1344557605
 Transform:
   m_ObjectHideFlags: 0
@@ -1014,50 +1008,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5195657681043212921, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
-        type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195657681043212923, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
-        type: 3}
-      propertyPath: speed
-      value: 35
-      objectReference: {fileID: 0}
     - target: {fileID: 5195657681043212923, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1916278446}
-    - target: {fileID: 5195657681043212923, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01, type: 3}
---- !u!195 &1368136815
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739386302}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &1481726608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,7 +1353,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!95 &1916278449
 Animator:
