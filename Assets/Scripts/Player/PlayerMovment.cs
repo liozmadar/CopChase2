@@ -48,14 +48,32 @@ public class PlayerMovment : MonoBehaviour
             {
                 MoveRight();
             }
-        }     
-        if (isColliding == true)
+        }
+
+        currentinvincibleTime -= Time.deltaTime;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "EnemyPolice")
         {
-            currentinvincibleTime -= Time.deltaTime;
             if (currentinvincibleTime <= 0)
             {
-                //ReduceLife();
-
+                currentinvincibleTime = 1;
+                life--;
+                if (life < 5)
+                {
+                    smokeEffect.SetActive(true);
+                }
+                if (life < 3)
+                {
+                    fireEffect.SetActive(true);
+                }
+                if (life <= 0)
+                {
+                    GameObject ExplosionPrefab = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+                    gameObject.SetActive(false);
+                    Destroy(ExplosionPrefab, 2);
+                }
             }
         }
     }

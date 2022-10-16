@@ -31,7 +31,8 @@ public class EnemyFollow : MonoBehaviour
     }
     void AnotherMovment()
     {
-
+        if (player !=null)
+        {
         Vector3 pointTarget = transform.position - player.transform.position;
         pointTarget.Normalize();
 
@@ -43,6 +44,6 @@ public class EnemyFollow : MonoBehaviour
         v3.y = rb.velocity.y;
         rb.velocity = v3;
         //
-
+        }
     }
 }
