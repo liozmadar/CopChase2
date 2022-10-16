@@ -27,10 +27,11 @@ public class EnemyFollow : MonoBehaviour
     }
     private void Update()
     {
-        navMesh.SetDestination(player.transform.position);
+       // navMesh.SetDestination(player.transform.position);
     }
     void AnotherMovment()
-    {/*
+    {
+
         Vector3 pointTarget = transform.position - player.transform.position;
         pointTarget.Normalize();
 
@@ -40,9 +41,8 @@ public class EnemyFollow : MonoBehaviour
         //
         var v3 = transform.forward * speed;
         v3.y = rb.velocity.y;
-        rb.velocity = v3;*/
+        rb.velocity = v3;
         //
 
-        
     }
 }
