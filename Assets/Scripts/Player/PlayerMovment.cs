@@ -9,6 +9,7 @@ public class PlayerMovment : MonoBehaviour
     public float currentSpeed;
     public float angleSpeed;
     private Rigidbody rb;
+    public Animator anim;
     //
     public GameObject smokeEffect, fireEffect, explosionEffect;
     public float invincibleTime = 1;
@@ -74,7 +75,7 @@ public class PlayerMovment : MonoBehaviour
                 {
                     GameObject ExplosionPrefab = Instantiate(explosionEffect, transform.position, Quaternion.identity);
                     Destroy(ExplosionPrefab, 2);
-                    for (int a = 0; a < 5; a++)
+                    for (int a = 0; a < 1; a++)
                     {
                         transform.GetChild(a).gameObject.SetActive(false);
                     }
