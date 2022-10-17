@@ -1570,3 +1570,16 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1916278445}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1916278452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916278446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05d34b67c7845b46a802a36f76911b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cone: {fileID: 4536707279986318857, guid: 0c171282e39786b4fbe0e8971c736024, type: 3}
