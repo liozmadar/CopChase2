@@ -11,7 +11,7 @@ public class PlayerMovment : MonoBehaviour
     private Rigidbody rb;
     public Animator anim;
     //
-    public GameObject smokeEffect, fireEffect, explosionEffect;
+    public GameObject smokeEffect, fireEffect, explosionEffect, boostFlame, boostFlame2;
     public float invincibleTime = 1;
     public int life = 10;
 

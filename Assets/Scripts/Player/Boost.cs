@@ -24,8 +24,10 @@ public class Boost : MonoBehaviour
         if (playerBoostSpeedBool)
         {
             playerBoostSpeedTimer += Time.deltaTime;
-            if (playerBoostSpeedTimer > 3)
+            if (playerBoostSpeedTimer > 4)
             {
+                PlayerMovment.instance.boostFlame.SetActive(false);
+                PlayerMovment.instance.boostFlame2.SetActive(false);
                 PlayerMovment.instance.currentSpeed = PlayerMovment.instance.speed;
                 playerBoostSpeedTimer = 0;
                 playerBoostSpeedBool = false;
@@ -46,7 +48,8 @@ public class Boost : MonoBehaviour
             PlayerMovment.instance.currentSpeed = 50;
             playerBoostSpeedBool = true;
             PlayerMovment.instance.anim.SetTrigger("Boost");
+            PlayerMovment.instance.boostFlame.SetActive(true);
+            PlayerMovment.instance.boostFlame2.SetActive(true);
         }
     }
-
 }
