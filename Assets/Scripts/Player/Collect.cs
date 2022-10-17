@@ -5,11 +5,14 @@ using UnityEngine;
 public class Collect : MonoBehaviour
 {
     public GameObject cone;
+    public GameObject coneCollected;
 
     public float coneShowTimer = 3;
     private bool coneShowBool = true;
+    public int coneCollectedCount;
 
     private Vector3 randomPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +42,9 @@ public class Collect : MonoBehaviour
     {
         if (other.gameObject.tag == "Cone")
         {
+            Instantiate(coneCollected, other.transform.position, Quaternion.identity);
             Destroy(other);
+            coneCollectedCount++;
         }
     }
 }
