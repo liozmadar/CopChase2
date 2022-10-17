@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovment : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class PlayerMovment : MonoBehaviour
     public int currentLife;
     public float currentinvincibleTime;
     private bool stopCheckIfCollide = true;
+
+    public Button screenLeft;
+    public Button screenRight;
+    private bool clickRight;
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +44,10 @@ public class PlayerMovment : MonoBehaviour
         v3.y = rb.velocity.y;
         rb.velocity = v3;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) || Input.touchCount > 0)
         {
             float x = Input.mousePosition.x;
+            Debug.Log(x);
             if (x < Screen.width / 2 && x > 0)
             {
                 MoveLeft();
@@ -63,11 +69,11 @@ public class PlayerMovment : MonoBehaviour
             {
                 currentinvincibleTime = 1;
                 life--;
-                if (life < 5)
+                if (life < 3)
                 {
                     smokeEffect.SetActive(true);
                 }
-                if (life < 3)
+                if (life < 1)
                 {
                     fireEffect.SetActive(true);
                 }
