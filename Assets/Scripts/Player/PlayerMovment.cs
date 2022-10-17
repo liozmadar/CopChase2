@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerMovment : MonoBehaviour
 {
+    public static PlayerMovment instance;
     public float speed;
+    public float currentSpeed;
     public float angleSpeed;
-    public Rigidbody rb;
-    public int currntAngle;
+    private Rigidbody rb;
     //
     public GameObject smokeEffect, fireEffect, explosionEffect;
     public float invincibleTime = 1;
@@ -20,7 +21,9 @@ public class PlayerMovment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         rb = GetComponent<Rigidbody>();
+        currentSpeed = speed;
     }
 
     // Update is called once per frame
@@ -31,7 +34,7 @@ public class PlayerMovment : MonoBehaviour
 
     void AllMovment()
     {
-        var v3 = transform.forward * speed;
+        var v3 = transform.forward * currentSpeed;
         v3.y = rb.velocity.y;
         rb.velocity = v3;
 
