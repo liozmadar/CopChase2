@@ -15,8 +15,7 @@ public class PlayerMovment : MonoBehaviour
 
     public int currentLife;
     public float currentinvincibleTime;
-    private bool isColliding;
-
+    private bool stopCheckIfCollide = true;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +53,7 @@ public class PlayerMovment : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "EnemyPolice")
+        if (collision.gameObject.tag == "EnemyPolice" && stopCheckIfCollide)
         {
             if (currentinvincibleTime <= 0)
             {
@@ -71,8 +70,15 @@ public class PlayerMovment : MonoBehaviour
                 if (life <= 0)
                 {
                     GameObject ExplosionPrefab = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-                    gameObject.SetActive(false);
                     Destroy(ExplosionPrefab, 2);
+                    for (int a = 0; a < 5; a++)
+                    {
+                        transform.GetChild(a).gameObject.SetActive(false);
+                    }
+                    rb.constraints = RigidbodyConstraints.FreezeAll;
+                    smokeEffect.SetActive(false);
+                    fireEffect.SetActive(false);
+                    stopCheckIfCollide = false;
                 }
             }
         }

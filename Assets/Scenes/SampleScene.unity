@@ -1676,6 +1676,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100000, guid: 8ecb83e29c7a909498b3f578724b5524, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 8ecb83e29c7a909498b3f578724b5524, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 8ecb83e29c7a909498b3f578724b5524, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 8ecb83e29c7a909498b3f578724b5524, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 8ecb83e29c7a909498b3f578724b5524, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 8ecb83e29c7a909498b3f578724b5524, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1810,7 +1830,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 1813018202934516, guid: 6fa2a4846fb21254c946ea9e38bac842,
     type: 3}
   invincibleTime: 1
-  life: 10
+  life: 2
   currentLife: 0
   currentinvincibleTime: 0
 --- !u!4 &1916278451 stripped
