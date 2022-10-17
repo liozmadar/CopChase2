@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Collect : MonoBehaviour
 {
     public GameObject cone;
     public GameObject coneCollected;
+    public TextMeshProUGUI coneCountText;
 
     public float coneShowTimer = 3;
     private bool coneShowBool = true;
@@ -30,6 +32,7 @@ public class Collect : MonoBehaviour
             RandomLocatin();
             coneShowBool = false;
         }
+        coneCountText.text = coneCollectedCount.ToString() + "/3";
     }
     void RandomLocatin()
     {
