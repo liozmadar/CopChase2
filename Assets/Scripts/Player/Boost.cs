@@ -24,6 +24,7 @@ public class Boost : MonoBehaviour
     {
         boostLevel += Time.deltaTime / 10;
         boostImage.fillAmount = boostLevel;
+        boostImage.color = Color.Lerp(Color.red, Color.green, boostLevel);
     }
     public void ClickBoost()
     {
