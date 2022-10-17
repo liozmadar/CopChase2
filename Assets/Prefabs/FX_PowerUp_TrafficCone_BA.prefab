@@ -4816,7 +4816,7 @@ GameObject:
   - component: {fileID: 6012812207315587323}
   m_Layer: 0
   m_Name: FX_PowerUp_TrafficCone_BA
-  m_TagString: Untagged
+  m_TagString: Cone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

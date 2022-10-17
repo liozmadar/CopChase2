@@ -32,7 +32,14 @@ public class Collect : MonoBehaviour
     {
         int randomPosX = Random.Range(-200,200);
         int randomPosZ = Random.Range(-200,200);
-        randomPos = new Vector3(transform.position.x + randomPosX, 1, transform.position.z + randomPosZ);
+        randomPos = new Vector3(transform.position.x + randomPosX, -8, transform.position.z + randomPosZ);
         Instantiate(cone, transform.position + randomPos, Quaternion.identity);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Cone")
+        {
+            Destroy(other);
+        }
     }
 }
