@@ -26,7 +26,6 @@ public class EnemySpawners : MonoBehaviour
     void Update()
     {
         EnemyPoliceTimerLevels = GameObject.Find("Timer").GetComponent<Timer>().timerText;
-        // Debug.Log(EnemyPoliceTimerLevels);
    
         timer -= Time.deltaTime;
         if (timer < 0)
@@ -54,7 +53,6 @@ public class EnemySpawners : MonoBehaviour
     {
         int RandomPoint = Random.Range(0, EnemySpawnPoints.Length);
         Instantiate(EnemyPolice, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
-        
     }
     void EnemySpawnLevel2()
     {
@@ -66,5 +64,4 @@ public class EnemySpawners : MonoBehaviour
         int RandomPoint = Random.Range(0, EnemySpawnPoints.Length);
         Instantiate(EnemyPoliceLevel3, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
     }
-
 }

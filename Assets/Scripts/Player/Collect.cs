@@ -5,6 +5,7 @@ using TMPro;
 
 public class Collect : MonoBehaviour
 {
+    // Cone spawn
     public GameObject cone;
     public GameObject coneCollected;
     public TextMeshProUGUI coneCountText;
@@ -14,27 +15,46 @@ public class Collect : MonoBehaviour
     public int coneCollectedCount;
 
     private Vector3 randomPos;
+    //;
+
+    // Cops spawn
+    public GameObject[] EnemySpawnPoints;
+    public int EnemyPoliceTimerLevels;
+    public float timer = 1;
+
+    public GameObject cop1;
+    public GameObject cop2;
+    public GameObject cop3;
+
+    public TextMeshProUGUI copsCountText;
+    private int copsCountNumber = 1;
+    //;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        EnemyPoliceTimerLevels = GameObject.Find("Timer").GetComponent<Timer>().timerText;
     }
 
     // Update is called once per frame
     void Update()
     {
+        ConeSpawn();
+        SpawnCop();
+    }
+    void ConeSpawn()
+    {
         coneShowTimer -= Time.deltaTime;
         if (coneShowTimer < 0 && coneShowBool)
         {
-            RandomLocatin();
-            RandomLocatin();
-            RandomLocatin();
+            RandomConeLocatin();
+            RandomConeLocatin();
+            RandomConeLocatin();
             coneShowBool = false;
         }
         coneCountText.text = coneCollectedCount.ToString() + "/3";
     }
-    void RandomLocatin()
+    void RandomConeLocatin()
     {
         int randomPosX = Random.Range(-200,200);
         int randomPosZ = Random.Range(-200,200);
@@ -48,6 +68,32 @@ public class Collect : MonoBehaviour
             Instantiate(coneCollected, other.transform.position, Quaternion.identity);
             Destroy(other);
             coneCollectedCount++;
+        }
+    }
+    void SpawnCop()
+    {
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            int RandomPoint = Random.Range(0, EnemySpawnPoints.Length);
+            if (EnemyPoliceTimerLevels < 10)
+            {
+                Instantiate(cop1, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
+                timer = 1;
+            }
+            else if (EnemyPoliceTimerLevels > 10)
+            {
+                Instantiate(cop1, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
+                timer = 1;
+            }
+            else if (EnemyPoliceTimerLevels > 20)
+            {
+                timer = 1;
+                Instantiate(cop1, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
+            }
+
+            copsCountNumber++;
+            copsCountText.text = copsCountNumber.ToString();
         }
     }
 }
