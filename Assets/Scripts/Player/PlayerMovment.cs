@@ -47,7 +47,6 @@ public class PlayerMovment : MonoBehaviour
         if (Input.GetMouseButton(0) || Input.touchCount > 0)
         {
             float x = Input.mousePosition.x;
-            Debug.Log(x);
             if (x < Screen.width / 2 && x > 0)
             {
                 MoveLeft();

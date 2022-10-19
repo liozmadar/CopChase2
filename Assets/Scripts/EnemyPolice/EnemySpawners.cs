@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemySpawners : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class EnemySpawners : MonoBehaviour
     public float timer = 1;
     //   
     public int EnemyPoliceTimerLevels;
+
+    public TextMeshProUGUI copsCountText;
+    private int copsCountNumber = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +46,8 @@ public class EnemySpawners : MonoBehaviour
                 timer = 1;
                 EnemySpawnLevel3();
             }
+            copsCountNumber++;
+            copsCountText.text = copsCountNumber.ToString();
         }      
     }
     void EnemySpawn()
