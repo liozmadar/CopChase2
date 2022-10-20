@@ -5364,7 +5364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694054635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.15, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12301,7 +12301,6 @@ MonoBehaviour:
   - {fileID: 626969907}
   - {fileID: 633156452}
   - {fileID: 1842359776}
-  EnemyPoliceTimerLevels: 0
   timer: 1
   cop1: {fileID: 5195657680708682768, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01, type: 3}
   cop2: {fileID: 321259013191435784, guid: d2f14784122506b409ca6690f46583d9, type: 3}

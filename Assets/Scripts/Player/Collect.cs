@@ -20,7 +20,6 @@ public class Collect : MonoBehaviour
 
     // Cops spawn
     public GameObject[] EnemySpawnPoints;
-    public int EnemyPoliceTimerLevels;
     public float timer = 1;
 
     public GameObject cop1;
@@ -37,7 +36,6 @@ public class Collect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EnemyPoliceTimerLevels = GameObject.Find("Timer").GetComponent<Timer>().timerText;
         instance = this;
     }
 
@@ -84,15 +82,15 @@ public class Collect : MonoBehaviour
         if (timer < 0)
         {
             int RandomPoint = Random.Range(0, EnemySpawnPoints.Length);
-            if (EnemyPoliceTimerLevels < 10)
+            if (Timer.instance.timerText < 10)
             {
                 Instantiate(cop1, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
             }
-            else if (EnemyPoliceTimerLevels > 10)
+            else if (Timer.instance.timerText > 10 && Timer.instance.timerText < 20)
             {
                 Instantiate(cop2, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
             }
-            else if (EnemyPoliceTimerLevels > 20)
+            else if (Timer.instance.timerText > 20)
             {
                 Instantiate(cop3, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
             }

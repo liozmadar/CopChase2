@@ -19,7 +19,6 @@ public class EnemyFollow : MonoBehaviour
         navMesh = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
     }
-
     // Update is called once per frame
     void FixedUpdate()
     {      
@@ -27,8 +26,7 @@ public class EnemyFollow : MonoBehaviour
     }
     private void Update()
     {
-        // navMesh.SetDestination(player.transform.position);
-        if (transform.position.y > 5)
+        if (transform.position.y > 6)
         {
             speed = 10;
         }
