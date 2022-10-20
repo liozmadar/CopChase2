@@ -79,18 +79,16 @@ public class Collect : MonoBehaviour
             if (EnemyPoliceTimerLevels < 10)
             {
                 Instantiate(cop1, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
-                timer = 1;
             }
             else if (EnemyPoliceTimerLevels > 10)
             {
-                Instantiate(cop1, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
-                timer = 1;
+                Instantiate(cop2, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
             }
             else if (EnemyPoliceTimerLevels > 20)
             {
-                timer = 1;
-                Instantiate(cop1, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
+                Instantiate(cop3, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
             }
+            timer = 1;
 
             copsCountNumber++;
             copsCountText.text = copsCountNumber.ToString();
