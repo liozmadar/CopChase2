@@ -20,7 +20,14 @@ public class Boost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FillImageBoost();
+        if (Collect.instance.startTheGame)
+        {
+            FillImageBoost();
+            BoostAnim();
+        }
+    }
+    void BoostAnim()
+    {
         if (playerBoostSpeedBool)
         {
             playerBoostSpeedTimer += Time.deltaTime;

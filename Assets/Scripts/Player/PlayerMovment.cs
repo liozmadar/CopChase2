@@ -137,9 +137,11 @@ public class PlayerMovment : MonoBehaviour
     public void MoveLeft()
     {
         transform.Rotate(-Vector3.up * angleSpeed * Time.deltaTime);
+        Collect.instance.startTheGame = true;
     }
     public void MoveRight()
     {
         transform.Rotate(Vector3.up * angleSpeed * Time.deltaTime);
+        Collect.instance.startTheGame = true;
     }
 }

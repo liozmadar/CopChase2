@@ -19,7 +19,13 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Collect.instance.startTheGame)
+        {
+            GameTimer();
+        }
+    }
+    void GameTimer()
+    {
         timer -= Time.deltaTime;
         if (timer < 0)
         {
@@ -27,6 +33,5 @@ public class Timer : MonoBehaviour
             timer = 1;
         }
         textMesh.text = timerText.ToString();
-      
     }
 }

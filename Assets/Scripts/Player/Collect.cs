@@ -5,6 +5,7 @@ using TMPro;
 
 public class Collect : MonoBehaviour
 {
+    public static Collect instance;
     // Cone spawn
     public GameObject cone;
     public GameObject coneCollected;
@@ -30,17 +31,24 @@ public class Collect : MonoBehaviour
     private int copsCountNumber = 1;
     //;
 
+    // Tuttorial
+    public bool startTheGame;
+
     // Start is called before the first frame update
     void Start()
     {
         EnemyPoliceTimerLevels = GameObject.Find("Timer").GetComponent<Timer>().timerText;
+        instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        ConeSpawn();
-        SpawnCop();
+        if (startTheGame)
+        {
+            ConeSpawn();
+            SpawnCop();
+        }
     }
     void ConeSpawn()
     {
@@ -56,8 +64,8 @@ public class Collect : MonoBehaviour
     }
     void RandomConeLocatin()
     {
-        int randomPosX = Random.Range(-200,200);
-        int randomPosZ = Random.Range(-200,200);
+        int randomPosX = Random.Range(-200, 200);
+        int randomPosZ = Random.Range(-200, 200);
         randomPos = new Vector3(transform.position.x + randomPosX, -8, transform.position.z + randomPosZ);
         Instantiate(cone, transform.position + randomPos, Quaternion.identity);
     }
