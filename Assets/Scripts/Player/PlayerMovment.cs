@@ -24,6 +24,9 @@ public class PlayerMovment : MonoBehaviour
     public Button screenRight;
     private bool clickRight;
 
+    private bool pressingLeft;
+    private bool pressingRight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,10 +43,40 @@ public class PlayerMovment : MonoBehaviour
 
     void AllMovment()
     {
+        //Player Auto move forward
         var v3 = transform.forward * currentSpeed;
         v3.y = rb.velocity.y;
         rb.velocity = v3;
 
+        //Invincible timer
+        currentinvincibleTime -= Time.deltaTime;
+
+        //The old movement
+        //PlayerMovement();
+
+        //The new movement
+        PlayerMovementButtons();
+    }
+    // Button event
+    public void ClickLeftDown()
+    {
+        pressingLeft = true;
+    }
+    public void ClickRightDown()
+    {
+        pressingRight = true;
+    }
+    public void ClickLeftUp()
+    {
+        pressingLeft = false;
+    }
+    public void ClickRightUp()
+    {
+        pressingRight = false;
+    }
+    //;
+    void PlayerMovement()
+    {
         if (Input.GetMouseButton(0) || Input.touchCount > 0)
         {
             float x = Input.mousePosition.x;
@@ -51,14 +84,23 @@ public class PlayerMovment : MonoBehaviour
             {
                 MoveLeft();
             }
-
             if (x > Screen.width / 2 && x < Screen.width)
             {
                 MoveRight();
             }
         }
-
-        currentinvincibleTime -= Time.deltaTime;
+    }
+    void PlayerMovementButtons()
+    {
+        if (pressingLeft)
+        {
+            MoveLeft();
+        }
+        else if (pressingRight)
+        {
+            MoveRight();
+        }
+        else return;
     }
     private void OnCollisionEnter(Collision collision)
     {
