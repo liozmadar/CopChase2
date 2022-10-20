@@ -5364,7 +5364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694054635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 7.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6614,7 +6614,7 @@ PrefabInstance:
     - target: {fileID: 5195657680708720688, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.9
+      value: 23.6
       objectReference: {fileID: 0}
     - target: {fileID: 5195657680708720688, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
         type: 3}
@@ -12252,6 +12252,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boostImage: {fileID: 1988633479}
+--- !u!114 &1916278455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916278446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5daea2507f2db4280da32c2ffe5eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  copSpawnPositionsParent: {fileID: 694054635}
+  copSpawnPositionsParentTurnSpeed: 100
 --- !u!1 &1988633476
 GameObject:
   m_ObjectHideFlags: 0

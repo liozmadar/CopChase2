@@ -27,7 +27,12 @@ public class EnemyFollow : MonoBehaviour
     }
     private void Update()
     {
-       // navMesh.SetDestination(player.transform.position);
+        // navMesh.SetDestination(player.transform.position);
+        if (transform.position.y > 5)
+        {
+            speed = 10;
+        }
+        else speed = 35;
     }
     void AnotherMovment()
     {
