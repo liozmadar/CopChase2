@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a2ff8d770846947a59d6a600383a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 10
+  maxLife: 5
   currentLife: 0
   invicTime: 1
   explosion: {fileID: 1813018202934516, guid: 6fa2a4846fb21254c946ea9e38bac842, type: 3}

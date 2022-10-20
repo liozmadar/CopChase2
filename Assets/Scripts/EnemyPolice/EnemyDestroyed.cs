@@ -38,7 +38,7 @@ public class EnemyDestroyed : MonoBehaviour
     void ReduceLife()
     {
         currentLife--;
-        if (currentLife == 5)
+        if (currentLife == 3)
         {
             fire.gameObject.SetActive(true);
             smoke.gameObject.SetActive(true);
