@@ -20,6 +20,10 @@ public class ArrowIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Indicator();
+    }
+    public void Indicator()
+    {
         float minX = image.GetPixelAdjustedRect().width / 2;
         float maxX = Screen.width - minX;
 
