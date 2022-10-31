@@ -65,4 +65,9 @@ public class ArrowIndicator : MonoBehaviour
 
         meter.transform.position = pos;
     }
+    public void DestroyImageAndMeter()
+    {
+        Destroy(image);
+        Destroy(meter);
+    }
 }

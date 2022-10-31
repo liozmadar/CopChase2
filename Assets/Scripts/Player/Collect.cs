@@ -72,6 +72,8 @@ public class Collect : MonoBehaviour
         if (other.gameObject.tag == "Cone")
         {
             Instantiate(coneCollected, other.transform.position, Quaternion.identity);
+            var destroyTheCone = other.gameObject.GetComponent<ArrowIndicator>();
+            destroyTheCone.DestroyImageAndMeter();
             Destroy(other);
             coneCollectedCount++;
         }
