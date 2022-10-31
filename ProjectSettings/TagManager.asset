@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EnemyPolice
   - Cone
+  - Canvas
   layers:
   - Default
   - TransparentFX

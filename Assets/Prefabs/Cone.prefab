@@ -4814,6 +4814,7 @@ GameObject:
   - component: {fileID: 4536707279986318856}
   - component: {fileID: 8895459137754152928}
   - component: {fileID: 6012812207315587323}
+  - component: {fileID: 1209682248}
   m_Layer: 0
   m_Name: Cone
   m_TagString: Cone
@@ -9657,6 +9658,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 4748730675913877244, guid: 9c074aa299cf88f4a9ce34d50a5bbff3,
     type: 3}
+--- !u!114 &1209682248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4536707279986318857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa5149803991f654894e29bea1b025d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  offSet: {x: 0, y: 25, z: 0}
+  offSetMeter: {x: 0, y: 35, z: 0}
+  imagePre: {fileID: 6627147717289478025, guid: 1223d9df77d5d1a4192cd2dcb6cd3706,
+    type: 3}
+  meterPre: {fileID: 898480165573181964, guid: d04dd37d2139bd347b212f31e8ad5ed8, type: 3}
 --- !u!1 &5947876614394631371
 GameObject:
   m_ObjectHideFlags: 0
