@@ -62,8 +62,8 @@ public class Collect : MonoBehaviour
     }
     void RandomConeLocatin()
     {
-        int randomPosX = Random.Range(-200, 200);
-        int randomPosZ = Random.Range(-200, 200);
+        int randomPosX = Random.Range(-500, 500);
+        int randomPosZ = Random.Range(-500, 500);
         randomPos = new Vector3(transform.position.x + randomPosX, -8, transform.position.z + randomPosZ);
         Instantiate(cone, transform.position + randomPos, Quaternion.identity);
     }
