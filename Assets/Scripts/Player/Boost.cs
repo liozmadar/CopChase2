@@ -54,7 +54,7 @@ public class Boost : MonoBehaviour
             boostLevel = 0;
             PlayerMovment.instance.currentSpeed = 50;
             playerBoostSpeedBool = true;
-            PlayerMovment.instance.anim.SetTrigger("Boost");
+            PlayerMovment.instance.anim.SetBool("Boost",true);
             PlayerMovment.instance.boostFlame.SetActive(true);
             PlayerMovment.instance.boostFlame2.SetActive(true);
         }

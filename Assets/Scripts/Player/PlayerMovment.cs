@@ -26,6 +26,7 @@ public class PlayerMovment : MonoBehaviour
 
     private bool pressingLeft;
     private bool pressingRight;
+    private bool winGameCantMove;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,11 @@ public class PlayerMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AllMovment();
+        if (!winGameCantMove)
+        {
+            AllMovment();
+        }
+        WinDrift();
     }
 
     void AllMovment()
@@ -143,5 +148,15 @@ public class PlayerMovment : MonoBehaviour
     {
         transform.Rotate(Vector3.up * angleSpeed * Time.deltaTime);
         Collect.instance.startTheGame = true;
+    }
+    void WinDrift()
+    {
+        if (Cones.instance.allConesCollected)
+        {
+            anim.SetBool("WinDrift",true);
+            anim.SetBool("Boost", false);
+            winGameCantMove = true;
+            Debug.Log("drift"); 
+        }
     }
 }

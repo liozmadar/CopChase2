@@ -5,19 +5,23 @@ using TMPro;
 
 public class Cones : MonoBehaviour
 {
+    public static Cones instance;
     public GameObject cone;
     public GameObject coneCollected;
     public TextMeshProUGUI coneCountText;
 
     public float coneShowTimer = 3;
     private bool coneShowBool = true;
+
     public int coneCollectedCount;
+    public bool allConesCollected;
+    private int randomConeNumber = 1;
 
     private Vector3 randomPos;
     // Start is called before the first frame update
     void Start()
     {
-
+        instance = this;
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class Cones : MonoBehaviour
         if (Collect.instance.startTheGame)
         {
             ConeSpawn();
+            AllConesCollected();
         }
     }
     void ConeSpawn()
@@ -33,12 +38,14 @@ public class Cones : MonoBehaviour
         coneShowTimer -= Time.deltaTime;
         if (coneShowTimer < 0 && coneShowBool)
         {
-            RandomConeLocatin();
-            RandomConeLocatin();
-            RandomConeLocatin();
+            randomConeNumber = Random.Range(1, 3);
+            for (int i = 0; i < randomConeNumber; i++)
+            {
+                RandomConeLocatin();
+            }
             coneShowBool = false;
+            coneCountText.text = coneCollectedCount.ToString() + "/" + randomConeNumber;
         }
-        coneCountText.text = coneCollectedCount.ToString() + "/3";
     }
     void RandomConeLocatin()
     {
@@ -56,6 +63,13 @@ public class Cones : MonoBehaviour
             destroyTheCone.DestroyImageAndMeter();
             Destroy(other);
             coneCollectedCount++;
+        }
+    }
+    public void AllConesCollected()
+    {
+        if (coneCollectedCount >= randomConeNumber)
+        {
+            allConesCollected = true;
         }
     }
 }
