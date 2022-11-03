@@ -153,10 +153,15 @@ public class PlayerMovment : MonoBehaviour
     {
         if (Cones.instance.allConesCollected)
         {
+            Debug.Log("now");
             anim.SetBool("WinDrift",true);
             anim.SetBool("Boost", false);
             winGameCantMove = true;
-            Debug.Log("drift"); 
+            Invoke("StopCarPlayerSpeed", 1);
         }
+    }
+    void StopCarPlayerSpeed()
+    {
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 }
