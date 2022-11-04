@@ -12,12 +12,13 @@ public class GroundOrb : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        gravity = GameObject.FindGameObjectWithTag("GroundFloor").GetComponent<GravityOrbit>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void FixedUpdate()
     {
@@ -27,7 +28,6 @@ public class GroundOrb : MonoBehaviour
             gravityUp = (transform.position - gravity.transform.position).normalized;
             Vector3 localUp = transform.up;
             Quaternion targetRotation = Quaternion.FromToRotation(localUp, gravityUp) * transform.rotation;
-            //transform.up = Vector3.Lerp(transform.up, gravityUp, rotationSpeed * Time.deltaTime);
 
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 

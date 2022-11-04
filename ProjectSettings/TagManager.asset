@@ -7,6 +7,7 @@ TagManager:
   - EnemyPolice
   - Cone
   - Canvas
+  - GroundFloor
   layers:
   - Default
   - TransparentFX
