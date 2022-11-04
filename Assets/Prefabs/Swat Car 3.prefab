@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: {fileID: 0}
-  rotationSpeed: 50
+  rotationSpeed: 1000
 --- !u!1001 &3449416933253156123
 PrefabInstance:
   m_ObjectHideFlags: 0

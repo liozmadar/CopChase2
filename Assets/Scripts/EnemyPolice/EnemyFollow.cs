@@ -28,7 +28,7 @@ public class EnemyFollow : MonoBehaviour
     {
         if (transform.position.y > 6)
         {
-            speed = 10;
+            speed = 35;
         }
         else speed = 35;
     }

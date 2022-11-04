@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: {fileID: 0}
-  rotationSpeed: 50
+  rotationSpeed: 1000
 --- !u!1 &5195657680708682770
 GameObject:
   m_ObjectHideFlags: 0
