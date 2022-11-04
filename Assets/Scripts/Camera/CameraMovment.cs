@@ -5,10 +5,13 @@ using UnityEngine;
 public class CameraMovment : MonoBehaviour
 {
     public GameObject player;
+    //public GameObject CameraPlayer;
+    public GameObject planet;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+       // CameraPlayer = GameObject.FindGameObjectWithTag("CameraPlayer");
     }
 
     // Update is called once per frame
@@ -16,13 +19,29 @@ public class CameraMovment : MonoBehaviour
     {
         // Vector3 CameraPos = new Vector3(player.transform.position.x,transform.position.y, player.transform.position.z - 200);
         // transform.position = CameraPos;
-        CameraMove();
+        //CameraMove();
+        NewNewCameraMove();
     }
     void CameraMove()
     {
         float PosX = player.transform.position.x;
-        float PosZ = player.transform.position.z -180;
+        float PosZ = player.transform.position.z - 180;
 
         transform.position = new Vector3(PosX, transform.position.y, PosZ);
+    }
+    void NewCameraMove()
+    {
+        //transform.position = CameraPlayer.transform.position;
+        transform.LookAt(player.transform.position);
+
+       // CameraPlayer.transform.position = player.transform.localPosition + Vector3.up * 50;
+    }
+    void NewNewCameraMove()
+    {
+        transform.position = Vector3.Lerp(transform.position, player.transform.position, 1f);
+        Vector3 gravDirection = (transform.position - planet.transform.position).normalized;
+
+        Quaternion toRotation = Quaternion.FromToRotation(transform.up, gravDirection) * transform.rotation;
+        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, 1f);
     }
 }

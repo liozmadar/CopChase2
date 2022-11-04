@@ -8,6 +8,7 @@ TagManager:
   - Cone
   - Canvas
   - GroundFloor
+  - CameraPlayer
   layers:
   - Default
   - TransparentFX
