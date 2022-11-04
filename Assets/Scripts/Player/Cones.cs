@@ -38,7 +38,7 @@ public class Cones : MonoBehaviour
         coneShowTimer -= Time.deltaTime;
         if (coneShowTimer < 0 && coneShowBool)
         {
-            randomConeNumber = Random.Range(1, 3);
+            randomConeNumber = Random.Range(1, 2);
             for (int i = 0; i < randomConeNumber; i++)
             {
                 RandomConeLocatin();

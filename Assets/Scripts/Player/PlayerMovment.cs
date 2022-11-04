@@ -143,18 +143,20 @@ public class PlayerMovment : MonoBehaviour
     {
         transform.Rotate(-Vector3.up * angleSpeed * Time.deltaTime);
         Collect.instance.startTheGame = true;
+
     }
     public void MoveRight()
     {
         transform.Rotate(Vector3.up * angleSpeed * Time.deltaTime);
         Collect.instance.startTheGame = true;
+
     }
     void WinDrift()
     {
         if (Cones.instance.allConesCollected)
         {
             Debug.Log("now");
-            anim.SetBool("WinDrift",true);
+            anim.SetBool("WinDrift", true);
             anim.SetBool("Boost", false);
             winGameCantMove = true;
             Invoke("StopCarPlayerSpeed", 1);
