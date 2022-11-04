@@ -29,13 +29,6 @@ public class CameraMovment : MonoBehaviour
 
         transform.position = new Vector3(PosX, transform.position.y, PosZ);
     }
-    void NewCameraMove()
-    {
-        //transform.position = CameraPlayer.transform.position;
-        transform.LookAt(player.transform.position);
-
-       // CameraPlayer.transform.position = player.transform.localPosition + Vector3.up * 50;
-    }
     void NewNewCameraMove()
     {
         transform.position = Vector3.Lerp(transform.position, player.transform.position, 1f);

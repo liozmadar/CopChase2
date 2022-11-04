@@ -9,6 +9,7 @@ TagManager:
   - Canvas
   - GroundFloor
   - CameraPlayer
+  - PlanetGroundFloor
   layers:
   - Default
   - TransparentFX

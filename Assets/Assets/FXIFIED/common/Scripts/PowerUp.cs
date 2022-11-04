@@ -6,6 +6,12 @@ public class PowerUp : MonoBehaviour
 {
 
     public GameObject pickupEffect;
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,7 +25,13 @@ public class PowerUp : MonoBehaviour
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
-
         Destroy(gameObject);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "PlanetGroundFloor")
+        {
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+        }
     }
 }
