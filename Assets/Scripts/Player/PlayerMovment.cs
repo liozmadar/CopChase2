@@ -28,6 +28,9 @@ public class PlayerMovment : MonoBehaviour
     private bool pressingRight;
     private bool winGameCantMove;
 
+
+    private Vector3 moveForward;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,10 @@ public class PlayerMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+    private void FixedUpdate()
+    {
         if (!winGameCantMove)
         {
             AllMovment();
@@ -48,7 +55,11 @@ public class PlayerMovment : MonoBehaviour
 
     void AllMovment()
     {
-        //Player Auto move forward
+        //here is movement so the car can go up through gravity;
+        Vector3 newPositon = transform.position + (transform.forward * currentSpeed * Time.deltaTime);
+        rb.MovePosition(newPositon);
+
+        //Player Auto move forward , and here is the movement for collision with other objects
         var v3 = transform.forward * currentSpeed;
         v3.y = rb.velocity.y;
         rb.velocity = v3;

@@ -58,7 +58,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &5195657681043212920
 BoxCollider:
@@ -87,8 +87,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   rb: {fileID: 5195657681043212921}
-  speed: 35
-  angleSpeed: 3
+  speed: 25
+  angleSpeed: 2
   navMesh: {fileID: 0}
 --- !u!114 &5195657681043212922
 MonoBehaviour:
@@ -105,7 +105,8 @@ MonoBehaviour:
   maxLife: 5
   currentLife: 0
   invicTime: 1
-  explosion: {fileID: 1813018202934516, guid: 6fa2a4846fb21254c946ea9e38bac842, type: 3}
+  explosion: {fileID: 1240182248577604319, guid: df07b3a0fc8e88446bd0bd8f1d3f62f5,
+    type: 3}
   fire: {fileID: 7366903960507788339}
   smoke: {fileID: 1642320891540135}
 --- !u!95 &52208181

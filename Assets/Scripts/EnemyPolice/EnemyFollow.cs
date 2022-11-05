@@ -11,7 +11,7 @@ public class EnemyFollow : MonoBehaviour
     public float angleSpeed;
 
     public NavMeshAgent navMesh;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,32 +21,38 @@ public class EnemyFollow : MonoBehaviour
     }
     // Update is called once per frame
     void FixedUpdate()
-    {      
+    {
         AnotherMovment();
+        Rotation();
     }
     private void Update()
     {
         if (transform.position.y > 6)
         {
-            speed = 35;
+            //  speed = 35;
         }
-        else speed = 35;
+        //else speed = 35;
     }
     void AnotherMovment()
     {
-        if (player !=null)
+        if (player != null)
         {
-        Vector3 pointTarget = transform.position - player.transform.position;
-        pointTarget.Normalize();
+            //here is movement so the car can go up through gravity;
+            Vector3 newPositon = transform.position + (transform.forward * speed * Time.deltaTime);
+            rb.MovePosition(newPositon);
 
-        float value = Vector3.Cross(pointTarget, transform.forward).y;
-        rb.angularVelocity = angleSpeed * value * new Vector3(0, 1, 0);
-        //rb.velocity = transform.forward * speed;
-        //
-        var v3 = transform.forward * speed;
-        v3.y = rb.velocity.y;
-        rb.velocity = v3;
-        //
+            //Player Auto move forward , and here is the movement for collision with other objects
+            var v3 = transform.forward * speed;
+            v3.y = rb.velocity.y;
+            rb.velocity = v3;
+            //
         }
+    }
+    void Rotation()
+    {
+        var targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+
+        // Smoothly rotate towards the target point.
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, angleSpeed * Time.deltaTime);
     }
 }
