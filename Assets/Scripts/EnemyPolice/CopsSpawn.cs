@@ -15,6 +15,6 @@ public class CopsSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        copSpawnPositionsParent.transform.Rotate(Vector3.up * Time.deltaTime * copSpawnPositionsParentTurnSpeed);
+       // copSpawnPositionsParent.transform.Rotate(Vector3.up * Time.deltaTime * copSpawnPositionsParentTurnSpeed);
     }
 }

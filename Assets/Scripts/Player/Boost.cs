@@ -11,6 +11,8 @@ public class Boost : MonoBehaviour
     float playerBoostSpeedTimer = 0;
     bool playerBoostSpeedBool;
 
+    public float boostSpeed = 25;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +54,7 @@ public class Boost : MonoBehaviour
         if (boostLevel >= 1)
         {
             boostLevel = 0;
-            PlayerMovment.instance.currentSpeed = 50;
+            PlayerMovment.instance.currentSpeed = boostSpeed;
             playerBoostSpeedBool = true;
             PlayerMovment.instance.anim.SetBool("Boost",true);
             PlayerMovment.instance.boostFlame.SetActive(true);

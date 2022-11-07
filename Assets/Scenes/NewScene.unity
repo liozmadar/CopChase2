@@ -123,7 +123,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: a006b40a281d63c41bcb561e2522b074, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &9398705
 GameObject:
   m_ObjectHideFlags: 0
@@ -5568,7 +5568,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemySpawnPoint (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5580,7 +5580,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626969907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300, y: 0, z: 0}
+  m_LocalPosition: {x: 174.5, y: -460, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5599,7 +5599,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemySpawnPoint (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5611,7 +5611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633156452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -300}
+  m_LocalPosition: {x: 0, y: -460, z: -155.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6895,11 +6895,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5314619089124056994, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
-        type: 3}
-      propertyPath: rotationSpeed
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 5195657680708682768, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
         type: 3}
       propertyPath: m_Name
@@ -6918,12 +6913,12 @@ PrefabInstance:
     - target: {fileID: 5195657680708720688, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.15
+      value: 4.7
       objectReference: {fileID: 0}
     - target: {fileID: 5195657680708720688, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5195657680708720688, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
         type: 3}
@@ -6960,26 +6955,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5195657681043212921, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195657681043212923, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
-        type: 3}
-      propertyPath: speed
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 5195657681043212923, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1916278446}
-    - target: {fileID: 5195657681043212923, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
-        type: 3}
-      propertyPath: angleSpeed
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01, type: 3}
 --- !u!224 &1443464135 stripped
@@ -7511,7 +7491,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemySpawnPoint (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7523,7 +7503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842359776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -300, y: 0, z: 0}
+  m_LocalPosition: {x: -180, y: -460, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7542,7 +7522,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemySpawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7554,7 +7534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856294438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 300}
+  m_LocalPosition: {x: 0, y: -460, z: 161}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12406,11 +12386,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 8ecb83e29c7a909498b3f578724b5524, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 20.3
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 8ecb83e29c7a909498b3f578724b5524, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21
+      value: 171.9
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 8ecb83e29c7a909498b3f578724b5524, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12534,7 +12514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32cd1094388fd394b99e7cd99c4fff48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 23
   currentSpeed: 0
   angleSpeed: 150
   anim: {fileID: 215944407}
@@ -12567,7 +12547,7 @@ MonoBehaviour:
   - {fileID: 626969907}
   - {fileID: 633156452}
   - {fileID: 1842359776}
-  timer: 100
+  timer: 500
   cop1: {fileID: 5195657680708682768, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01, type: 3}
   cop2: {fileID: 321259013191435784, guid: d2f14784122506b409ca6690f46583d9, type: 3}
   cop3: {fileID: 1135690220698244810, guid: a1a47aa6cd9e0f6488c7c59610328d5e, type: 3}
@@ -12586,6 +12566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boostImage: {fileID: 1988633479}
+  boostSpeed: 30
 --- !u!114 &1916278455
 MonoBehaviour:
   m_ObjectHideFlags: 0
