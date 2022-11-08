@@ -10,6 +10,7 @@ TagManager:
   - GroundFloor
   - CameraPlayer
   - PlanetGroundFloor
+  - IndicatorRenderer
   layers:
   - Default
   - TransparentFX
