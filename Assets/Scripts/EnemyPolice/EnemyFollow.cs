@@ -29,6 +29,7 @@ public class EnemyFollow : MonoBehaviour
     {
         AnotherMovment();
         Rotation();
+        AllCopsGoAway();
         //TryMove();
         if (transform.position.y > 7)
         {
@@ -41,7 +42,7 @@ public class EnemyFollow : MonoBehaviour
     }
     private void Update()
     {
-        
+
     }
     void AnotherMovment()
     {
@@ -58,25 +59,25 @@ public class EnemyFollow : MonoBehaviour
             //
         }
     }
-    void Rotation()
+    void AllCopsGoAway()
     {
-        var targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
-
-        // Smoothly rotate towards the target point.
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, angleSpeed * Time.deltaTime);
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "PlanetGroundFloor")
+        if (Cones.instance.allConesCollected)
         {
-            currentSpeed = speed;
+            Debug.Log("now");
+            var targetRotation = Quaternion.LookRotation(transform.position - player.transform.position);
+
+            // Smoothly rotate towards the target point.
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, angleSpeed * Time.deltaTime);
         }
     }
-    private void OnCollisionExit(Collision collision)
+    void Rotation()
     {
-        if (collision.gameObject.tag == "PlanetGroundFloor")
+        if (!Cones.instance.allConesCollected)
         {
-           // currentSpeed = slowSpeed;
+            var targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+
+            // Smoothly rotate towards the target point.
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, angleSpeed * Time.deltaTime);
         }
     }
 }
