@@ -12,7 +12,7 @@ public class GroundOrb : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        gravity = GameObject.FindGameObjectWithTag("GroundFloor").GetComponent<GravityOrbit>();
+       // gravity = GameObject.FindGameObjectWithTag("GroundFloor").GetComponent<GravityOrbit>();
     }
 
     // Update is called once per frame

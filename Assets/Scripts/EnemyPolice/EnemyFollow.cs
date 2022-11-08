@@ -29,6 +29,15 @@ public class EnemyFollow : MonoBehaviour
     {
         AnotherMovment();
         Rotation();
+        //TryMove();
+        if (transform.position.y > 7)
+        {
+            currentSpeed = slowSpeed;
+        }
+        else
+        {
+            currentSpeed = speed;
+        }
     }
     private void Update()
     {
