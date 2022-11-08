@@ -6962,6 +6962,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5195657681043212923, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
         type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195657681043212923, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1916278446}
@@ -12565,7 +12570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boostImage: {fileID: 1988633479}
-  boostSpeed: 25
+  boostSpeed: 40
 --- !u!114 &1916278455
 MonoBehaviour:
   m_ObjectHideFlags: 0

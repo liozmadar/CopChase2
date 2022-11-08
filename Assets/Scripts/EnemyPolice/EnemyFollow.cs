@@ -30,7 +30,6 @@ public class EnemyFollow : MonoBehaviour
         AnotherMovment();
         Rotation();
         AllCopsGoAway();
-        //TryMove();
         if (transform.position.y > 7)
         {
             currentSpeed = slowSpeed;
