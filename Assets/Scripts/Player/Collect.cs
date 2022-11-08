@@ -38,26 +38,30 @@ public class Collect : MonoBehaviour
     }
     void SpawnCop()
     {
-        timer -= Time.deltaTime;
-        if (timer < 0)
+        if (!Cones.instance.allConesCollected)
         {
-            int RandomPoint = Random.Range(0, EnemySpawnPoints.Length);
-            if (Timer.instance.timerText < 10)
+            timer -= Time.deltaTime;
+            if (timer < 0)
             {
-                Instantiate(cop1, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
-            }
-            else if (Timer.instance.timerText > 10 && Timer.instance.timerText < 20)
-            {
-                Instantiate(cop2, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
-            }
-            else if (Timer.instance.timerText > 20)
-            {
-                Instantiate(cop3, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
-            }
-            timer = 1;
+                int RandomPoint = Random.Range(0, EnemySpawnPoints.Length);
+                if (Timer.instance.timerText < 10)
+                {
+                    Instantiate(cop1, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
+                }
+                else if (Timer.instance.timerText > 10 && Timer.instance.timerText < 20)
+                {
+                    Instantiate(cop2, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
+                }
+                else if (Timer.instance.timerText > 20)
+                {
+                    Instantiate(cop3, EnemySpawnPoints[RandomPoint].transform.position, Quaternion.identity);
+                }
+                timer = 1;
 
-            copsCountNumber++;
-            copsCountText.text = copsCountNumber.ToString();
+                copsCountNumber++;
+                copsCountText.text = copsCountNumber.ToString();
+            }
         }
+        
     }
 }
