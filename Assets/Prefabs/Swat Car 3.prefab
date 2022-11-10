@@ -502,11 +502,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   rb: {fileID: 1135690220698244814}
-  speed: 30
+  speed: 45
   slowSpeed: 10
   currentSpeed: 0
   angleSpeed: 3
-  navMesh: {fileID: 0}
 --- !u!114 &1135690220698244813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +525,7 @@ MonoBehaviour:
     type: 3}
   fire: {fileID: 6981835486604047749}
   smoke: {fileID: 335671575912147974}
+  copsDestroyedNumber: 0
 --- !u!95 &-6736123495564442398
 Animator:
   serializedVersion: 4

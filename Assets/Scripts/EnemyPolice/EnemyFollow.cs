@@ -17,23 +17,28 @@ public class EnemyFollow : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
-
-        currentSpeed = slowSpeed;
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        AnotherMovment();
-        Rotation();
-        AllCopsGoAway();
-        if (transform.position.y > 7)
+        if (GameManager.instance.startTheGame)
         {
-            currentSpeed = slowSpeed;
+            if (transform.position.y > 7)
+            {
+                currentSpeed = slowSpeed;
+            }
+            else
+            {
+                currentSpeed = speed;
+            }
         }
         else
         {
-            currentSpeed = speed;
+            currentSpeed = PlayerMovment.instance.speed;
         }
+        AnotherMovment();
+        Rotation();
+        AllCopsGoAway();
     }
     void AnotherMovment()
     {

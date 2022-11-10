@@ -33,10 +33,11 @@ public class Boost : MonoBehaviour
         if (playerBoostSpeedBool)
         {
             playerBoostSpeedTimer += Time.deltaTime;
-            if (playerBoostSpeedTimer > 4)
+            if (playerBoostSpeedTimer > 3)
             {
                 PlayerMovment.instance.boostFlame.SetActive(false);
                 PlayerMovment.instance.boostFlame2.SetActive(false);
+                PlayerMovment.instance.anim.SetBool("Boost", false);
                 PlayerMovment.instance.currentSpeed = PlayerMovment.instance.speed;
                 playerBoostSpeedTimer = 0;
                 playerBoostSpeedBool = false;
