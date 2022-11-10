@@ -39,10 +39,6 @@ public class EnemyFollow : MonoBehaviour
             currentSpeed = speed;
         }
     }
-    private void Update()
-    {
-
-    }
     void AnotherMovment()
     {
         if (player != null)
@@ -62,7 +58,6 @@ public class EnemyFollow : MonoBehaviour
     {
         if (Cones.instance.allConesCollected)
         {
-            Debug.Log("now");
             var targetRotation = Quaternion.LookRotation(transform.position - player.transform.position);
 
             // Smoothly rotate towards the target point.

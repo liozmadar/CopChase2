@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI textMesh;
     public float timer;
     public int timerText;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +28,15 @@ public class Timer : MonoBehaviour
     }
     void GameTimer()
     {
-        timer -= Time.deltaTime;
-        if (timer < 0)
+        if (!Cones.instance.allConesCollected)
         {
-            timerText++;
-            timer = 1;
+            timer -= Time.deltaTime;
+            if (timer < 0)
+            {
+                timerText++;
+                timer = 1;
+            }
+            textMesh.text = timerText.ToString();
         }
-        textMesh.text = timerText.ToString();
     }
 }
