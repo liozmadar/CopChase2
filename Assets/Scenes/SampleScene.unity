@@ -12529,7 +12529,7 @@ MonoBehaviour:
   boostFlame: {fileID: 1882329125}
   boostFlame2: {fileID: 200138114}
   invincibleTime: 1
-  life: 5
+  life: 1
   currentLife: 0
   currentinvincibleTime: 0
   screenLeft: {fileID: 1293000202}

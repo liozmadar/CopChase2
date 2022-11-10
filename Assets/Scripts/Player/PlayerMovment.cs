@@ -146,6 +146,7 @@ public class PlayerMovment : MonoBehaviour
                     smokeEffect.SetActive(false);
                     fireEffect.SetActive(false);
                     stopCheckIfCollide = false;
+                    Cones.instance.allConesCollected = true;
                 }
             }
         }
