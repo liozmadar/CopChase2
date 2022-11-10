@@ -252,6 +252,52 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 59480995}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &169518458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 169518459}
+  - component: {fileID: 169518460}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &169518459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169518458}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 32.21129, y: -155.26389, z: 142.7289}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 460187026}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &169518460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169518458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb6a5e58192708408c25d2aabe3659c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTheGame: 0
+  StopTheGameHelper: 0
 --- !u!4 &173279919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 535928429055214182, guid: 8ecb83e29c7a909498b3f578724b5524,
@@ -5433,6 +5479,7 @@ Transform:
   - {fileID: 1481726609}
   - {fileID: 1344557605}
   - {fileID: 255711915}
+  - {fileID: 169518459}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12556,7 +12603,6 @@ MonoBehaviour:
   cop2: {fileID: 321259013191435784, guid: d2f14784122506b409ca6690f46583d9, type: 3}
   cop3: {fileID: 1135690220698244810, guid: a1a47aa6cd9e0f6488c7c59610328d5e, type: 3}
   copsCountText: {fileID: 928239379}
-  startTheGame: 0
 --- !u!114 &1916278453
 MonoBehaviour:
   m_ObjectHideFlags: 0

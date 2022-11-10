@@ -29,8 +29,6 @@ public class PlayerMovment : MonoBehaviour
     private bool winGameCantMove;
 
 
-    private Vector3 moveForward;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -147,21 +145,27 @@ public class PlayerMovment : MonoBehaviour
                     fireEffect.SetActive(false);
                     stopCheckIfCollide = false;
                     Cones.instance.allConesCollected = true;
+                    GameManager.instance.StopTheGameHelper = true;
+                    GameManager.instance.startTheGame = false;
                 }
             }
         }
     }
     public void MoveLeft()
     {
-        transform.Rotate(-Vector3.up * angleSpeed * Time.deltaTime);
-        Collect.instance.startTheGame = true;
-
+        if (!GameManager.instance.StopTheGameHelper)
+        {
+            transform.Rotate(-Vector3.up * angleSpeed * Time.deltaTime);
+            GameManager.instance.startTheGame = true;
+        }
     }
     public void MoveRight()
     {
-        transform.Rotate(Vector3.up * angleSpeed * Time.deltaTime);
-        Collect.instance.startTheGame = true;
-
+        if (!GameManager.instance.StopTheGameHelper)
+        {
+            transform.Rotate(Vector3.up * angleSpeed * Time.deltaTime);
+            GameManager.instance.startTheGame = true;
+        }
     }
     void WinDrift()
     {

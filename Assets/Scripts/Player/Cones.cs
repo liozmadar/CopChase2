@@ -27,7 +27,7 @@ public class Cones : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Collect.instance.startTheGame)
+        if (GameManager.instance.startTheGame)
         {
             ConeSpawn();
             AllConesCollected();

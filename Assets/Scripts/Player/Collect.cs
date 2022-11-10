@@ -19,9 +19,6 @@ public class Collect : MonoBehaviour
     private int copsCountNumber = 1;
     //;
 
-    // Tuttorial
-    public bool startTheGame;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +28,7 @@ public class Collect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startTheGame)
+        if (GameManager.instance.startTheGame)
         {
             SpawnCop();
         }
