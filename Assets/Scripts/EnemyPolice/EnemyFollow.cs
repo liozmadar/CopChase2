@@ -10,16 +10,12 @@ public class EnemyFollow : MonoBehaviour
     public float speed;
     public float slowSpeed;
     public float currentSpeed;
-
     public float angleSpeed;
-
-    public NavMeshAgent navMesh;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        navMesh = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
 
         currentSpeed = slowSpeed;
@@ -56,7 +52,7 @@ public class EnemyFollow : MonoBehaviour
     }
     void AllCopsGoAway()
     {
-        if (Cones.instance.allConesCollected)
+        if (GameManager.instance.allCopsGoAway)
         {
             var targetRotation = Quaternion.LookRotation(transform.position - player.transform.position);
 
@@ -66,7 +62,7 @@ public class EnemyFollow : MonoBehaviour
     }
     void Rotation()
     {
-        if (!Cones.instance.allConesCollected)
+        if (!GameManager.instance.allCopsGoAway)
         {
             var targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
 

@@ -12,6 +12,8 @@ public class EnemyDestroyed : MonoBehaviour
     public GameObject fire;
     public GameObject smoke;
 
+    public int copsDestroyedNumber;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,7 @@ public class EnemyDestroyed : MonoBehaviour
             gameObject.SetActive(false);
             Destroy(ExplosionPrefab, 2);
             Destroy(gameObject, 5);
+            GameManager.instance.copsDestroyedNumber++;
         }
     }
 }

@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 
     public bool startTheGame;
     public bool StopTheGameHelper;
+    public bool allCopsGoAway;
+
+    public int copsDestroyedNumber;
 
     // Start is called before the first frame update
     void Start()

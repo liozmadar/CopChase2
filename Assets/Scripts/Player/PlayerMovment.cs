@@ -144,9 +144,10 @@ public class PlayerMovment : MonoBehaviour
                     smokeEffect.SetActive(false);
                     fireEffect.SetActive(false);
                     stopCheckIfCollide = false;
-                    Cones.instance.allConesCollected = true;
+                    GameManager.instance.allCopsGoAway = true;
                     GameManager.instance.StopTheGameHelper = true;
                     GameManager.instance.startTheGame = false;
+                    CanvasManager.instance.EndGameCardLose();
                 }
             }
         }
@@ -175,10 +176,12 @@ public class PlayerMovment : MonoBehaviour
             anim.SetBool("Boost", false);
             winGameCantMove = true;
             Invoke("StopCarPlayerSpeed", 1);
+            GameManager.instance.allCopsGoAway = true;
         }
     }
     void StopCarPlayerSpeed()
     {
         rb.constraints = RigidbodyConstraints.FreezeAll;
+        CanvasManager.instance.EndGameCardWin();
     }
 }
