@@ -28,12 +28,15 @@ public class PlayerMovment : MonoBehaviour
     private bool pressingRight;
     private bool winGameCantMove;
 
+    private TrailRenderer trailRenderer;
+
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         rb = GetComponent<Rigidbody>();
+        trailRenderer = GetComponent<TrailRenderer>();
         currentSpeed = speed;
     }
 
@@ -75,18 +78,22 @@ public class PlayerMovment : MonoBehaviour
     public void ClickLeftDown()
     {
         pressingLeft = true;
+        trailRenderer.enabled = true;
     }
     public void ClickRightDown()
     {
         pressingRight = true;
+        trailRenderer.enabled = true;
     }
     public void ClickLeftUp()
     {
         pressingLeft = false;
+        trailRenderer.enabled = false;
     }
     public void ClickRightUp()
     {
         pressingRight = false;
+        trailRenderer.enabled = false;
     }
     //;
     void PlayerMovement()
