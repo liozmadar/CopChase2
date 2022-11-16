@@ -22,6 +22,13 @@ public class CanvasManager : MonoBehaviour
     public int mostCopsDestroyedCount;
     public TextMeshProUGUI mostConeCollectedText;
     public int mostConeCollectedCount;
+
+    public GameObject newScore;
+    public bool newScoreBool;
+    public GameObject newCops;
+    public bool newCopsBool;
+    public GameObject newCones;
+    public bool newConesBool;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +39,20 @@ public class CanvasManager : MonoBehaviour
     void Update()
     {
         CheckTheBestScoreNumber();
+
+        if (newScoreBool)
+        {
+            newScore.SetActive(true);
+        }
+        if (newConesBool)
+        {
+            newCones.SetActive(true);
+        }
+        if (newCopsBool)
+        {
+            newCops.SetActive(true);
+        }
+        //DeleteAllKeys();
     }
     public void TryAgainButton()
     {
@@ -73,6 +94,7 @@ public class CanvasManager : MonoBehaviour
         if (Cones.instance.coneCollectedCount > PlayerPrefs.GetInt("Cones"))
         {
             MostConesCollectedCheck();
+            newConesBool = true;
         }
         else
         {
@@ -81,6 +103,7 @@ public class CanvasManager : MonoBehaviour
         if (GameManager.instance.copsDestroyedNumber > PlayerPrefs.GetInt("Cops"))
         {
             MostCopsDestroyed();
+            newCopsBool = true;
         }
         else
         {
@@ -89,10 +112,17 @@ public class CanvasManager : MonoBehaviour
         if (Timer.instance.timerText > PlayerPrefs.GetInt("Score"))
         {
             BestScore();
+            newScoreBool = true;
         }
         else
         {
             bestScoreText.text = PlayerPrefs.GetInt("Score").ToString();
         }
+    }
+    void DeleteAllKeys()
+    {
+        PlayerPrefs.DeleteKey("Cones");
+        PlayerPrefs.DeleteKey("Cops");
+        PlayerPrefs.DeleteKey("Score");
     }
 }
