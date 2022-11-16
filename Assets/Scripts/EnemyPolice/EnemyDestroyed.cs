@@ -12,8 +12,6 @@ public class EnemyDestroyed : MonoBehaviour
     public GameObject fire;
     public GameObject smoke;
 
-    public int copsDestroyedNumber;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,17 +23,17 @@ public class EnemyDestroyed : MonoBehaviour
     {
         invicTime -= Time.deltaTime;
     }
-  
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "EnemyPolice")
-        {      
+        {
             if (invicTime < 0)
             {
                 ReduceLife();
                 invicTime = 1;
             }
-        }      
+        }
     }
     void ReduceLife()
     {
@@ -52,6 +50,7 @@ public class EnemyDestroyed : MonoBehaviour
             Destroy(ExplosionPrefab, 2);
             Destroy(gameObject, 5);
             GameManager.instance.copsDestroyedNumber++;
+            Collect.instance.copsCountNumber--;
         }
     }
 }

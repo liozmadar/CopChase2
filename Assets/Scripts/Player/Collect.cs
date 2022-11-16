@@ -16,7 +16,7 @@ public class Collect : MonoBehaviour
     public GameObject cop3;
 
     public TextMeshProUGUI copsCountText;
-    private int copsCountNumber = 1;
+    public int copsCountNumber = 1;
     //;
 
     // Start is called before the first frame update
@@ -32,6 +32,8 @@ public class Collect : MonoBehaviour
         {
             SpawnCop();
         }
+
+        copsCountText.text = copsCountNumber.ToString();
     }
     void SpawnCop()
     {
@@ -56,7 +58,6 @@ public class Collect : MonoBehaviour
                 timer = 1;
 
                 copsCountNumber++;
-                copsCountText.text = copsCountNumber.ToString();
             }
         }
         
