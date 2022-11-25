@@ -27,6 +27,7 @@ public class Boost : MonoBehaviour
             FillImageBoost();
             BoostAnim();
         }
+        ClickBoost();
     }
     void BoostAnim()
     {
@@ -52,14 +53,19 @@ public class Boost : MonoBehaviour
     }
     public void ClickBoost()
     {
-        if (boostLevel >= 1)
+        if (PlayerBoost.instance.activeTheBoost)
         {
-            boostLevel = 0;
-            PlayerMovment.instance.currentSpeed = boostSpeed;
-            playerBoostSpeedBool = true;
-            PlayerMovment.instance.anim.SetBool("Boost",true);
-            PlayerMovment.instance.boostFlame.SetActive(true);
-            PlayerMovment.instance.boostFlame2.SetActive(true);
+            if (boostLevel >= 1)
+            {
+                boostLevel = 0;
+                PlayerMovment.instance.currentSpeed = boostSpeed;
+                playerBoostSpeedBool = true;
+                PlayerMovment.instance.anim.SetBool("Boost", true);
+                PlayerMovment.instance.boostFlame.SetActive(true);
+                PlayerMovment.instance.boostFlame2.SetActive(true);
+
+                PlayerBoost.instance.activeTheBoost = false;
+            }
         }
     }
 }
