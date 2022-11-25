@@ -10,18 +10,14 @@ public class CameraMovment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-       // CameraPlayer = GameObject.FindGameObjectWithTag("CameraPlayer");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Vector3 CameraPos = new Vector3(player.transform.position.x,transform.position.y, player.transform.position.z - 200);
-        // transform.position = CameraPos;
-
+        player = GameObject.FindGameObjectWithTag("Player");
         CameraMove();
-       // NewNewCameraMove();
     }
     void CameraMove()
     {
