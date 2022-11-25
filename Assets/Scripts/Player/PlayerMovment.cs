@@ -20,16 +20,10 @@ public class PlayerMovment : MonoBehaviour
     public float currentinvincibleTime;
     private bool stopCheckIfCollide = true;
 
-    public Button screenLeft;
-    public Button screenRight;
-    private bool clickRight;
 
-    public bool pressingLeft;
-    public bool pressingRight;
     private bool winGameCantMove;
 
     public TrailRenderer trailRenderer;
-
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +31,12 @@ public class PlayerMovment : MonoBehaviour
         instance = this;
         rb = GetComponent<Rigidbody>();
         trailRenderer = GetComponent<TrailRenderer>();
+        anim = GetComponentInChildren<Animator>();
+        // smokeEffect = GameObject.Find("smoke_thick");
+        // fireEffect = GameObject.Find("Fire");
+
         currentSpeed = speed;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -53,7 +50,6 @@ public class PlayerMovment : MonoBehaviour
         }
         WinDrift();
     }
-
     void AllMovment()
     {
         //here is movement so the car can go up through gravity;
@@ -74,28 +70,6 @@ public class PlayerMovment : MonoBehaviour
         //The new movement
         PlayerMovementButtons();
     }
-    // Button event
-    public void ClickLeftDown()
-    {
-        pressingLeft = true;
-        trailRenderer.enabled = true;
-    }
-    public void ClickRightDown()
-    {
-        pressingRight = true;
-        trailRenderer.enabled = true;
-    }
-    public void ClickLeftUp()
-    {
-        pressingLeft = false;
-        trailRenderer.enabled = false;
-    }
-    public void ClickRightUp()
-    {
-        pressingRight = false;
-        trailRenderer.enabled = false;
-    }
-    //;
     void PlayerMovement()
     {
         if (Input.GetMouseButton(0) || Input.touchCount > 0)
@@ -113,11 +87,11 @@ public class PlayerMovment : MonoBehaviour
     }
     void PlayerMovementButtons()
     {
-        if (pressingLeft)
+        if (ScreenButtonMovement.instance.pressingLeft)
         {
             MoveLeft();
         }
-        else if (pressingRight)
+        else if (ScreenButtonMovement.instance.pressingRight)
         {
             MoveRight();
         }

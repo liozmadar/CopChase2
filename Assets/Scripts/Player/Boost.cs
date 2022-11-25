@@ -16,7 +16,7 @@ public class Boost : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        boostImage = GameObject.FindGameObjectWithTag("BoostImage").GetComponent<Image>();
     }
 
     // Update is called once per frame

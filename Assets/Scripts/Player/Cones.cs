@@ -22,6 +22,7 @@ public class Cones : MonoBehaviour
     void Start()
     {
         instance = this;
+        coneCountText = GameObject.FindGameObjectWithTag("ConeCountText").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
