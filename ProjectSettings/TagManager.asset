@@ -11,6 +11,7 @@ TagManager:
   - CameraPlayer
   - PlanetGroundFloor
   - IndicatorRenderer
+  - CopsCountText
   layers:
   - Default
   - TransparentFX
