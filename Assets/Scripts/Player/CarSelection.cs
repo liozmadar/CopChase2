@@ -48,14 +48,14 @@ public class CarSelection : MonoBehaviour
     public void ChangeCars1()
     {
         Debug.Log("Here");
-        GameObject car1 = Instantiate(playerCarSelection[0], transform.position, Quaternion.identity);
+        car1 = Instantiate(playerCarSelection[0], transform.position, Quaternion.identity);
         Destroy(car2);
         Destroy(firstStartCar);
     }
     public void ChangeCars2()
     {
         Debug.Log("Here2");
-        GameObject car2 = Instantiate(playerCarSelection[1], transform.position, Quaternion.identity);
+        car2 = Instantiate(playerCarSelection[1], transform.position, Quaternion.identity);
         Destroy(car1);
         Destroy(firstStartCar);
     }

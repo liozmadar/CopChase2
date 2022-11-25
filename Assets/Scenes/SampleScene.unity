@@ -2034,7 +2034,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 282802131}
         m_TargetAssemblyTypeName: CarSelection, Assembly-CSharp
         m_MethodName: ChangeCars2
         m_Mode: 1
@@ -5144,7 +5144,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 282802131}
         m_TargetAssemblyTypeName: CarSelection, Assembly-CSharp
         m_MethodName: ChangeCars1
         m_Mode: 1
