@@ -60,6 +60,10 @@ public class CanvasManager : MonoBehaviour
     }
     public void EndGameCardWin()
     {
+        Invoke("DelayTheEndCardWin", 1);
+    }
+    void DelayTheEndCardWin()
+    {
         endGameCard.SetActive(true);
         headerText.text = "You win!";
         timerScore.text = Timer.instance.timerText.ToString();
@@ -67,6 +71,10 @@ public class CanvasManager : MonoBehaviour
         coneCollected.text = Cones.instance.coneCollectedCount.ToString();
     }
     public void EndGameCardLose()
+    {
+        Invoke("DelayTheEndCardLose", 1);
+    }
+    void DelayTheEndCardLose()
     {
         endGameCard.SetActive(true);
         headerText.text = "Try again!";
