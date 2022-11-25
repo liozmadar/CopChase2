@@ -24,11 +24,11 @@ public class PlayerMovment : MonoBehaviour
     public Button screenRight;
     private bool clickRight;
 
-    private bool pressingLeft;
-    private bool pressingRight;
+    public bool pressingLeft;
+    public bool pressingRight;
     private bool winGameCantMove;
 
-    private TrailRenderer trailRenderer;
+    public TrailRenderer trailRenderer;
 
 
     // Start is called before the first frame update
