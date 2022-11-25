@@ -277,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57517684}
   m_LocalRotation: {x: 0, y: 0.9848078, z: 0.17364825, w: 0}
-  m_LocalPosition: {x: 0.85999995, y: 0.45000002, z: -1.164}
+  m_LocalPosition: {x: 0.44999996, y: 0.45000002, z: -1.164}
   m_LocalScale: {x: 1.4000002, y: 1.1666667, z: 1.1666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6751,7 +6751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924722786}
   m_LocalRotation: {x: 0, y: 0.9848078, z: 0.17364825, w: 0}
-  m_LocalPosition: {x: -0.03, y: 0.45000002, z: -1.164}
+  m_LocalPosition: {x: -0.44, y: 0.45000002, z: -1.164}
   m_LocalScale: {x: 1.4000002, y: 1.1666667, z: 1.1666667}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19943,6 +19943,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 829262173530979728, guid: 834181966c7d0624cb3a4eb021034d11,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4259031831680333615, guid: 834181966c7d0624cb3a4eb021034d11,
         type: 3}
       propertyPath: m_RootOrder
@@ -20008,10 +20013,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4259031831680462247, guid: 834181966c7d0624cb3a4eb021034d11,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 6.5585995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259031831680462247, guid: 834181966c7d0624cb3a4eb021034d11,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 3.2694454
+      objectReference: {fileID: 0}
     - target: {fileID: 4259031831680462260, guid: 834181966c7d0624cb3a4eb021034d11,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259031831680462264, guid: 834181966c7d0624cb3a4eb021034d11,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 4259031831680462266, guid: 834181966c7d0624cb3a4eb021034d11,
         type: 3}
@@ -20177,6 +20197,11 @@ PrefabInstance:
         type: 3}
       propertyPath: pressingRight
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490539081406008847, guid: c1bb5c1c799b3d94c995f7442df384e9,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 8490539081406040248, guid: c1bb5c1c799b3d94c995f7442df384e9,
         type: 3}
