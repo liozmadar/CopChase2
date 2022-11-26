@@ -7,6 +7,7 @@ public class CarSelection : MonoBehaviour
 {
     public static CarSelection instance;
     public GameObject[] playerCarSelection;
+    private int index;
     public GameObject firstStartCar;
     private GameObject car1;
     private GameObject car2;
@@ -51,18 +52,24 @@ public class CarSelection : MonoBehaviour
             Destroy(car2);
             Destroy(firstStartCar);
             cantMakeMoreThenTwoCars = true;
-            cantMakeMoreThenTwoCars2 = false;
         }
     }
-    public void ChangeCars2()
+    public void NextCarIndex()
     {
-        if (!cantMakeMoreThenTwoCars2)
+        if (playerCarSelection.Length > index+1)
         {
-            car2 = Instantiate(playerCarSelection[1], transform.position, Quaternion.identity);
-            Destroy(car1);
-            Destroy(firstStartCar);
-            cantMakeMoreThenTwoCars2 = true;
-            cantMakeMoreThenTwoCars = false;
+            Destroy(GameObject.FindGameObjectWithTag("Player"));
+            index++;
+            Instantiate(playerCarSelection[index], transform.position, Quaternion.identity);
+        }
+    }
+    public void PreviousCarIndex()
+    {
+        if (index > 0)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Player"));
+            index--;
+            Instantiate(playerCarSelection[index], transform.position, Quaternion.identity);
         }
     }
 }

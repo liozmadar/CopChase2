@@ -10468,6 +10468,7 @@ MonoBehaviour:
   playerCarSelection:
   - {fileID: 7183804445777158767, guid: 37127e01ac01ea24e911f74d54533683, type: 3}
   - {fileID: 612925501446286766, guid: 834181966c7d0624cb3a4eb021034d11, type: 3}
+  - {fileID: 2399842108689170640, guid: a77a807a193c94e449e546d961778837, type: 3}
   firstStartCar: {fileID: 3968663109479791056}
   rb: {fileID: 0}
   nextCar: {fileID: 1815419005}
@@ -11865,7 +11866,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 282802131}
         m_TargetAssemblyTypeName: CarSelection, Assembly-CSharp
-        m_MethodName: ChangeCars2
+        m_MethodName: PreviousCarIndex
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15055,7 +15056,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 282802131}
         m_TargetAssemblyTypeName: CarSelection, Assembly-CSharp
-        m_MethodName: ChangeCars1
+        m_MethodName: NextCarIndex
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
