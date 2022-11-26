@@ -15,6 +15,8 @@ public class CarSelection : MonoBehaviour
 
     public Button nextCar;
     public Button previousCar;
+    private bool cantMakeMoreThenTwoCars;
+    private bool cantMakeMoreThenTwoCars2;
 
     public float speed = 40;
 
@@ -31,7 +33,7 @@ public class CarSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // ObjectMoveWithTheScreen();
+        // ObjectMoveWithTheScreen();
     }
     void ObjectMoveWithTheScreen()
     {
@@ -47,16 +49,26 @@ public class CarSelection : MonoBehaviour
     }
     public void ChangeCars1()
     {
-        Debug.Log("Here");
-        car1 = Instantiate(playerCarSelection[0], transform.position, Quaternion.identity);
-        Destroy(car2);
-        Destroy(firstStartCar);
+        if (!cantMakeMoreThenTwoCars)
+        {
+            Debug.Log("Here");
+            car1 = Instantiate(playerCarSelection[0], transform.position, Quaternion.identity);
+            Destroy(car2);
+            Destroy(firstStartCar);
+            cantMakeMoreThenTwoCars = true;
+            cantMakeMoreThenTwoCars2 = false;
+        }
     }
     public void ChangeCars2()
     {
-        Debug.Log("Here2");
-        car2 = Instantiate(playerCarSelection[1], transform.position, Quaternion.identity);
-        Destroy(car1);
-        Destroy(firstStartCar);
+        if (!cantMakeMoreThenTwoCars2)
+        {
+            Debug.Log("Here2");
+            car2 = Instantiate(playerCarSelection[1], transform.position, Quaternion.identity);
+            Destroy(car1);
+            Destroy(firstStartCar);
+            cantMakeMoreThenTwoCars2 = true;
+            cantMakeMoreThenTwoCars = false;
+        }
     }
 }

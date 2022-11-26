@@ -15,8 +15,11 @@ public class EnemyFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -69,10 +72,13 @@ public class EnemyFollow : MonoBehaviour
     {
         if (!GameManager.instance.allCopsGoAway)
         {
-            var targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+            if (player != null)
+            {
+                var targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
 
-            // Smoothly rotate towards the target point.
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, angleSpeed * Time.deltaTime);
+                // Smoothly rotate towards the target point.
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, angleSpeed * Time.deltaTime);
+            }
         }
     }
 }
