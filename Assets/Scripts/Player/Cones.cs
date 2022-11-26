@@ -15,7 +15,7 @@ public class Cones : MonoBehaviour
 
     public int coneCollectedCount;
     public bool allConesCollected;
-    private int randomConeNumber = 1;
+    private int randomConeNumber = 30;
 
     private Vector3 randomPos;
     // Start is called before the first frame update
@@ -39,11 +39,12 @@ public class Cones : MonoBehaviour
         coneShowTimer -= Time.deltaTime;
         if (coneShowTimer < 0 && coneShowBool)
         {
-            randomConeNumber = Random.Range(1, 2);
+            /*randomConeNumber = Random.Range(1, 2);
             for (int i = 0; i < randomConeNumber; i++)
             {
-                RandomConeLocatin();
-            }
+               
+            }*/
+            RandomConeLocatin();
             coneShowBool = false;
         }
         coneCountText.text = coneCollectedCount.ToString() + "/" + randomConeNumber;
@@ -61,6 +62,7 @@ public class Cones : MonoBehaviour
         {
             Instantiate(coneCollected, other.transform.position, Quaternion.identity);
             Destroy(other);
+            RandomConeLocatin();
             coneCollectedCount++;
         }
     }
