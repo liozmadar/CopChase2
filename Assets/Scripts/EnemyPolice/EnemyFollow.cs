@@ -70,7 +70,7 @@ public class EnemyFollow : MonoBehaviour
     }
     void Rotation()
     {
-        if (!GameManager.instance.allCopsGoAway)
+        if (!GameManager.instance.allCopsGoAway && GameManager.instance.startTheGame)
         {
             if (player != null)
             {
