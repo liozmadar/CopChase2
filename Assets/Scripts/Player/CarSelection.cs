@@ -33,25 +33,20 @@ public class CarSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ObjectMoveWithTheScreen();
+        CloseTheChangeCarsButtons();
     }
-    void ObjectMoveWithTheScreen()
+    public void CloseTheChangeCarsButtons()
     {
-        //here is movement so the car can go up through gravity;
-        Vector3 newPositon = transform.position + (transform.forward * speed * Time.deltaTime);
-        rb.MovePosition(newPositon);
-
-        //Player Auto move forward , and here is the movement for collision with other objects
-        var v3 = transform.forward * speed;
-        v3.y = rb.velocity.y;
-        rb.velocity = v3;
-        //
+        if (GameManager.instance.startTheGame)
+        {
+            nextCar.gameObject.SetActive(false);
+            previousCar.gameObject.SetActive(false);
+        }
     }
     public void ChangeCars1()
     {
         if (!cantMakeMoreThenTwoCars)
         {
-            Debug.Log("Here");
             car1 = Instantiate(playerCarSelection[0], transform.position, Quaternion.identity);
             Destroy(car2);
             Destroy(firstStartCar);
@@ -63,7 +58,6 @@ public class CarSelection : MonoBehaviour
     {
         if (!cantMakeMoreThenTwoCars2)
         {
-            Debug.Log("Here2");
             car2 = Instantiate(playerCarSelection[1], transform.position, Quaternion.identity);
             Destroy(car1);
             Destroy(firstStartCar);
