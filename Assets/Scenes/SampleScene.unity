@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visible: 1
-  margin: 40
+  margin: 35
   canvasColor: {r: 0, g: 0.8117647, b: 1, a: 0.105882354}
   camera: {fileID: 963194227}
 --- !u!1 &249619037
