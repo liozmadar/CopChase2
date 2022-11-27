@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 1135690220699208392}
   - component: {fileID: 1135690220700174344}
   m_Layer: 0
-  m_Name: body
+  m_Name: swat_car_main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

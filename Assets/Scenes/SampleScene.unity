@@ -689,18 +689,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269647219}
   m_CullTransparentMesh: 1
---- !u!114 &282802131 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 282802131, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
-    type: 3}
-  m_PrefabInstance: {fileID: 1368136809}
+--- !u!1 &282802129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 282802130}
+  - component: {fileID: 282802131}
+  m_Layer: 0
+  m_Name: PlayerCarsSelection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &282802130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282802129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 50}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 883844826}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &282802131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282802129}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e834b19131b2b8d4ebca8e7a8f84001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCarSelection:
+  - {fileID: 7183804445777158767, guid: 37127e01ac01ea24e911f74d54533683, type: 3}
+  - {fileID: 612925501446286766, guid: 834181966c7d0624cb3a4eb021034d11, type: 3}
+  - {fileID: 2399842108689170640, guid: a77a807a193c94e449e546d961778837, type: 3}
+  - {fileID: 4740748826749427703, guid: a4dd072289aa1824fadebe12b19e054b, type: 3}
+  firstStartCar: {fileID: 0}
+  rb: {fileID: 0}
+  nextCar: {fileID: 1815419005}
+  previousCar: {fileID: 851152225}
+  speed: 40
 --- !u!1 &287751959
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,6 +2122,12 @@ MonoBehaviour:
   pressingRight: 0
   screenLeft: {fileID: 0}
   screenRight: {fileID: 0}
+--- !u!4 &883844826 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5195657680708720688, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
+    type: 3}
+  m_PrefabInstance: {fileID: 1368136809}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &897582929
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,14 +3967,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 282802131, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01, type: 3}
-      propertyPath: nextCar
-      value: 
-      objectReference: {fileID: 1815419005}
-    - target: {fileID: 282802131, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01, type: 3}
-      propertyPath: previousCar
-      value: 
-      objectReference: {fileID: 851152225}
     - target: {fileID: 5195657680708682768, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
         type: 3}
       propertyPath: m_Name
@@ -3987,7 +4027,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5195657681043212921, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195657681043212923, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5195657681043212920, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01, type: 3}
 --- !u!1 &1481726608
 GameObject:
@@ -5661,6 +5712,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048524219}
   m_CullTransparentMesh: 1
+--- !u!1 &2098468552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5195657680708682768, guid: 2aeaaad6859a9ef4eb9a5612b0b22b01,
+    type: 3}
+  m_PrefabInstance: {fileID: 1368136809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2098468559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098468552}
+  m_Material: {fileID: 13400000, guid: b6f1bb14eb2626d45b5ad2803e41bbcf, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.688403, y: 6.480359, z: 15.334475}
+  m_Center: {x: 0.02736473, y: -0.0818696, z: 0.12393284}
 --- !u!1 &2132217720
 GameObject:
   m_ObjectHideFlags: 0

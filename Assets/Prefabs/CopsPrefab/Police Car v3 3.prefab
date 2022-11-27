@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 321259012800486766}
   - component: {fileID: 321259012800486753}
   m_Layer: 0
-  m_Name: body
+  m_Name: police_car_v3_main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
