@@ -4819,6 +4819,8 @@ GameObject:
   - component: {fileID: 5056023110791030672}
   - component: {fileID: -138212888024541349}
   - component: {fileID: 4542584059269134191}
+  - component: {fileID: 8849629668216564801}
+  - component: {fileID: -5394198427755209952}
   m_Layer: 0
   m_Name: Cone
   m_TagString: Cone
@@ -9751,6 +9753,51 @@ MonoBehaviour:
     margin: -30
     width: 100
     height: 100
+--- !u!114 &8849629668216564801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4536707279986318857}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08470e2a2343b14e90107557e5208ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visible: 1
+  renderers: []
+  style:
+    texture: {fileID: 2800000, guid: 2d7d34242bb238342b5090606321941d, type: 3}
+    color: {r: 1, g: 0, b: 0, a: 1}
+    width: 32
+    height: 32
+  showArrow: 0
+  arrowStyle:
+    texture: {fileID: 0}
+    color: {r: 1, g: 0, b: 0, a: 1}
+    margin: 0
+    width: 16
+    height: 16
+--- !u!114 &-5394198427755209952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4536707279986318857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbece708d010c64980fb08f58991252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cone: {fileID: 0}
+  meters: {fileID: 0}
+  metersPrefab: {fileID: 3761451616644754376, guid: c3b38bf15a2a38749ab0255fed3e9563,
+    type: 3}
+  metersText: {fileID: 0}
+  canvas: {fileID: 0}
+  offSet: {x: 35, y: 20, z: 0}
 --- !u!1 &5947876614394631371
 GameObject:
   m_ObjectHideFlags: 0
