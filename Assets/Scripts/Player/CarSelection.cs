@@ -9,21 +9,18 @@ public class CarSelection : MonoBehaviour
     public GameObject[] playerCarSelection;
     private int index;
     public GameObject firstStartCar;
-    private GameObject car1;
-    private GameObject car2;
 
     public Rigidbody rb;
 
     public Button nextCar;
     public Button previousCar;
     private bool cantMakeMoreThenTwoCars;
-    private bool cantMakeMoreThenTwoCars2;
 
     public float speed = 40;
 
     private void Awake()
     {
-        ChangeCars1();
+        FirstCarStart();
     }
     // Start is called before the first frame update
     void Start()
@@ -44,14 +41,12 @@ public class CarSelection : MonoBehaviour
             previousCar.gameObject.SetActive(false);
         }
     }
-    public void ChangeCars1()
+    public void FirstCarStart()
     {
         if (!cantMakeMoreThenTwoCars)
         {
-            car1 = Instantiate(playerCarSelection[0], transform.position, Quaternion.identity);
-            Destroy(car2);
-            Destroy(firstStartCar);
             cantMakeMoreThenTwoCars = true;
+            firstStartCar = Instantiate(playerCarSelection[0], transform.position, Quaternion.identity);
         }
     }
     public void NextCarIndex()
