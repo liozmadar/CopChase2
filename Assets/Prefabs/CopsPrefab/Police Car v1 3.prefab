@@ -94,6 +94,60 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &282802129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 282802130}
+  - component: {fileID: 282802131}
+  m_Layer: 0
+  m_Name: PlayerCarsSelection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &282802130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282802129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 50}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5195657680708720688}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &282802131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282802129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e834b19131b2b8d4ebca8e7a8f84001c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCarSelection:
+  - {fileID: 7183804445777158767, guid: 37127e01ac01ea24e911f74d54533683, type: 3}
+  - {fileID: 612925501446286766, guid: 834181966c7d0624cb3a4eb021034d11, type: 3}
+  - {fileID: 2399842108689170640, guid: a77a807a193c94e449e546d961778837, type: 3}
+  - {fileID: 4740748826749427703, guid: a4dd072289aa1824fadebe12b19e054b, type: 3}
+  firstStartCar: {fileID: 0}
+  rb: {fileID: 0}
+  nextCar: {fileID: 0}
+  previousCar: {fileID: 0}
+  speed: 40
 --- !u!1 &332858255
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,11 +420,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5195657680708720688}
   - component: {fileID: 5195657681043212921}
-  - component: {fileID: 5195657681043212920}
   - component: {fileID: 5195657681043212923}
   - component: {fileID: 5195657681043212922}
   - component: {fileID: 52208181}
   - component: {fileID: -5314619089124056994}
+  - component: {fileID: 2098468559}
   m_Layer: 0
   m_Name: Police Car v1 3
   m_TagString: EnemyPolice
@@ -399,6 +453,7 @@ Transform:
   - {fileID: 7365177997067603925}
   - {fileID: 332858256}
   - {fileID: 2090798419}
+  - {fileID: 282802130}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -418,19 +473,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &5195657681043212920
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5195657680708682768}
-  m_Material: {fileID: 13400000, guid: b6f1bb14eb2626d45b5ad2803e41bbcf, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7.0072355, y: 6.3857975, z: 15.8330765}
-  m_Center: {x: -0.0517869, y: -0.05178666, z: 0.1534996}
 --- !u!114 &5195657681043212923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,6 +544,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: {fileID: 0}
   rotationSpeed: 1000
+--- !u!65 &2098468559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5195657680708682768}
+  m_Material: {fileID: 13400000, guid: b6f1bb14eb2626d45b5ad2803e41bbcf, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.688403, y: 6.480359, z: 15.334475}
+  m_Center: {x: 0.02736473, y: -0.0818696, z: 0.12393284}
 --- !u!1 &5195657680708682770
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +570,7 @@ GameObject:
   - component: {fileID: 5195657680706427602}
   - component: {fileID: 1368136811}
   m_Layer: 0
-  m_Name: police_car_main
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
