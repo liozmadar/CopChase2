@@ -69,6 +69,7 @@ public class PlayerMovment : MonoBehaviour
 
         //The new movement
         PlayerMovementButtons();
+        rb.AddForce(Vector3.down * rb.mass * 50);
     }
     void PlayerMovement()
     {

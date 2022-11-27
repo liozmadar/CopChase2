@@ -26,7 +26,7 @@ public class EnemyFollow : MonoBehaviour
     {
         if (GameManager.instance.startTheGame)
         {
-            if (transform.position.y > 7)
+            if (transform.position.y > 8)
             {
                 currentSpeed = slowSpeed;
             }
@@ -56,6 +56,7 @@ public class EnemyFollow : MonoBehaviour
             v3.y = rb.velocity.y;
             rb.velocity = v3;
             //
+            rb.AddForce(Vector3.down * rb.mass * 50);
         }
     }
     void AllCopsGoAway()
