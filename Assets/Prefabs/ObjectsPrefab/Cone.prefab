@@ -9791,12 +9791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbece708d010c64980fb08f58991252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cone: {fileID: 0}
-  meters: {fileID: 0}
   metersPrefab: {fileID: 3761451616644754376, guid: c3b38bf15a2a38749ab0255fed3e9563,
     type: 3}
-  metersText: {fileID: 0}
-  canvas: {fileID: 0}
   offSet: {x: 35, y: 20, z: 0}
 --- !u!1 &5947876614394631371
 GameObject:
