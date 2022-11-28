@@ -14754,7 +14754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   currentSpeed: 0
-  angleSpeed: 150
+  angleSpeed: 170
   anim: {fileID: 0}
   smokeEffect: {fileID: 6332278546435133356}
   fireEffect: {fileID: 7872918779150755407}

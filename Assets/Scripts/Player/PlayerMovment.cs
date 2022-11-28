@@ -32,8 +32,8 @@ public class PlayerMovment : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         trailRenderer = GetComponent<TrailRenderer>();
         anim = GetComponentInChildren<Animator>();
-        // smokeEffect = GameObject.Find("smoke_thick");
-        // fireEffect = GameObject.Find("Fire");
+       // smokeEffect = GameObject.Find("smoke_thick");
+       // fireEffect = GameObject.Find("Fire");
 
         currentSpeed = speed;
     }
