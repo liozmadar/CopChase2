@@ -22,6 +22,6 @@ public class ScoreSystem : MonoBehaviour
     void Update()
     {
         totalScorePoints = PlayerPrefs.GetInt("totalScorePoints");
-        totalScorePointsText.text = "Total points:" + totalScorePoints.ToString();
+        totalScorePointsText.text = totalScorePoints.ToString();
     }
 }
