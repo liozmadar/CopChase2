@@ -64,6 +64,8 @@ public class Cones : MonoBehaviour
             Destroy(other);
             RandomConeLocatin();
             coneCollectedCount++;
+            ScoreSystem.instance.totalScorePoints++;
+            PlayerPrefs.SetInt("totalScorePoints",ScoreSystem.instance.totalScorePoints);
         }
     }
     public void AllConesCollected()
