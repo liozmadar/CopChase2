@@ -739,6 +739,7 @@ MonoBehaviour:
   - {fileID: 2399842108689170640, guid: a77a807a193c94e449e546d961778837, type: 3}
   - {fileID: 4740748826749427703, guid: a4dd072289aa1824fadebe12b19e054b, type: 3}
   - {fileID: 3877391331334040350, guid: fe0ad53506648614ca85bdbcb79971b3, type: 3}
+  - {fileID: 4427919919281772388, guid: 71173a01b19d65441b420c98f22a8b1b, type: 3}
   firstStartCar: {fileID: 0}
   rb: {fileID: 0}
   nextCar: {fileID: 1815419005}
