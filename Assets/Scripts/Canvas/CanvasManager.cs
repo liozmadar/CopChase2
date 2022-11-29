@@ -29,6 +29,13 @@ public class CanvasManager : MonoBehaviour
     public bool newCopsBool;
     public GameObject newCones;
     public bool newConesBool;
+
+    //Home screen UI
+    public GameObject buyCarsScreenUI;
+    public GameObject homeScreenUI;
+
+    //
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +46,22 @@ public class CanvasManager : MonoBehaviour
     void Update()
     {
         CheckTheBestScoreNumber();
+        CheckIfNewScore();
 
+        //DeleteAllKeys();
+    }
+    public void ClickToGoToBuyCarsUI()
+    {
+        homeScreenUI.SetActive(false);
+        buyCarsScreenUI.SetActive(true);
+    }
+    public void ClickToGoBackToHomeUI()
+    {
+        homeScreenUI.SetActive(true);
+        buyCarsScreenUI.SetActive(false);
+    }
+    void CheckIfNewScore()
+    {
         if (newScoreBool)
         {
             newScore.SetActive(true);
@@ -52,7 +74,6 @@ public class CanvasManager : MonoBehaviour
         {
             newCops.SetActive(true);
         }
-        //DeleteAllKeys();
     }
     public void TryAgainButton()
     {
