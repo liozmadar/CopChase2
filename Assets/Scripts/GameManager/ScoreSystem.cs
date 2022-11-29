@@ -7,8 +7,8 @@ public class ScoreSystem : MonoBehaviour
 {
     public static ScoreSystem instance;
 
-    public int totalScorePoints;
     //"totalScorePoints" is the playerPrefs
+    public int totalScorePoints;
 
     public TextMeshProUGUI totalScorePointsText;
 
@@ -22,6 +22,6 @@ public class ScoreSystem : MonoBehaviour
     void Update()
     {
         totalScorePoints = PlayerPrefs.GetInt("totalScorePoints");
-        totalScorePointsText.text = totalScorePoints.ToString();
+        totalScorePointsText.text = "Total coins" + totalScorePoints.ToString();
     }
 }
