@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class CanvasManager : MonoBehaviour
 {
@@ -57,7 +58,6 @@ public class CanvasManager : MonoBehaviour
             Time.timeScale = 1;
         }
     }
-
     // Update is called once per frame
     void Update()
     {

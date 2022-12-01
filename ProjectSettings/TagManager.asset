@@ -16,6 +16,7 @@ TagManager:
   - ScreenRight
   - ConeCountText
   - BoostImage
+  - Lock
   layers:
   - Default
   - TransparentFX
