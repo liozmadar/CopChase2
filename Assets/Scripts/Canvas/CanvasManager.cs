@@ -33,13 +33,29 @@ public class CanvasManager : MonoBehaviour
     //Home screen UI
     public GameObject buyCarsScreenUI;
     public GameObject homeScreenUI;
-
+    public GameObject playerCarsChange;
+    public GameObject endCardUI;
+    private int endGameCardClickToPlayAgain;
     //
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+
+        //Get the prefs of 1 = close the homeUI , or 2 = keep the homeUI
+        endGameCardClickToPlayAgain = PlayerPrefs.GetInt("PlayAgain");
+
+        //Stop the car from moveing
+        Time.timeScale = 0;
+
+        //If 1 then you want to play again , after the game reset close the homeUI and and let the cars move
+        if (endGameCardClickToPlayAgain == 1)
+        {
+            homeScreenUI.SetActive(false);
+            PlayerPrefs.SetInt("PlayAgain", 0);
+            Time.timeScale = 1;
+        }
     }
 
     // Update is called once per frame
@@ -50,16 +66,41 @@ public class CanvasManager : MonoBehaviour
 
         //DeleteAllKeys();
     }
+    //All UI screens
     public void ClickToGoToBuyCarsUI()
     {
         homeScreenUI.SetActive(false);
         buyCarsScreenUI.SetActive(true);
+        endCardUI.SetActive(false);
     }
     public void ClickToGoBackToHomeUI()
     {
         homeScreenUI.SetActive(true);
         buyCarsScreenUI.SetActive(false);
+        endCardUI.SetActive(false);
+        Time.timeScale = 0;
     }
+    //Click to play the game from the first homeUI
+    public void ClickToPlayGameFromHomeUI()
+    {
+        homeScreenUI.SetActive(false);
+        playerCarsChange.SetActive(true);
+        Time.timeScale = 1;
+    }
+    //Reset the game but close the first homeUI
+    public void TryAgainButton()
+    { 
+        PlayerPrefs.SetInt("PlayAgain",1);
+        SceneManager.LoadScene(0);
+    }
+    //Reset the game and keep the first homeUI
+    public void GoToHomeUIAfterTheEndCard()
+    {
+        PlayerPrefs.SetInt("PlayAgain", 0);
+        SceneManager.LoadScene(0);
+    }
+    //
+
     void CheckIfNewScore()
     {
         if (newScoreBool)
@@ -74,10 +115,6 @@ public class CanvasManager : MonoBehaviour
         {
             newCops.SetActive(true);
         }
-    }
-    public void TryAgainButton()
-    {
-        SceneManager.LoadScene(0);
     }
     public void EndGameCardWin()
     {
