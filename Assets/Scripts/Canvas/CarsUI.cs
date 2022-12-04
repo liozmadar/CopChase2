@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using System;
 
 public class CarsUI : MonoBehaviour
 {
@@ -15,18 +17,30 @@ public class CarsUI : MonoBehaviour
 
     public bool deleteAllKeys;
 
+    public List<CarDetailes> allCars;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        deleteAllKeys = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("BoughtCar0") == 1)
+        RemoveOrKeepTheLockOnCarsUI();
+
+        //Delete all keys , so its like reset the game totally
+        if (deleteAllKeys)
         {
-            allLockedCars[0].SetActive(false);
+            DeleteAllKeys();
+        }
+    }
+    void RemoveOrKeepTheLockOnCarsUI()
+    {
+        if (PlayerPrefs.GetInt("FirstCar") == 1)
+        {
+            allCars[0].carLockImage.SetActive(false);
         }
         if (PlayerPrefs.GetInt("BoughtCar1") == 1)
         {
@@ -40,22 +54,16 @@ public class CarsUI : MonoBehaviour
         {
             allLockedCars[3].SetActive(false);
         }
-
-        //Delete all keys , so its like reset the game totally
-        if (deleteAllKeys)
-        {
-            DeleteAllKeys();
-        }
     }
     public void CarNumber0()
     {
-        if (PlayerPrefs.GetInt("BoughtCar0") == 0)
+        if (PlayerPrefs.GetInt("FirstCar") == 0)
         {
-            if (ScoreSystem.instance.totalScorePoints >= carCostNumber0)
+            if (ScoreSystem.instance.totalScorePoints >= allCars[0].carCostNumber)
             {
-                int totalScorePointsAfterBuy = ScoreSystem.instance.totalScorePoints - carCostNumber0;
-                PlayerPrefs.SetInt("BoughtCar0", 1);
-                allLockedCars[0].SetActive(false);
+                int totalScorePointsAfterBuy = ScoreSystem.instance.totalScorePoints - allCars[0].carCostNumber;
+                PlayerPrefs.SetInt("FirstCar", 1);
+                allCars[0].carLockImage.SetActive(false);
 
                 PlayerPrefs.SetInt("totalScorePoints", totalScorePointsAfterBuy);
             }
@@ -105,7 +113,7 @@ public class CarsUI : MonoBehaviour
     }
     void DeleteAllKeys()
     {
-        PlayerPrefs.DeleteKey("BoughtCar0");
+        PlayerPrefs.DeleteKey("FirstCar");
         PlayerPrefs.DeleteKey("BoughtCar1");
         PlayerPrefs.DeleteKey("BoughtCar2");
         PlayerPrefs.DeleteKey("BoughtCar3");

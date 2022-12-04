@@ -755,6 +755,28 @@ MonoBehaviour:
   carCostNumber4: 1
   carCostNumber5: 1
   deleteAllKeys: 0
+  allCars:
+  - name: FirstCar
+    carLockImage: {fileID: 1845447229}
+    carCostNumber: 1
+  - name: 
+    carLockImage: {fileID: 0}
+    carCostNumber: 0
+  - name: 
+    carLockImage: {fileID: 0}
+    carCostNumber: 0
+  - name: 
+    carLockImage: {fileID: 0}
+    carCostNumber: 0
+  - name: 
+    carLockImage: {fileID: 0}
+    carCostNumber: 0
+  - name: 
+    carLockImage: {fileID: 0}
+    carCostNumber: 0
+  - name: 
+    carLockImage: {fileID: 0}
+    carCostNumber: 0
 --- !u!1 &269647219
 GameObject:
   m_ObjectHideFlags: 0
