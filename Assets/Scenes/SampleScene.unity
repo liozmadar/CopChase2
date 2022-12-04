@@ -756,27 +756,21 @@ MonoBehaviour:
   carCostNumber5: 1
   deleteAllKeys: 0
   allCars:
-  - name: FirstCar
+  - name: Car0
     carLockImage: {fileID: 1845447229}
     carCostNumber: 1
-  - name: 
-    carLockImage: {fileID: 0}
-    carCostNumber: 0
-  - name: 
-    carLockImage: {fileID: 0}
-    carCostNumber: 0
-  - name: 
-    carLockImage: {fileID: 0}
-    carCostNumber: 0
-  - name: 
-    carLockImage: {fileID: 0}
-    carCostNumber: 0
-  - name: 
-    carLockImage: {fileID: 0}
-    carCostNumber: 0
-  - name: 
-    carLockImage: {fileID: 0}
-    carCostNumber: 0
+  - name: Car1
+    carLockImage: {fileID: 781266403}
+    carCostNumber: 1
+  - name: Car2
+    carLockImage: {fileID: 1377363192}
+    carCostNumber: 1
+  - name: Car3
+    carLockImage: {fileID: 418699972}
+    carCostNumber: 1
+  whichRayHit:
+    serializedVersion: 2
+    m_Bits: 32
 --- !u!1 &269647219
 GameObject:
   m_ObjectHideFlags: 0
@@ -3057,6 +3051,7 @@ GameObject:
   - component: {fileID: 760911762}
   - component: {fileID: 760911761}
   - component: {fileID: 760911763}
+  - component: {fileID: 760911764}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -3180,6 +3175,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &760911764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760911759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 150, y: 100, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &766745197
 GameObject:
   m_ObjectHideFlags: 0
@@ -4627,7 +4635,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 255711917}
         m_TargetAssemblyTypeName: CarsUI, Assembly-CSharp
-        m_MethodName: CarNumber3
+        m_MethodName: CarNumber0
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7065,7 +7073,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 255711917}
         m_TargetAssemblyTypeName: CarsUI, Assembly-CSharp
-        m_MethodName: CarNumber1
+        m_MethodName: CarNumber0
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8277,7 +8285,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 255711917}
         m_TargetAssemblyTypeName: CarsUI, Assembly-CSharp
-        m_MethodName: CarNumber2
+        m_MethodName: CarNumber0
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9635,7 +9643,7 @@ GameObject:
   - component: {fileID: 2065292477}
   m_Layer: 5
   m_Name: PlayScreenUI
-  m_TagString: Untagged
+  m_TagString: Check
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

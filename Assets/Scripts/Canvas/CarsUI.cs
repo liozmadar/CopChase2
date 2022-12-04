@@ -18,6 +18,10 @@ public class CarsUI : MonoBehaviour
     public bool deleteAllKeys;
 
     public List<CarDetailes> allCars;
+    private int nextCar;
+    private int nextPrefsName;
+
+    public LayerMask whichRayHit;
 
     // Start is called before the first frame update
     void Start()
@@ -35,39 +39,74 @@ public class CarsUI : MonoBehaviour
         {
             DeleteAllKeys();
         }
+       // rayCast();
+    }
+    public void rayCast()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Debug.Log(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 100000, whichRayHit))
+            {
+                Debug.Log("Hit anything");
+                if (hit.collider.tag == "Check")
+                {
+                    Debug.Log("Check");
+                }
+            }
+        }
     }
     void RemoveOrKeepTheLockOnCarsUI()
     {
-        if (PlayerPrefs.GetInt("FirstCar") == 1)
+        if (PlayerPrefs.GetInt(allCars[nextPrefsName].name) == 1)
         {
-            allCars[0].carLockImage.SetActive(false);
+            allCars[nextPrefsName].carLockImage.SetActive(false);
         }
-        if (PlayerPrefs.GetInt("BoughtCar1") == 1)
+        nextPrefsName++;
+
+        if (nextPrefsName >= allCars.Count)
         {
-            allLockedCars[1].SetActive(false);
+            nextPrefsName = 0;
         }
-        if (PlayerPrefs.GetInt("BoughtCar2") == 1)
-        {
-            allLockedCars[2].SetActive(false);
-        }
-        if (PlayerPrefs.GetInt("BoughtCar3") == 1)
-        {
-            allLockedCars[3].SetActive(false);
-        }
+
+
+        /*  if (PlayerPrefs.GetInt("BoughtCar1") == 1)
+          {
+              allLockedCars[1].SetActive(false);
+          }
+          if (PlayerPrefs.GetInt("BoughtCar2") == 1)
+          {
+              allLockedCars[2].SetActive(false);
+          }
+          if (PlayerPrefs.GetInt("BoughtCar3") == 1)
+          {
+              allLockedCars[3].SetActive(false);
+          }*/
     }
     public void CarNumber0()
     {
-        if (PlayerPrefs.GetInt("FirstCar") == 0)
+        for (int i = 0; i < allCars.Count; i++)
         {
-            if (ScoreSystem.instance.totalScorePoints >= allCars[0].carCostNumber)
+            if (PlayerPrefs.GetInt(allCars[nextCar].name) == 0)
             {
-                int totalScorePointsAfterBuy = ScoreSystem.instance.totalScorePoints - allCars[0].carCostNumber;
-                PlayerPrefs.SetInt("FirstCar", 1);
-                allCars[0].carLockImage.SetActive(false);
+                if (ScoreSystem.instance.totalScorePoints >= allCars[nextCar].carCostNumber)
+                {
+                    int totalScorePointsAfterBuy = ScoreSystem.instance.totalScorePoints - allCars[nextCar].carCostNumber;
+                    PlayerPrefs.SetInt(allCars[nextCar].name, 1);
+                    allCars[nextCar].carLockImage.SetActive(false);
 
-                PlayerPrefs.SetInt("totalScorePoints", totalScorePointsAfterBuy);
+                    PlayerPrefs.SetInt("totalScorePoints", totalScorePointsAfterBuy);
+                }
+            }
+            nextCar++;
+            if (nextCar >= allCars.Count)
+            {
+                nextCar = 0;
             }
         }
+
     }
     public void CarNumber1()
     {
@@ -113,9 +152,9 @@ public class CarsUI : MonoBehaviour
     }
     void DeleteAllKeys()
     {
-        PlayerPrefs.DeleteKey("FirstCar");
-        PlayerPrefs.DeleteKey("BoughtCar1");
-        PlayerPrefs.DeleteKey("BoughtCar2");
-        PlayerPrefs.DeleteKey("BoughtCar3");
+        PlayerPrefs.DeleteKey(allCars[nextPrefsName].name);
+        PlayerPrefs.DeleteKey(allCars[nextPrefsName].name);
+        PlayerPrefs.DeleteKey(allCars[nextPrefsName].name);
+        PlayerPrefs.DeleteKey(allCars[nextPrefsName].name);
     }
 }
