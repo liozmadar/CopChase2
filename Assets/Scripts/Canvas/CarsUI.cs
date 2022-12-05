@@ -12,6 +12,7 @@ public class CarsUI : MonoBehaviour
     private int nextPrefsName;
 
     public bool deleteAllKeys;
+    public int addTotalPoints;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,11 @@ public class CarsUI : MonoBehaviour
         {
             DeleteAllKeys();
         }
+    }
+    public void AddTotalPoints()
+    {
+        addTotalPoints = ScoreSystem.instance.totalScorePoints + 10;
+        PlayerPrefs.SetInt("totalScorePoints", addTotalPoints);
     }
     void RemoveOrKeepTheLockOnCarsUI()
     {
