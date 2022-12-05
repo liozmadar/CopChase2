@@ -9,6 +9,7 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
     private bool closeBuyCarsUI;
 
     private int nextCar;
+    private bool boughtCar;
 
     // Start is called before the first frame update
     void Start()

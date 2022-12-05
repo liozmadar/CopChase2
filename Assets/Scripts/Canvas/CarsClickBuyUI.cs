@@ -32,7 +32,9 @@ public class CarsClickBuyUI : MonoBehaviour, IPointerClickHandler
                     closeLockerUI = CarsUI.instance.allCars[nextCar].carLockImage;
                     closeLockerUI.SetActive(false);
                     buyTheCar = true;
+
                     CarsUI.instance.allCars[nextCar].name = "UnNamedCar";
+                    CarsUI.instance.allCars[nextCar].buyCarsPopup.gameObject.SetActive(false);
 
                     PlayerPrefs.SetInt("totalScorePoints", totalScorePointsAfterBuy);
                 }
