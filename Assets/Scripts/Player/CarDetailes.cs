@@ -9,4 +9,5 @@ public class CarDetailes
     public string name;
     public GameObject carLockImage;
     public int carCostNumber;
+    public GameObject buyCarsPopup;
 }
