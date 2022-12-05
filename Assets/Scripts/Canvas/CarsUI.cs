@@ -21,7 +21,8 @@ public class CarsUI : MonoBehaviour
     private int nextCar;
     private int nextPrefsName;
 
-    public LayerMask whichRayHit;
+    public LayerMask layerUI;
+    public float distance = 10000;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class CarsUI : MonoBehaviour
         {
             DeleteAllKeys();
         }
-       // rayCast();
+        rayCast();
     }
     public void rayCast()
     {
@@ -47,8 +48,7 @@ public class CarsUI : MonoBehaviour
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Debug.Log(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 100000, whichRayHit))
+            if (Physics.Raycast(ray, out hit, distance, layerUI))
             {
                 Debug.Log("Hit anything");
                 if (hit.collider.tag == "Check")
@@ -106,7 +106,6 @@ public class CarsUI : MonoBehaviour
                 nextCar = 0;
             }
         }
-
     }
     public void CarNumber1()
     {
