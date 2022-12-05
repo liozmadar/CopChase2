@@ -44,7 +44,7 @@ public class CarsUI : MonoBehaviour
             nextPrefsName = 0;
         }
     }
-    void DeleteAllKeys()
+    public void DeleteAllKeys()
     {
         PlayerPrefs.DeleteKey(allCars[nextPrefsName].name);
         PlayerPrefs.DeleteKey(allCars[nextPrefsName].name);
