@@ -9,7 +9,6 @@ public class CarsUI : MonoBehaviour
     public static CarsUI instance;
 
     public List<CarDetailes> allCars;
-    private int nextCar;
     private int nextPrefsName;
 
     public bool deleteAllKeys;
@@ -43,28 +42,6 @@ public class CarsUI : MonoBehaviour
         if (nextPrefsName >= allCars.Count)
         {
             nextPrefsName = 0;
-        }
-    }
-    public void UnlockTheCarsUI()
-    {
-        for (int i = 0; i < allCars.Count; i++)
-        {
-            if (PlayerPrefs.GetInt(allCars[nextCar].name) == 0)
-            {
-                if (ScoreSystem.instance.totalScorePoints >= allCars[nextCar].carCostNumber)
-                {
-                    int totalScorePointsAfterBuy = ScoreSystem.instance.totalScorePoints - allCars[nextCar].carCostNumber;
-                    PlayerPrefs.SetInt(allCars[nextCar].name, 1);
-                    allCars[nextCar].carLockImage.SetActive(false);
-
-                    PlayerPrefs.SetInt("totalScorePoints", totalScorePointsAfterBuy);
-                }
-            }
-            nextCar++;
-            if (nextCar >= allCars.Count)
-            {
-                nextCar = 0;
-            }
         }
     }
     void DeleteAllKeys()
