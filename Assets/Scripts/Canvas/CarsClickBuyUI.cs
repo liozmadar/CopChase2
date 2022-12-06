@@ -11,23 +11,15 @@ public class CarsClickBuyUI : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        //I check if i can buy the car, and if i can , i decrease the totalScorePoints and buy the car
         for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
         {
-            nextCar++;
-        }
-        if (nextCar >= CarsUI.instance.allCars.Count)
-        {
-            nextCar = 0;
-        }
-
-        for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
-        {
-            if (PlayerPrefs.GetInt(CarsUI.instance.allCars[nextCar].name) == 0)
+            if (PlayerPrefs.GetInt(CarsUI.instance.allCars[nextCar].id.ToString()) == 0)
             {
                 if (gameObject.name == CarsUI.instance.allCars[nextCar].name)
                 {
                     int totalScorePointsAfterBuy = ScoreSystem.instance.totalScorePoints - CarsUI.instance.allCars[nextCar].carCostNumber;
-                    PlayerPrefs.SetInt(CarsUI.instance.allCars[nextCar].name, 1);
+                    PlayerPrefs.SetInt(CarsUI.instance.allCars[nextCar].id.ToString(), 1);
 
                     closeLockerUI = CarsUI.instance.allCars[nextCar].carLockImage;
                     closeLockerUI.SetActive(false);

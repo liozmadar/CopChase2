@@ -1230,27 +1230,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allCars:
   - name: Car0
+    id: 0
     carLockImage: {fileID: 1845447229}
     carCostNumber: 1
     buyCarsPopup: {fileID: 1552211784}
     buyCarButton: {fileID: 383751048}
   - name: Car1
+    id: 1
     carLockImage: {fileID: 781266403}
     carCostNumber: 1
     buyCarsPopup: {fileID: 1779802018}
     buyCarButton: {fileID: 1769669120}
   - name: Car2
+    id: 2
     carLockImage: {fileID: 1377363192}
     carCostNumber: 1
     buyCarsPopup: {fileID: 144238818}
     buyCarButton: {fileID: 1247259470}
   - name: Car3
+    id: 3
     carLockImage: {fileID: 418699972}
     carCostNumber: 1
     buyCarsPopup: {fileID: 2012748075}
     buyCarButton: {fileID: 31327381}
   deleteAllKeys: 0
-  addTotalPoints: 0
+  deleteAllKeysNumbers: 0
+  addTotalPoints: 10
 --- !u!1 &269647219
 GameObject:
   m_ObjectHideFlags: 0

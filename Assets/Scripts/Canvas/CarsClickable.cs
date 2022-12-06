@@ -24,6 +24,7 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+       // Here i open/close the - buy cars popup window 
         for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
         {
             if (gameObject.name == CarsUI.instance.allCars[nextCar].name)

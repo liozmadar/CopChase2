@@ -12,6 +12,7 @@ public class CarsUI : MonoBehaviour
     private int nextPrefsName;
 
     public bool deleteAllKeys;
+    public int deleteAllKeysNumbers;
     public int addTotalPoints;
 
     // Start is called before the first frame update
@@ -24,22 +25,25 @@ public class CarsUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RemoveOrKeepTheLockOnCarsUI();
 
         //Delete all keys , so its like reset the game totally
         if (deleteAllKeys)
         {
             DeleteAllKeys();
         }
+        else if (!deleteAllKeys)
+        {
+            RemoveOrKeepTheLockOnCarsUI();
+        }
     }
     public void AddTotalPoints()
     {
-        addTotalPoints = ScoreSystem.instance.totalScorePoints + 10;
-        PlayerPrefs.SetInt("totalScorePoints", addTotalPoints);
+        int TotalPointsAfterAd = ScoreSystem.instance.totalScorePoints + addTotalPoints;
+        PlayerPrefs.SetInt("totalScorePoints", TotalPointsAfterAd);
     }
     void RemoveOrKeepTheLockOnCarsUI()
     {
-        if (PlayerPrefs.GetInt(allCars[nextPrefsName].name) == 1)
+        if (PlayerPrefs.GetInt(allCars[nextPrefsName].id.ToString()) == 1)
         {
             allCars[nextPrefsName].carLockImage.SetActive(false);
         }
@@ -52,9 +56,15 @@ public class CarsUI : MonoBehaviour
     }
     public void DeleteAllKeys()
     {
-        PlayerPrefs.DeleteKey(allCars[nextPrefsName].name);
-        PlayerPrefs.DeleteKey(allCars[nextPrefsName].name);
-        PlayerPrefs.DeleteKey(allCars[nextPrefsName].name);
-        PlayerPrefs.DeleteKey(allCars[nextPrefsName].name);
+        deleteAllKeys = true;
+        for (int i = 0; i < allCars.Count; i++)
+        {
+            PlayerPrefs.DeleteKey(allCars[deleteAllKeysNumbers].id.ToString());
+            deleteAllKeysNumbers++;
+            if (deleteAllKeysNumbers >= allCars.Count)
+            {
+                deleteAllKeysNumbers = 0;
+            }
+        }
     }
 }

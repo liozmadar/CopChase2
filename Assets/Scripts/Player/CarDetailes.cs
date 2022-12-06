@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class CarDetailes
 {
     public string name;
+    public int id;
     public GameObject carLockImage;
     public int carCostNumber;
     public GameObject buyCarsPopup;
