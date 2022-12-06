@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
+using UnityEngine.SceneManagement;
 
 public class CarsUI : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class CarsUI : MonoBehaviour
 
     public bool deleteAllKeys;
     public int deleteAllKeysNumbers;
+
+   // public GameObject resetGameImage;
+   // private bool resetGameOpenCloseImage;
+
     public int addTotalPoints;
 
     // Start is called before the first frame update
@@ -66,5 +71,6 @@ public class CarsUI : MonoBehaviour
                 deleteAllKeysNumbers = 0;
             }
         }
+        SceneManager.LoadScene(0);
     }
 }

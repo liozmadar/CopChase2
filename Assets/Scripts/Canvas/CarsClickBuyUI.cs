@@ -11,24 +11,30 @@ public class CarsClickBuyUI : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //I check if i can buy the car, and if i can , i decrease the totalScorePoints and buy the car
+        //check if i can buy the car, and if i can , i decrease the totalScorePoints and buy the car
         for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
         {
+            //check if i already bought this car
             if (PlayerPrefs.GetInt(CarsUI.instance.allCars[nextCar].id.ToString()) == 0)
             {
+
                 if (gameObject.name == CarsUI.instance.allCars[nextCar].name)
                 {
-                    int totalScorePointsAfterBuy = ScoreSystem.instance.totalScorePoints - CarsUI.instance.allCars[nextCar].carCostNumber;
-                    PlayerPrefs.SetInt(CarsUI.instance.allCars[nextCar].id.ToString(), 1);
+                    //check if the totalCoins is more than the car cost
+                    if (ScoreSystem.instance.totalScorePoints >= CarsUI.instance.allCars[nextCar].carCostNumber)
+                    {
+                        int totalScorePointsAfterBuy = ScoreSystem.instance.totalScorePoints - CarsUI.instance.allCars[nextCar].carCostNumber;
+                        PlayerPrefs.SetInt(CarsUI.instance.allCars[nextCar].id.ToString(), 1);
 
-                    closeLockerUI = CarsUI.instance.allCars[nextCar].carLockImage;
-                    closeLockerUI.SetActive(false);
-                    buyTheCar = true;
+                        closeLockerUI = CarsUI.instance.allCars[nextCar].carLockImage;
+                        closeLockerUI.SetActive(false);
+                        buyTheCar = true;
 
-                    CarsUI.instance.allCars[nextCar].name = "UnNamedCar";
-                    CarsUI.instance.allCars[nextCar].buyCarsPopup.gameObject.SetActive(false);
+                        CarsUI.instance.allCars[nextCar].name = "UnNamedCar";
+                        CarsUI.instance.allCars[nextCar].buyCarsPopup.gameObject.SetActive(false);
 
-                    PlayerPrefs.SetInt("totalScorePoints", totalScorePointsAfterBuy);
+                        PlayerPrefs.SetInt("totalScorePoints", totalScorePointsAfterBuy);
+                    }
                 }
             }
             nextCar++;
