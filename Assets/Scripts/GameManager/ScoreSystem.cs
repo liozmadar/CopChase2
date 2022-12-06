@@ -10,7 +10,8 @@ public class ScoreSystem : MonoBehaviour
     //"totalScorePoints" is the playerPrefs
     public int totalScorePoints;
 
-    public TextMeshProUGUI totalScorePointsText;
+    public TextMeshProUGUI totalScorePointsTextHomeScreen;
+    public TextMeshProUGUI totalScorePointsTextCarsScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class ScoreSystem : MonoBehaviour
     void Update()
     {
         totalScorePoints = PlayerPrefs.GetInt("totalScorePoints");
-        totalScorePointsText.text = "Total coins: " + totalScorePoints.ToString();
+        totalScorePointsTextHomeScreen.text = "Total coins: " + totalScorePoints.ToString();
+        totalScorePointsTextCarsScreen.text = "Total coins: " + totalScorePoints.ToString();
     }
 }
