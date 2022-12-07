@@ -86,6 +86,14 @@ public class CanvasManager : MonoBehaviour
         homeScreenUI.SetActive(false);
         playerCarsChange.SetActive(true);
         Time.timeScale = 1;
+
+        for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
+        {
+            if (PlayerPrefs.GetInt(CarsUI.instance.allCars[i].id.ToString()) == 1)
+            {
+                CarSelection.instance.availableCars.Add(CarSelection.instance.playerCarSelection[i]);
+            }
+        }
     }
     //Reset the game but close the first homeUI
     public void TryAgainButton()

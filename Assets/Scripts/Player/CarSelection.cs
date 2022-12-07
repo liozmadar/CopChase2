@@ -7,26 +7,26 @@ public class CarSelection : MonoBehaviour
 {
     public static CarSelection instance;
     public GameObject[] playerCarSelection;
-    private int index;
+    private int currentCarIndex;
     public GameObject firstStartCar;
-
-    public Rigidbody rb;
 
     public Button nextCar;
     public Button previousCar;
     private bool cantMakeMoreThenTwoCars;
 
     public float speed = 40;
+    public List<GameObject> availableCars;
 
     private void Awake()
     {
+        instance = this;
+
         FirstCarStart();
     }
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
-        rb = GetComponent<Rigidbody>();
+        previousCar.interactable = false;
     }
     // Update is called once per frame
     void Update()
@@ -51,20 +51,30 @@ public class CarSelection : MonoBehaviour
     }
     public void NextCarIndex()
     {
-        if (playerCarSelection.Length > index+1)
+        if (availableCars.Count > currentCarIndex + 1)
         {
             Destroy(GameObject.FindGameObjectWithTag("Player"));
-            index++;
-            Instantiate(playerCarSelection[index], transform.position, Quaternion.identity);
+            currentCarIndex++;
+            Instantiate(availableCars[currentCarIndex], transform.position, Quaternion.identity);
+            if (availableCars.Count <= currentCarIndex + 1)
+            {
+                nextCar.interactable = false;
+            }
+            previousCar.interactable = true;
         }
     }
     public void PreviousCarIndex()
     {
-        if (index > 0)
+        if (currentCarIndex > 0)
         {
             Destroy(GameObject.FindGameObjectWithTag("Player"));
-            index--;
-            Instantiate(playerCarSelection[index], transform.position, Quaternion.identity);
+            currentCarIndex--;
+            Instantiate(availableCars[currentCarIndex], transform.position, Quaternion.identity);
+            if (currentCarIndex <= 0)
+            {
+                previousCar.interactable = false;
+            }
+            nextCar.interactable = true;
         }
     }
 }
