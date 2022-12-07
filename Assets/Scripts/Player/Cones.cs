@@ -54,7 +54,7 @@ public class Cones : MonoBehaviour
         int randomPosX = Random.Range(-500, 500);
         int randomPosZ = Random.Range(-500, 500);
         randomPos = new Vector3(transform.position.x + randomPosX, -8, transform.position.z + randomPosZ);
-        Instantiate(cone, transform.position + randomPos, Quaternion.identity);
+        Instantiate(cone,randomPos, Quaternion.identity);
     }
     private void OnTriggerEnter(Collider other)
     {
