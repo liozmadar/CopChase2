@@ -18,6 +18,8 @@ public class Cones : MonoBehaviour
     private int randomConeNumber = 30;
 
     private Vector3 randomPos;
+
+    public int totalCoinsFromCones;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +68,8 @@ public class Cones : MonoBehaviour
             coneCollectedCount++;
             ScoreSystem.instance.totalScorePoints++;
             PlayerPrefs.SetInt("totalScorePoints",ScoreSystem.instance.totalScorePoints);
+            totalCoinsFromCones++;
+            Debug.Log(totalCoinsFromCones);
         }
     }
     public void AllConesCollected()

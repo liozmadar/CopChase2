@@ -24,6 +24,8 @@ public class CanvasManager : MonoBehaviour
     public TextMeshProUGUI mostConeCollectedText;
     public int mostConeCollectedCount;
 
+    public TextMeshProUGUI coinsEarndFromConeCollected;
+
     public GameObject newScore;
     public bool newScoreBool;
     public GameObject newCops;
@@ -135,6 +137,7 @@ public class CanvasManager : MonoBehaviour
         timerScore.text = Timer.instance.timerText.ToString();
         copsDestroyed.text = GameManager.instance.copsDestroyedNumber.ToString();
         coneCollected.text = Cones.instance.coneCollectedCount.ToString();
+        coinsEarndFromConeCollected.text =  "+" + Cones.instance.totalCoinsFromCones.ToString();
     }
     public void EndGameCardLose()
     {
@@ -147,6 +150,7 @@ public class CanvasManager : MonoBehaviour
         timerScore.text = Timer.instance.timerText.ToString();
         copsDestroyed.text = GameManager.instance.copsDestroyedNumber.ToString();
         coneCollected.text = Cones.instance.coneCollectedCount.ToString();
+        coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
     }
     void MostConesCollectedCheck()
     {
