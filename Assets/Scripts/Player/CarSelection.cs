@@ -35,14 +35,7 @@ public class CarSelection : MonoBehaviour
     }
     public void CloseTheChangeCarsButtons()
     {
-        Debug.Log(PlayerPrefs.GetInt("PlayAgain"));
-        if (PlayerPrefs.GetInt("PlayAgain") == 1)
-        {
-            nextCar.gameObject.SetActive(true);
-            previousCar.gameObject.SetActive(true);
-            
-        }
-        else if (GameManager.instance.startTheGame)
+        if (GameManager.instance.startTheGame)
         {
             nextCar.gameObject.SetActive(false);
             previousCar.gameObject.SetActive(false);

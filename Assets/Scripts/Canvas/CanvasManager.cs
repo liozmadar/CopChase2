@@ -10,7 +10,6 @@ public class CanvasManager : MonoBehaviour
 {
     public static CanvasManager instance;
 
-    public GameObject endGameCard;
     public TextMeshProUGUI headerText;
 
     public TextMeshProUGUI timerScore;
@@ -37,7 +36,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject buyCarsScreenUI;
     public GameObject homeScreenUI;
     public GameObject playerCarsChange;
-    public GameObject endCardUI;
+    public GameObject endGameCard;
     private int endGameCardClickToPlayAgain;
     //
 
@@ -58,6 +57,13 @@ public class CanvasManager : MonoBehaviour
             homeScreenUI.SetActive(false);
             PlayerPrefs.SetInt("PlayAgain", 0);
             Time.timeScale = 1;
+            for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
+            {
+                if (PlayerPrefs.GetInt(CarsUI.instance.allCars[i].id.ToString()) == 1)
+                {
+                    CarSelection.instance.availableCars.Add(CarSelection.instance.playerCarSelection[i]);
+                }
+            }
         }
     }
     // Update is called once per frame
@@ -65,21 +71,19 @@ public class CanvasManager : MonoBehaviour
     {
         CheckTheBestScoreNumber();
         CheckIfNewScore();
-
-        //DeleteAllKeys();
     }
     //All UI screens
     public void ClickToGoToBuyCarsUI()
     {
         homeScreenUI.SetActive(false);
         buyCarsScreenUI.SetActive(true);
-        endCardUI.SetActive(false);
+        endGameCard.SetActive(false);
     }
     public void ClickToGoBackToHomeUI()
     {
         homeScreenUI.SetActive(true);
         buyCarsScreenUI.SetActive(false);
-        endCardUI.SetActive(false);
+        endGameCard.SetActive(false);
         Time.timeScale = 0;
     }
     //Click to play the game from the first homeUI
@@ -99,8 +103,8 @@ public class CanvasManager : MonoBehaviour
     }
     //Reset the game but close the first homeUI
     public void TryAgainButton()
-    { 
-        PlayerPrefs.SetInt("PlayAgain",1);
+    {
+        PlayerPrefs.SetInt("PlayAgain", 1);
         SceneManager.LoadScene(0);
     }
     //Reset the game and keep the first homeUI
@@ -137,7 +141,7 @@ public class CanvasManager : MonoBehaviour
         timerScore.text = Timer.instance.timerText.ToString();
         copsDestroyed.text = GameManager.instance.copsDestroyedNumber.ToString();
         coneCollected.text = Cones.instance.coneCollectedCount.ToString();
-        coinsEarndFromConeCollected.text =  "+" + Cones.instance.totalCoinsFromCones.ToString();
+        coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
     }
     public void EndGameCardLose()
     {
@@ -197,7 +201,7 @@ public class CanvasManager : MonoBehaviour
             bestScoreText.text = PlayerPrefs.GetInt("Score").ToString();
         }
     }
-    void DeleteAllKeys()
+    public void DeleteAllKeys()
     {
         PlayerPrefs.DeleteKey("Cones");
         PlayerPrefs.DeleteKey("Cops");
