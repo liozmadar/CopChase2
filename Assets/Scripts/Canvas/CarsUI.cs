@@ -25,6 +25,7 @@ public class CarsUI : MonoBehaviour
     {
         instance = this;
         deleteAllKeys = false;
+        UpdateTheCarCost();
     }
     // Update is called once per frame
     void Update()
@@ -71,5 +72,12 @@ public class CarsUI : MonoBehaviour
             }
         }
         SceneManager.LoadScene(0);
+    }
+    void UpdateTheCarCost()
+    {
+        for (int i = 0; i < allCars.Count; i++)
+        {
+            allCars[i].carCost.text = allCars[i].carCostNumber.ToString();
+        }
     }
 }

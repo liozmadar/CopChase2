@@ -1646,36 +1646,42 @@ MonoBehaviour:
     carCostNumber: 1
     buyCarsPopup: {fileID: 1552211784}
     buyCarButton: {fileID: 383751048}
+    carCost: {fileID: 1303476444}
   - name: Car1
     id: 1
     carLockImage: {fileID: 781266403}
-    carCostNumber: 1
+    carCostNumber: 2
     buyCarsPopup: {fileID: 1779802018}
     buyCarButton: {fileID: 1769669120}
+    carCost: {fileID: 1274160931}
   - name: Car2
     id: 2
     carLockImage: {fileID: 1377363192}
-    carCostNumber: 1
+    carCostNumber: 3
     buyCarsPopup: {fileID: 144238818}
     buyCarButton: {fileID: 1247259470}
+    carCost: {fileID: 111285671}
   - name: Car3
     id: 3
     carLockImage: {fileID: 418699972}
-    carCostNumber: 1
+    carCostNumber: 4
     buyCarsPopup: {fileID: 2012748075}
     buyCarButton: {fileID: 31327381}
+    carCost: {fileID: 367140300}
   - name: Car4
     id: 4
     carLockImage: {fileID: 1240189512}
-    carCostNumber: 1
+    carCostNumber: 5
     buyCarsPopup: {fileID: 85358862}
     buyCarButton: {fileID: 2099655398}
+    carCost: {fileID: 1609926164}
   - name: Car5
     id: 5
     carLockImage: {fileID: 125526286}
-    carCostNumber: 1
+    carCostNumber: 6
     buyCarsPopup: {fileID: 1627248943}
     buyCarButton: {fileID: 319720939}
+    carCost: {fileID: 166985957}
   deleteAllKeys: 0
   deleteAllKeysNumbers: 0
   addTotalPoints: 10

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [System.Serializable]
 public class CarDetailes
@@ -12,4 +13,5 @@ public class CarDetailes
     public int carCostNumber;
     public GameObject buyCarsPopup;
     public GameObject buyCarButton;
+    public TextMeshProUGUI carCost;
 }
