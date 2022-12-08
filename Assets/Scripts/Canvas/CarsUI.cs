@@ -26,11 +26,9 @@ public class CarsUI : MonoBehaviour
         instance = this;
         deleteAllKeys = false;
     }
-
     // Update is called once per frame
     void Update()
     {
-
         //Delete all keys , so its like reset the game totally
         if (deleteAllKeys)
         {
