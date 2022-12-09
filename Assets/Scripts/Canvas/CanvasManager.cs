@@ -37,6 +37,9 @@ public class CanvasManager : MonoBehaviour
     public GameObject homeScreenUI;
     public GameObject playerCarsChange;
     public GameObject endGameCard;
+    public GameObject resetButton;
+    public bool resetButtonBool;
+
     private int endGameCardClickToPlayAgain;
     //
 
@@ -200,6 +203,20 @@ public class CanvasManager : MonoBehaviour
         {
             bestScoreText.text = PlayerPrefs.GetInt("Score").ToString();
         }
+    }
+    public void OpenResetButton()
+    {
+        if (!resetButtonBool)
+        {
+            resetButton.SetActive(true);
+            resetButtonBool = true;
+        }
+        else
+        {
+            resetButton.SetActive(false);
+            resetButtonBool = false;
+        }
+        
     }
     public void DeleteAllEndGameCardKeys()
     {
