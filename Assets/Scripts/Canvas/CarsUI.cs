@@ -26,6 +26,7 @@ public class CarsUI : MonoBehaviour
         instance = this;
         deleteAllKeys = false;
         UpdateTheCarCost();
+        PlayerPrefs.SetInt(allCars[0].id.ToString(),1);
     }
     // Update is called once per frame
     void Update()
