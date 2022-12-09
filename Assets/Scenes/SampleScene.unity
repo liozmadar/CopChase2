@@ -3812,9 +3812,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 255711917}
-        m_TargetAssemblyTypeName: CarsUI, Assembly-CSharp
-        m_MethodName: DeleteAllKeys
+      - m_Target: {fileID: 255711916}
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: DeleteAllEndGameCardKeys
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -64,7 +64,7 @@ public class CarsUI : MonoBehaviour
         for (int i = 0; i < allCars.Count; i++)
         {
             PlayerPrefs.DeleteKey(allCars[deleteAllKeysNumbers].id.ToString());
-            DeleteAllKeys();
+            CanvasManager.instance.DeleteAllEndGameCardKeys();
             deleteAllKeysNumbers++;
             if (deleteAllKeysNumbers >= allCars.Count)
             {

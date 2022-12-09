@@ -201,7 +201,7 @@ public class CanvasManager : MonoBehaviour
             bestScoreText.text = PlayerPrefs.GetInt("Score").ToString();
         }
     }
-    public void DeleteAllKeys()
+    public void DeleteAllEndGameCardKeys()
     {
         PlayerPrefs.DeleteKey("Cones");
         PlayerPrefs.DeleteKey("Cops");
