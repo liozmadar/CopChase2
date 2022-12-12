@@ -153,7 +153,7 @@ public class CanvasManager : MonoBehaviour
     void DelayTheEndCardLose()
     {
         endGameCard.SetActive(true);
-        headerText.text = "Try again!";
+        headerText.text = "Busted!";
         timerScore.text = Timer.instance.timerText.ToString();
         copsDestroyed.text = GameManager.instance.copsDestroyedNumber.ToString();
         coneCollected.text = Cones.instance.coneCollectedCount.ToString();
