@@ -7,9 +7,8 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
 {
     private GameObject buyCarsUI;
     private bool closeBuyCarsUI;
+    private GameObject closeCarsUI;
 
-    private int nextCar;
-    private bool boughtCar;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +26,11 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
        // Here i open/close the - buy cars popup window 
         for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
         {
-            if (gameObject.name == CarsUI.instance.allCars[nextCar].name)
+            if (gameObject.name == CarsUI.instance.allCars[i].name)
             {
                 if (!closeBuyCarsUI)
                 {
-                    buyCarsUI = CarsUI.instance.allCars[nextCar].buyCarsPopup;
+                    buyCarsUI = CarsUI.instance.allCars[i].buyCarsPopup;
                     buyCarsUI.SetActive(true);
                     closeBuyCarsUI = true;
                 }
@@ -41,11 +40,6 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
                     closeBuyCarsUI = false;
                 }
             }
-            nextCar++;
-            if (nextCar >= CarsUI.instance.allCars.Count)
-            {
-                nextCar = 0;
-            } 
         }
     }
 }
