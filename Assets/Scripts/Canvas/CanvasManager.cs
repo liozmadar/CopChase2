@@ -41,12 +41,17 @@ public class CanvasManager : MonoBehaviour
     public bool resetButtonBool;
 
     private int endGameCardClickToPlayAgain;
+
+    public GameObject GameTutorialText;
+
     //
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+
+        GameTutorialText = GameObject.Find("ShowHowToTheCarsTurn");
 
         //Get the prefs of 1 = close the homeUI , or 2 = keep the homeUI
         endGameCardClickToPlayAgain = PlayerPrefs.GetInt("PlayAgain");
@@ -92,6 +97,8 @@ public class CanvasManager : MonoBehaviour
     //Click to play the game from the first homeUI
     public void ClickToPlayGameFromHomeUI()
     {
+
+        GameTutorialText.SetActive(false);
         homeScreenUI.SetActive(false);
         playerCarsChange.SetActive(true);
         Time.timeScale = 1;
