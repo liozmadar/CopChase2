@@ -5,14 +5,13 @@ using UnityEngine.EventSystems;
 
 public class CarsClickable : MonoBehaviour, IPointerClickHandler
 {
-    private GameObject buyCarsUI;
     public bool isOpen;
-    private GameObject closeCarsUI;
 
     public GameObject buyCarsUIImage;
     private GameObject canvas;
-    private Vector3 offSet = new Vector3(0, -300, 0);
+    private Vector3 offSet = new Vector3(-43, 20, 0);
 
+    private Transform firstChildPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -35,9 +34,11 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
     }
     private void ShowToolTip(int i)
     {
-        Debug.Log("Show");
-        canvas = Instantiate(buyCarsUIImage, transform.position + offSet, Quaternion.identity);
+        firstChildPosition = transform.GetChild(0).gameObject.GetComponent<Transform>();
+        Debug.Log(firstChildPosition);
+        canvas = Instantiate(buyCarsUIImage, firstChildPosition.transform.position, Quaternion.identity);
         canvas.transform.SetParent(CarsUI.instance.carsImages[i], false);
+        canvas.transform.position = firstChildPosition.transform.position + offSet;
         ShowCarCostText.instance.carsCostText.text = CarsUI.instance.allCars[i].carCostNumber.ToString();
         isOpen = true;
     }
