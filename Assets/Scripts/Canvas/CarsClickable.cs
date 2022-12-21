@@ -35,7 +35,6 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
     private void ShowToolTip(int i)
     {
         firstChildPosition = transform.GetChild(0).gameObject.GetComponent<Transform>();
-        Debug.Log(firstChildPosition);
         canvas = Instantiate(buyCarsUIImage, firstChildPosition.transform.position, Quaternion.identity);
         canvas.transform.SetParent(CarsUI.instance.carsImages[i], false);
         canvas.transform.position = firstChildPosition.transform.position + offSet;
@@ -48,8 +47,11 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
         {
             if (gameObject.name == CarsUI.instance.allCars[i].name)
             {
-                if (isOpen) HideToolTip();
-                else ShowToolTip(i);
+                if (PlayerPrefs.GetInt(CarsUI.instance.allCars[i].id.ToString()) == 0)
+                {
+                    if (isOpen) HideToolTip();
+                    else ShowToolTip(i);
+                }
             }
             else
             {
