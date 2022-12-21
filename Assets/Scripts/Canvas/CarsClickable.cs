@@ -6,8 +6,12 @@ using UnityEngine.EventSystems;
 public class CarsClickable : MonoBehaviour, IPointerClickHandler
 {
     private GameObject buyCarsUI;
-    private bool closeBuyCarsUI;
+    public bool isOpen;
     private GameObject closeCarsUI;
+
+    public GameObject buyCarsUIImage;
+    private GameObject canvas;
+    private Vector3 offSet = new Vector3(0, -300, 0);
 
 
     // Start is called before the first frame update
@@ -21,24 +25,35 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
     {
 
     }
+    private void HideToolTip()
+    {
+        if (canvas != null && isOpen)
+        {
+            Destroy(canvas);
+            isOpen = false;
+        }
+    }
+    private void ShowToolTip(int i)
+    {
+        Debug.Log("Show");
+        canvas = Instantiate(buyCarsUIImage, transform.position + offSet, Quaternion.identity);
+        canvas.transform.SetParent(CarsUI.instance.carsImages[i], false);
+        ShowCarCostText.instance.carsCostText.text = CarsUI.instance.allCars[i].carCostNumber.ToString();
+        isOpen = true;
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
-       // Here i open/close the - buy cars popup window 
         for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
         {
             if (gameObject.name == CarsUI.instance.allCars[i].name)
             {
-                if (!closeBuyCarsUI)
-                {
-                    buyCarsUI = CarsUI.instance.allCars[i].buyCarsPopup;
-                    buyCarsUI.SetActive(true);
-                    closeBuyCarsUI = true;
-                }
-                else
-                {
-                    buyCarsUI.SetActive(false);
-                    closeBuyCarsUI = false;
-                }
+                if (isOpen) HideToolTip();
+                else ShowToolTip(i);
+            }
+            else
+            {
+                CarsClickable carsClickable = CarsUI.instance.carsImages[i].gameObject.GetComponent<CarsClickable>();
+                carsClickable.HideToolTip();
             }
         }
     }

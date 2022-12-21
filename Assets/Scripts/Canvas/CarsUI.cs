@@ -10,6 +10,7 @@ public class CarsUI : MonoBehaviour
     public static CarsUI instance;
 
     public List<CarDetailes> allCars;
+    public List<Transform> carsImages;
     private int nextPrefsName;
 
     public bool deleteAllKeys;
@@ -77,9 +78,9 @@ public class CarsUI : MonoBehaviour
     }
     void UpdateTheCarCost()
     {
-        for (int i = 0; i < allCars.Count; i++)
+       /* for (int i = 0; i < allCars.Count; i++)
         {
             allCars[i].carCost.text = allCars[i].carCostNumber.ToString();
-        }
+        }*/
     }
 }
