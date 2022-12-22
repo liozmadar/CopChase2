@@ -53,8 +53,7 @@ public class CanvasManager : MonoBehaviour
 
         GameTutorialText = GameObject.Find("ShowHowToTheCarsTurn");
 
-        CarSelection.instance.nextCar.gameObject.SetActive(false);
-        CarSelection.instance.previousCar.gameObject.SetActive(false);
+        playerCarsChange.SetActive(false);
         GameTutorialText.SetActive(false);
 
         //Get the prefs of 1 = close the homeUI , or 2 = keep the homeUI
@@ -68,8 +67,7 @@ public class CanvasManager : MonoBehaviour
         {
             homeScreenUI.SetActive(false);
 
-            CarSelection.instance.nextCar.gameObject.SetActive(true);
-            CarSelection.instance.previousCar.gameObject.SetActive(true);
+            playerCarsChange.SetActive(true);
             GameTutorialText.SetActive(true);
 
             PlayerPrefs.SetInt("PlayAgain", 0);
@@ -110,8 +108,7 @@ public class CanvasManager : MonoBehaviour
         playerCarsChange.SetActive(true);
 
         //Show the tutorial and the car change buttons
-        CarSelection.instance.nextCar.gameObject.SetActive(true);
-        CarSelection.instance.previousCar.gameObject.SetActive(true);
+        playerCarsChange.SetActive(true);
         GameTutorialText.SetActive(true);
         //
         Time.timeScale = 1;

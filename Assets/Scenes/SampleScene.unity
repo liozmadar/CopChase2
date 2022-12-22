@@ -1090,35 +1090,35 @@ MonoBehaviour:
   - name: Car1
     id: 1
     carLockImage: {fileID: 781266403}
-    carCostNumber: 2
+    carCostNumber: 10
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
   - name: Car2
     id: 2
     carLockImage: {fileID: 1377363192}
-    carCostNumber: 5
+    carCostNumber: 30
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
   - name: Car3
     id: 3
     carLockImage: {fileID: 418699972}
-    carCostNumber: 10
+    carCostNumber: 50
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
   - name: Car4
     id: 4
     carLockImage: {fileID: 1240189512}
-    carCostNumber: 20
+    carCostNumber: 70
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
   - name: Car5
     id: 5
     carLockImage: {fileID: 125526286}
-    carCostNumber: 30
+    carCostNumber: 100
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}

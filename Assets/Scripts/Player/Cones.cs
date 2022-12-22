@@ -56,7 +56,7 @@ public class Cones : MonoBehaviour
         int randomPosX = Random.Range(-500, 500);
         int randomPosZ = Random.Range(-500, 500);
         randomPos = new Vector3(transform.position.x + randomPosX, -8, transform.position.z + randomPosZ);
-        Instantiate(cone,randomPos, Quaternion.identity);
+        Instantiate(cone, randomPos, Quaternion.identity);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -67,8 +67,8 @@ public class Cones : MonoBehaviour
             RandomConeLocatin();
             coneCollectedCount++;
             ScoreSystem.instance.totalScorePoints++;
-            PlayerPrefs.SetInt("totalScorePoints",ScoreSystem.instance.totalScorePoints);
-            totalCoinsFromCones++;
+            PlayerPrefs.SetInt("totalScorePoints", ScoreSystem.instance.totalScorePoints);
+            totalCoinsFromCones += 10;
             Debug.Log(totalCoinsFromCones);
         }
     }
