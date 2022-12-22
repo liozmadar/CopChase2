@@ -16,6 +16,12 @@ public class CanvasManager : MonoBehaviour
     public TextMeshProUGUI copsDestroyed;
     public TextMeshProUGUI coneCollected;
 
+    //The gameobjects on the gamePlayScreenUI
+    public GameObject playScreenTimer;
+    public GameObject playScreenCops;
+    public GameObject playScreenCones;
+    public GameObject playScreenBoost;
+
     public TextMeshProUGUI bestScoreText;
     public int bestScoreCount;
     public TextMeshProUGUI mostCopsDestroyedText;
@@ -55,6 +61,11 @@ public class CanvasManager : MonoBehaviour
 
         playerCarsChange.SetActive(false);
         GameTutorialText.SetActive(false);
+        playScreenTimer.gameObject.SetActive(false);
+        playScreenCops.gameObject.SetActive(false);
+        playScreenCones.gameObject.SetActive(false);
+        playScreenBoost.gameObject.SetActive(false);
+
 
         //Get the prefs of 1 = close the homeUI , or 2 = keep the homeUI
         endGameCardClickToPlayAgain = PlayerPrefs.GetInt("PlayAgain");
@@ -69,6 +80,10 @@ public class CanvasManager : MonoBehaviour
 
             playerCarsChange.SetActive(true);
             GameTutorialText.SetActive(true);
+            playScreenTimer.gameObject.SetActive(true);
+            playScreenCops.gameObject.SetActive(true);
+            playScreenCones.gameObject.SetActive(true);
+            playScreenBoost.gameObject.SetActive(true);
 
             PlayerPrefs.SetInt("PlayAgain", 0);
             Time.timeScale = 1;
@@ -118,9 +133,14 @@ public class CanvasManager : MonoBehaviour
         playerCarsChange.SetActive(true);
 
         //Show the tutorial and the car change buttons
-        playerCarsChange.SetActive(true);
         GameTutorialText.SetActive(true);
         //
+
+        playScreenTimer.gameObject.SetActive(true);
+        playScreenCops.gameObject.SetActive(true);
+        playScreenCones.gameObject.SetActive(true);
+        playScreenBoost.gameObject.SetActive(true);
+
         Time.timeScale = 1;
 
         for (int i = 0; i < CarsUI.instance.allCars.Count; i++)

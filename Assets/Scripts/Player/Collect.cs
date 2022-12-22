@@ -19,11 +19,15 @@ public class Collect : MonoBehaviour
     public int copsCountNumber = 1;
     //;
 
+    private void Awake()
+    {
+        copsCountText = GameObject.FindGameObjectWithTag("CopsCountText").GetComponent<TextMeshProUGUI>();
+    }
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        copsCountText = GameObject.FindGameObjectWithTag("CopsCountText").GetComponent<TextMeshProUGUI>();
+        
     }
 
     // Update is called once per frame

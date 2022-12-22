@@ -1047,6 +1047,10 @@ MonoBehaviour:
   timerScore: {fileID: 630733534}
   copsDestroyed: {fileID: 1699455810}
   coneCollected: {fileID: 1523236476}
+  playScreenTimer: {fileID: 625473114}
+  playScreenCops: {fileID: 9398705}
+  playScreenCones: {fileID: 1513092776}
+  playScreenBoost: {fileID: 587754996}
   bestScoreText: {fileID: 1627584456}
   bestScoreCount: 0
   mostCopsDestroyedText: {fileID: 1717221818}
@@ -3840,6 +3844,7 @@ MonoBehaviour:
   isOpen: 0
   buyCarsUIImage: {fileID: 3724472300335434139, guid: 6c67067dec47b2e47989a4306d58f384,
     type: 3}
+  canvas: {fileID: 0}
 --- !u!1 &766745197
 GameObject:
   m_ObjectHideFlags: 0
@@ -4187,6 +4192,7 @@ MonoBehaviour:
   isOpen: 0
   buyCarsUIImage: {fileID: 3724472300335434139, guid: 6c67067dec47b2e47989a4306d58f384,
     type: 3}
+  canvas: {fileID: 0}
 --- !u!114 &800314531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5735,6 +5741,7 @@ MonoBehaviour:
   isOpen: 0
   buyCarsUIImage: {fileID: 3724472300335434139, guid: 6c67067dec47b2e47989a4306d58f384,
     type: 3}
+  canvas: {fileID: 0}
 --- !u!1 &959235507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7246,6 +7253,7 @@ MonoBehaviour:
   isOpen: 0
   buyCarsUIImage: {fileID: 3724472300335434139, guid: 6c67067dec47b2e47989a4306d58f384,
     type: 3}
+  canvas: {fileID: 0}
 --- !u!114 &1183786560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9071,6 +9079,7 @@ MonoBehaviour:
   isOpen: 0
   buyCarsUIImage: {fileID: 3724472300335434139, guid: 6c67067dec47b2e47989a4306d58f384,
     type: 3}
+  canvas: {fileID: 0}
 --- !u!1 &1513092776
 GameObject:
   m_ObjectHideFlags: 0
@@ -10568,6 +10577,7 @@ MonoBehaviour:
   isOpen: 0
   buyCarsUIImage: {fileID: 3724472300335434139, guid: 6c67067dec47b2e47989a4306d58f384,
     type: 3}
+  canvas: {fileID: 0}
 --- !u!1 &1717221816
 GameObject:
   m_ObjectHideFlags: 0

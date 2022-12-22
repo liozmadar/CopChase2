@@ -20,11 +20,16 @@ public class Cones : MonoBehaviour
     private Vector3 randomPos;
 
     public int totalCoinsFromCones;
+
+    private void Awake()
+    {
+        coneCountText = GameObject.FindGameObjectWithTag("ConeCountText").GetComponent<TextMeshProUGUI>();
+    }
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        coneCountText = GameObject.FindGameObjectWithTag("ConeCountText").GetComponent<TextMeshProUGUI>();
+        
     }
 
     // Update is called once per frame

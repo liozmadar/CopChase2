@@ -13,10 +13,14 @@ public class Boost : MonoBehaviour
 
     public float boostSpeed = 25;
 
+    private void Awake()
+    {
+        boostImage = GameObject.FindGameObjectWithTag("BoostImage").GetComponent<Image>();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        boostImage = GameObject.FindGameObjectWithTag("BoostImage").GetComponent<Image>();
+        
     }
 
     // Update is called once per frame
