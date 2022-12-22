@@ -39,6 +39,8 @@ public class CarSelection : MonoBehaviour
         {
             nextCar.gameObject.SetActive(false);
             previousCar.gameObject.SetActive(false);
+
+            CanvasManager.instance.GameTutorialText.SetActive(false);
         }
     }
     public void FirstCarStart()

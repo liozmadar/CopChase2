@@ -53,6 +53,10 @@ public class CanvasManager : MonoBehaviour
 
         GameTutorialText = GameObject.Find("ShowHowToTheCarsTurn");
 
+        CarSelection.instance.nextCar.gameObject.SetActive(false);
+        CarSelection.instance.previousCar.gameObject.SetActive(false);
+        GameTutorialText.SetActive(false);
+
         //Get the prefs of 1 = close the homeUI , or 2 = keep the homeUI
         endGameCardClickToPlayAgain = PlayerPrefs.GetInt("PlayAgain");
 
@@ -63,6 +67,11 @@ public class CanvasManager : MonoBehaviour
         if (endGameCardClickToPlayAgain == 1)
         {
             homeScreenUI.SetActive(false);
+
+            CarSelection.instance.nextCar.gameObject.SetActive(true);
+            CarSelection.instance.previousCar.gameObject.SetActive(true);
+            GameTutorialText.SetActive(true);
+
             PlayerPrefs.SetInt("PlayAgain", 0);
             Time.timeScale = 1;
             for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
@@ -97,10 +106,14 @@ public class CanvasManager : MonoBehaviour
     //Click to play the game from the first homeUI
     public void ClickToPlayGameFromHomeUI()
     {
-
-        GameTutorialText.SetActive(false);
         homeScreenUI.SetActive(false);
         playerCarsChange.SetActive(true);
+
+        //Show the tutorial and the car change buttons
+        CarSelection.instance.nextCar.gameObject.SetActive(true);
+        CarSelection.instance.previousCar.gameObject.SetActive(true);
+        GameTutorialText.SetActive(true);
+        //
         Time.timeScale = 1;
 
         for (int i = 0; i < CarsUI.instance.allCars.Count; i++)

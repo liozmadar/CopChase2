@@ -1066,7 +1066,7 @@ MonoBehaviour:
   endGameCard: {fileID: 1963322109}
   resetButton: {fileID: 733577376}
   resetButtonBool: 0
-  GameTutorialText: {fileID: 0}
+  GameTutorialText: {fileID: 1202242098}
 --- !u!114 &255711917
 MonoBehaviour:
   m_ObjectHideFlags: 0
