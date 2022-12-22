@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buyTheCar: 0
+  carsBuyImage: {fileID: 0}
 --- !u!1 &3724472300053147145
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +435,7 @@ GameObject:
   - component: {fileID: 3724472300335434137}
   m_Layer: 5
   m_Name: BuyCarPopup
-  m_TagString: Untagged
+  m_TagString: CarsBuyImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

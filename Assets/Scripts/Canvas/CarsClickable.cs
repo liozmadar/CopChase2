@@ -39,6 +39,7 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
         canvas.transform.SetParent(CarsUI.instance.carsImages[i], false);
         canvas.transform.position = firstChildPosition.transform.position + offSet;
         ShowCarCostText.instance.carsCostText.text = CarsUI.instance.allCars[i].carCostNumber.ToString();
+        CarsUI.instance.allCars[i].carBuyBoolImage = 1;
         isOpen = true;
     }
     public void OnPointerClick(PointerEventData eventData)
@@ -49,13 +50,17 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
             {
                 if (PlayerPrefs.GetInt(CarsUI.instance.allCars[i].id.ToString()) == 0)
                 {
-                    if (isOpen) HideToolTip();
+                    if (isOpen) 
+                    {
+                        HideToolTip();
+                    } 
                     else ShowToolTip(i);
                 }
             }
             else
             {
                 CarsClickable carsClickable = CarsUI.instance.carsImages[i].gameObject.GetComponent<CarsClickable>();
+                CarsUI.instance.allCars[i].carBuyBoolImage = 0;
                 carsClickable.HideToolTip();
             }
         }

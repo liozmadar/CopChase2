@@ -14,4 +14,5 @@ public class CarDetailes
     public GameObject buyCarsPopup;
     public GameObject buyCarButton;
     public TextMeshProUGUI carCost;
+    public int carBuyBoolImage;
 }

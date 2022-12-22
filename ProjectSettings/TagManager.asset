@@ -18,6 +18,7 @@ TagManager:
   - BoostImage
   - Lock
   - Check
+  - CarsBuyImage
   layers:
   - Default
   - TransparentFX

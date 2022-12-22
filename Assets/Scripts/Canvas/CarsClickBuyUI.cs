@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class CarsClickBuyUI : MonoBehaviour, IPointerClickHandler
 {
     private GameObject closeLockerUI;
-    private int nextCar;
     public bool buyTheCar;
+    public GameObject carsBuyImage;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -15,32 +15,29 @@ public class CarsClickBuyUI : MonoBehaviour, IPointerClickHandler
         for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
         {
             //check if i already bought this car
-            if (PlayerPrefs.GetInt(CarsUI.instance.allCars[nextCar].id.ToString()) == 0)
+            if (PlayerPrefs.GetInt(CarsUI.instance.allCars[i].id.ToString()) == 0)
             {
-
-                if (gameObject.name == CarsUI.instance.allCars[nextCar].name)
+                if (CarsUI.instance.allCars[i].carBuyBoolImage == 1)
                 {
-                    //check if the totalCoins is more than the car cost
-                    if (ScoreSystem.instance.totalScorePoints >= CarsUI.instance.allCars[nextCar].carCostNumber)
+                    if (ScoreSystem.instance.totalScorePoints >= CarsUI.instance.allCars[i].carCostNumber)
                     {
-                        int totalScorePointsAfterBuy = ScoreSystem.instance.totalScorePoints - CarsUI.instance.allCars[nextCar].carCostNumber;
-                        PlayerPrefs.SetInt(CarsUI.instance.allCars[nextCar].id.ToString(), 1);
+                        int totalScorePointsAfterBuy = ScoreSystem.instance.totalScorePoints - CarsUI.instance.allCars[i].carCostNumber;
+                        PlayerPrefs.SetInt(CarsUI.instance.allCars[i].id.ToString(), 1);
 
-                        closeLockerUI = CarsUI.instance.allCars[nextCar].carLockImage;
+                        closeLockerUI = CarsUI.instance.allCars[i].carLockImage;
                         closeLockerUI.SetActive(false);
                         buyTheCar = true;
 
-                        CarsUI.instance.allCars[nextCar].name = "UnNamedCar";
-                        CarsUI.instance.allCars[nextCar].buyCarsPopup.gameObject.SetActive(false);
-
                         PlayerPrefs.SetInt("totalScorePoints", totalScorePointsAfterBuy);
+
+                        carsBuyImage = GameObject.FindGameObjectWithTag("CarsBuyImage");
+                        Destroy(carsBuyImage);
+
+                        Debug.Log(CarsUI.instance.allCars[i].name);
+                        Debug.Log(carsBuyImage);
+                        CarsUI.instance.allCars[i].carBuyBoolImage = 0;
                     }
                 }
-            }
-            nextCar++;
-            if (nextCar >= CarsUI.instance.allCars.Count)
-            {
-                nextCar = 0;
             }
         }
     }
@@ -48,7 +45,7 @@ public class CarsClickBuyUI : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

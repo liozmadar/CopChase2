@@ -813,8 +813,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1091,6 +1091,7 @@ MonoBehaviour:
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
+    carBuyBoolImage: 0
   - name: Car1
     id: 1
     carLockImage: {fileID: 781266403}
@@ -1098,6 +1099,7 @@ MonoBehaviour:
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
+    carBuyBoolImage: 0
   - name: Car2
     id: 2
     carLockImage: {fileID: 1377363192}
@@ -1105,6 +1107,7 @@ MonoBehaviour:
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
+    carBuyBoolImage: 0
   - name: Car3
     id: 3
     carLockImage: {fileID: 418699972}
@@ -1112,6 +1115,7 @@ MonoBehaviour:
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
+    carBuyBoolImage: 0
   - name: Car4
     id: 4
     carLockImage: {fileID: 1240189512}
@@ -1119,6 +1123,7 @@ MonoBehaviour:
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
+    carBuyBoolImage: 0
   - name: Car5
     id: 5
     carLockImage: {fileID: 125526286}
@@ -1126,6 +1131,7 @@ MonoBehaviour:
     buyCarsPopup: {fileID: 0}
     buyCarButton: {fileID: 0}
     carCost: {fileID: 0}
+    carBuyBoolImage: 0
   carsImages:
   - {fileID: 760911760}
   - {fileID: 1506600516}
