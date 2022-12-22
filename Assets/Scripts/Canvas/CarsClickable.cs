@@ -8,7 +8,7 @@ public class CarsClickable : MonoBehaviour, IPointerClickHandler
     public bool isOpen;
 
     public GameObject buyCarsUIImage;
-    private GameObject canvas;
+    public GameObject canvas;
     private Vector3 offSet = new Vector3(-43, 20, 0);
 
     private Transform firstChildPosition;

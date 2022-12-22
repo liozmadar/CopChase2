@@ -100,6 +100,16 @@ public class CanvasManager : MonoBehaviour
         buyCarsScreenUI.SetActive(false);
         endGameCard.SetActive(false);
         Time.timeScale = 0;
+
+        for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
+        {
+            CarsClickable carsClickable = CarsUI.instance.carsImages[i].gameObject.GetComponent<CarsClickable>();
+            if (carsClickable.canvas != null && carsClickable.isOpen)
+            {
+                Destroy(carsClickable.canvas);
+                carsClickable.isOpen = false;
+            }
+        }
     }
     //Click to play the game from the first homeUI
     public void ClickToPlayGameFromHomeUI()
