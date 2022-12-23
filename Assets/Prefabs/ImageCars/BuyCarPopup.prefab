@@ -94,8 +94,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -174,8 +174,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -15.39996}
-  m_SizeDelta: {x: 150, y: 30}
+  m_AnchoredPosition: {x: 0, y: -18.8}
+  m_SizeDelta: {x: 170, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3724472299426792799
 CanvasRenderer:
@@ -275,6 +275,7 @@ MonoBehaviour:
   carsBuyImage: {fileID: 0}
   notEnoughCoinsImage: {fileID: 1421941203906246568, guid: f3f0e73a880f44e4a89785d394012ba3,
     type: 3}
+  notEnoughCoinsImagePrefab: {fileID: 0}
 --- !u!1 &3724472300053147145
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 120, y: 0.0000705719}
+  m_AnchoredPosition: {x: 142.9, y: 0.0000705719}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3724472300053147150
@@ -369,8 +370,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -462,7 +463,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 220, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3724472300335434136
 CanvasRenderer:
@@ -595,8 +596,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
