@@ -36,12 +36,19 @@ public class PlayerMovment : MonoBehaviour
         // smokeEffect = GameObject.Find("smoke_thick");
         // fireEffect = GameObject.Find("Fire");
 
-        currentSpeed = speed;
+        //currentSpeed = speed;
     }
     // Update is called once per frame
     void Update()
     {
-
+        if (GameManager.instance.startTheGame)
+        {
+            currentSpeed = speed;
+        }
+        else
+        {
+            currentSpeed = 0;
+        }
     }
     private void FixedUpdate()
     {

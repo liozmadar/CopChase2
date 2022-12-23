@@ -26,18 +26,19 @@ public class EnemyFollow : MonoBehaviour
     {
         if (GameManager.instance.startTheGame)
         {
+            Debug.Log("first");
             if (transform.position.y > 8)
             {
                 currentSpeed = slowSpeed;
             }
             else
             {
-                currentSpeed = speed;
+                 currentSpeed = speed;
             }
         }
         else
         {
-            currentSpeed = PlayerMovment.instance.speed;
+            currentSpeed = PlayerMovment.instance.currentSpeed;
         }
         AnotherMovment();
         Rotation();
