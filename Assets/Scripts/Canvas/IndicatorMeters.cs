@@ -12,7 +12,7 @@ public class IndicatorMeters : MonoBehaviour
     private TextMeshProUGUI metersText;
     private GameObject canvas;
 
-    public Vector3 offSet;
+    private Vector3 offSet = new Vector3(0,50,0);
 
     // Start is called before the first frame update
     void Start()
