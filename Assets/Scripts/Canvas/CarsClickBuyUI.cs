@@ -10,8 +10,6 @@ public class CarsClickBuyUI : MonoBehaviour, IPointerClickHandler
     public GameObject carsBuyImage;
     public GameObject notEnoughCoinsImage;
     public GameObject notEnoughCoinsImagePrefab;
-    private bool notEnoughCoinsImagePrefabBool;
-    private float notEnoughCoinsImagePrefabTimer = 500;
 
 
     public void OnPointerClick(PointerEventData eventData)
@@ -49,9 +47,8 @@ public class CarsClickBuyUI : MonoBehaviour, IPointerClickHandler
                         GameObject carBuyImagePrefab = GameObject.FindGameObjectWithTag("CarsBuyImage");
                         notEnoughCoinsImagePrefab = Instantiate(notEnoughCoinsImage, offSet, Quaternion.identity);
                         notEnoughCoinsImagePrefab.transform.SetParent(carBuyImagePrefab.transform, false);
-                        Debug.Log(notEnoughCoinsImagePrefab);
 
-                        notEnoughCoinsImagePrefabBool = true;
+                        Destroy(notEnoughCoinsImagePrefab, 2);
                     }
                 }
             }
@@ -67,19 +64,6 @@ public class CarsClickBuyUI : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
-        DestroyNotEnoughCoinsImagePrefab();
-    }
-    void DestroyNotEnoughCoinsImagePrefab()
-    {
-        if (notEnoughCoinsImagePrefabBool)
-        {
-            notEnoughCoinsImagePrefabTimer --;
-            if (notEnoughCoinsImagePrefabTimer <= 0)
-            {
-                Destroy(notEnoughCoinsImagePrefab);
-                notEnoughCoinsImagePrefabTimer = 500;
-                notEnoughCoinsImagePrefabBool = false;
-            }
-        }
+
     }
 }
