@@ -29,7 +29,7 @@ public class Cones : MonoBehaviour
     void Start()
     {
         instance = this;
-        
+
     }
 
     // Update is called once per frame
@@ -71,7 +71,7 @@ public class Cones : MonoBehaviour
             Destroy(other);
             RandomConeLocatin();
             coneCollectedCount++;
-            ScoreSystem.instance.totalScorePoints++;
+            ScoreSystem.instance.totalScorePoints += 10;
             PlayerPrefs.SetInt("totalScorePoints", ScoreSystem.instance.totalScorePoints);
             totalCoinsFromCones += 10;
             Debug.Log(totalCoinsFromCones);
