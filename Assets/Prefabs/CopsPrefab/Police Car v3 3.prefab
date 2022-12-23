@@ -421,7 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   rb: {fileID: 321259013191436020}
-  speed: 47
+  speed: 50
   slowSpeed: 10
   currentSpeed: 0
   angleSpeed: 2
