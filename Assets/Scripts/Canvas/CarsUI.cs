@@ -16,8 +16,8 @@ public class CarsUI : MonoBehaviour
     public bool deleteAllKeys;
     public int deleteAllKeysNumbers;
 
-   // public GameObject resetGameImage;
-   // private bool resetGameOpenCloseImage;
+    // public GameObject resetGameImage;
+    // private bool resetGameOpenCloseImage;
 
     public int addTotalPoints;
 
@@ -27,7 +27,7 @@ public class CarsUI : MonoBehaviour
         instance = this;
         deleteAllKeys = false;
         UpdateTheCarCost();
-        PlayerPrefs.SetInt(allCars[0].id.ToString(),1);
+        PlayerPrefs.SetInt(allCars[0].id.ToString(), 1);
     }
     // Update is called once per frame
     void Update()
@@ -67,6 +67,10 @@ public class CarsUI : MonoBehaviour
         {
             PlayerPrefs.DeleteKey(allCars[deleteAllKeysNumbers].id.ToString());
             CanvasManager.instance.DeleteAllEndGameCardKeys();
+            //if i want to reset the total coins too
+           /* int newTotalCoins = 0;
+            PlayerPrefs.SetInt("totalScorePoints", newTotalCoins);*/
+            //
             CanvasManager.instance.resetButton.SetActive(false);
             deleteAllKeysNumbers++;
             if (deleteAllKeysNumbers >= allCars.Count)
@@ -78,9 +82,9 @@ public class CarsUI : MonoBehaviour
     }
     void UpdateTheCarCost()
     {
-       /* for (int i = 0; i < allCars.Count; i++)
-        {
-            allCars[i].carCost.text = allCars[i].carCostNumber.ToString();
-        }*/
+        /* for (int i = 0; i < allCars.Count; i++)
+         {
+             allCars[i].carCost.text = allCars[i].carCostNumber.ToString();
+         }*/
     }
 }
