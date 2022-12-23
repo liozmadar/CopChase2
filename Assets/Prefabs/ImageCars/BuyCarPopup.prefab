@@ -273,6 +273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buyTheCar: 0
   carsBuyImage: {fileID: 0}
+  notEnoughCoinsImage: {fileID: 1421941203906246568, guid: f3f0e73a880f44e4a89785d394012ba3,
+    type: 3}
 --- !u!1 &3724472300053147145
 GameObject:
   m_ObjectHideFlags: 0

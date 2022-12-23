@@ -19,6 +19,7 @@ TagManager:
   - Lock
   - Check
   - CarsBuyImage
+  - notEnoughCoinsImagePrefab
   layers:
   - Default
   - TransparentFX

@@ -49,7 +49,6 @@ public class CanvasManager : MonoBehaviour
     private int endGameCardClickToPlayAgain;
 
     public GameObject GameTutorialText;
-
     //
 
     // Start is called before the first frame update
@@ -263,7 +262,7 @@ public class CanvasManager : MonoBehaviour
             resetButton.SetActive(false);
             resetButtonBool = false;
         }
-        
+
     }
     public void DeleteAllEndGameCardKeys()
     {
