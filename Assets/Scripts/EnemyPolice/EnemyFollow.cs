@@ -24,25 +24,32 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        CopsSpeedChange();
+        AnotherMovment();
+        Rotation();
+        AllCopsGoAway();
+    }
+    void CopsSpeedChange()
+    {
         if (GameManager.instance.startTheGame)
         {
-            Debug.Log("first");
             if (transform.position.y > 8)
             {
                 currentSpeed = slowSpeed;
             }
             else
             {
-                 currentSpeed = speed;
+                currentSpeed = speed;
             }
+        }
+        else if (GameManager.instance.allCopsGoAway)
+        {
+            currentSpeed = speed;
         }
         else
         {
             currentSpeed = PlayerMovment.instance.currentSpeed;
         }
-        AnotherMovment();
-        Rotation();
-        AllCopsGoAway();
     }
     void AnotherMovment()
     {
