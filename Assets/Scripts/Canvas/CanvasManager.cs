@@ -44,7 +44,11 @@ public class CanvasManager : MonoBehaviour
     public GameObject playerCarsChange;
     public GameObject endGameCard;
     public GameObject resetButton;
+    public GameObject adButton;
+    private bool adButtonBool;
     public bool resetButtonBool;
+
+    public GameObject clickOnAdButton;
 
     private int endGameCardClickToPlayAgain;
 
@@ -161,6 +165,26 @@ public class CanvasManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("PlayAgain", 0);
         SceneManager.LoadScene(0);
+    }
+
+    public void AdButtonOpenClose()
+    {
+        if (!adButtonBool)
+        {
+            adButton.SetActive(true);
+            adButtonBool = true;
+        }
+        else
+        {
+            adButton.SetActive(false);
+            adButtonBool = false;
+        }
+        
+    }
+
+    public void ClickOnAdButton()
+    {
+        Debug.Log("Watch ad now !");
     }
     //
 
