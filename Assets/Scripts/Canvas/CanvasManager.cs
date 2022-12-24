@@ -69,6 +69,9 @@ public class CanvasManager : MonoBehaviour
         playScreenCones.gameObject.SetActive(false);
         playScreenBoost.gameObject.SetActive(false);
 
+        buyCarsScreenUI.SetActive(false);
+        homeScreenUI.SetActive(true);
+
 
         //Get the prefs of 1 = close the homeUI , or 2 = keep the homeUI
         endGameCardClickToPlayAgain = PlayerPrefs.GetInt("PlayAgain");
