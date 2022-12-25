@@ -11,6 +11,8 @@ public class CarsClickBuyUI : MonoBehaviour, IPointerClickHandler
     public GameObject notEnoughCoinsImage;
     public GameObject notEnoughCoinsImagePrefab;
 
+    private Vector3 offSet = new Vector3(0, 50, 0);
+
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -43,7 +45,7 @@ public class CarsClickBuyUI : MonoBehaviour, IPointerClickHandler
                     }
                     else
                     {
-                        Vector3 offSet = new Vector3(0, 0, 0);
+                       // Vector3 offSet = new Vector3(0, 50, 0);
                         GameObject carBuyImagePrefab = GameObject.FindGameObjectWithTag("CarsBuyImage");
                         notEnoughCoinsImagePrefab = Instantiate(notEnoughCoinsImage, offSet, Quaternion.identity);
                         notEnoughCoinsImagePrefab.transform.SetParent(carBuyImagePrefab.transform, false);
