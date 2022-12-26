@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boostImage: {fileID: 0}
-  boostSpeed: 50
+  boostSpeed: 55
 --- !u!114 &2399842108689139296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +283,7 @@ MonoBehaviour:
   coneShowTimer: 3
   coneCollectedCount: 0
   allConesCollected: 0
+  totalCoinsFromCones: 0
 --- !u!1 &7413099452648236845
 GameObject:
   m_ObjectHideFlags: 0

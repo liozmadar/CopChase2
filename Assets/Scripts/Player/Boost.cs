@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class Boost : MonoBehaviour
 {
+    public static Boost instance;
     public Image boostImage;
 
     float boostLevel = 0;
     float playerBoostSpeedTimer = 0;
     bool playerBoostSpeedBool;
+
+    public bool playerSpeedBoost;
 
     public float boostSpeed = 25;
 
@@ -20,7 +23,7 @@ public class Boost : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class Boost : MonoBehaviour
                 PlayerMovment.instance.currentSpeed = PlayerMovment.instance.speed;
                 playerBoostSpeedTimer = 0;
                 playerBoostSpeedBool = false;
+                playerSpeedBoost = false;
             }
         }
     }
@@ -61,6 +65,7 @@ public class Boost : MonoBehaviour
         {
             if (boostLevel >= 1)
             {
+                playerSpeedBoost = true;
                 boostLevel = 0;
                 PlayerMovment.instance.currentSpeed = boostSpeed;
                 playerBoostSpeedBool = true;

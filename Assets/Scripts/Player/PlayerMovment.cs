@@ -24,7 +24,7 @@ public class PlayerMovment : MonoBehaviour
     private bool winGameCantMove;
 
     public TrailRenderer trailRenderer;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,10 @@ public class PlayerMovment : MonoBehaviour
     {
         if (GameManager.instance.startTheGame)
         {
-            currentSpeed = speed;
+            if (!Boost.instance.playerSpeedBoost)
+            {
+                currentSpeed = speed;
+            }
         }
         else
         {
@@ -70,7 +73,7 @@ public class PlayerMovment : MonoBehaviour
         rb.velocity = v3;
 
         //Invincible timer
-        currentinvincibleTime -= Time.deltaTime;
+        // currentinvincibleTime -= Time.deltaTime;
 
         //The old movement
         //PlayerMovement();

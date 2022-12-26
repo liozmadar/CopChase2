@@ -49,6 +49,9 @@ public class CanvasManager : MonoBehaviour
     public bool adButtonBool;
     public bool resetButtonBool;
 
+    public GameObject onlyOnMobileAdImage;
+    private bool onlyOnMobileAdImageBool;
+
     public GameObject clickOnAdButton;
 
     private int endGameCardClickToPlayAgain;
@@ -188,10 +191,20 @@ public class CanvasManager : MonoBehaviour
         }
         
     }
-
     public void ClickOnAdButton()
     {
         Debug.Log("Watch ad now !");
+        if (!onlyOnMobileAdImageBool)
+        {
+            onlyOnMobileAdImage.SetActive(true);
+            onlyOnMobileAdImageBool = true;
+            Invoke("OnlyOnMobileAdDestroy", 2);
+        }
+    }
+    void OnlyOnMobileAdDestroy()
+    {
+        onlyOnMobileAdImage.SetActive(false);
+        onlyOnMobileAdImageBool = false;
     }
     //
 
