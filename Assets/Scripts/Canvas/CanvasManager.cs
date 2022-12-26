@@ -45,7 +45,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject endGameCard;
     public GameObject resetButton;
     public GameObject adButton;
-    private bool adButtonBool;
+    public bool adButtonBool;
     public bool resetButtonBool;
 
     public GameObject clickOnAdButton;
