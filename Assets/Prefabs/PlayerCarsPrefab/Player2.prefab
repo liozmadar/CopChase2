@@ -249,7 +249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boostImage: {fileID: 0}
-  boostSpeed: 55
+  playerSpeedBoost: 0
+  boostSpeed: 53
 --- !u!114 &2399842108689139296
 MonoBehaviour:
   m_ObjectHideFlags: 0
