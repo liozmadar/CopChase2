@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements; //Assuming you imported the Advertisements from the "Package Manager"
@@ -55,11 +55,11 @@ public class AdsRewarded : MonoBehaviour, IUnityAdsListener
     {
         print("this is extra");
     }
-    *//*
-    public void OnDestro() 
+
+    public void OnDestro()
     {
         print("The object your Ad's were attached to has BEEN DESTROYED");
         Advertisement.RemoveListener(this);
     }
-    *//*
-}*/
+
+}

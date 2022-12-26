@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements; //Assuming you imported the Advertisements from the "Package Manager"
@@ -13,7 +13,7 @@ public class AdsBanner : MonoBehaviour
     public string mySurfacingId = "Banner_Android";
 #endif
     public bool testMode = true; //Leave this as True UNTIL you release your game!!!
-    
+
     void Start()
     {
         Advertisement.Initialize(gameId, testMode);
@@ -29,4 +29,4 @@ public class AdsBanner : MonoBehaviour
         }
         Advertisement.Banner.Show(mySurfacingId);
     }
-}*/
+}
