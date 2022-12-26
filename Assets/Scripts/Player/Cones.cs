@@ -54,7 +54,7 @@ public class Cones : MonoBehaviour
             RandomConeLocatin();
             coneShowBool = false;
         }
-        coneCountText.text = coneCollectedCount.ToString();// + "/" + randomConeNumber;
+        coneCountText.text = ": " + coneCollectedCount.ToString();// + "/" + randomConeNumber;
     }
     void RandomConeLocatin()
     {
