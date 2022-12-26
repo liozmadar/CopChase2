@@ -14,12 +14,14 @@ public class ScreenButtonMovement : MonoBehaviour
     public Button screenRight;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        screenLeft = GameObject.FindGameObjectWithTag("ScreenLeft").GetComponent<Button>();
+        screenRight = GameObject.FindGameObjectWithTag("ScreenRight").GetComponent<Button>();
+    }
     void Start()
     {
         instance = this;
-
-        screenLeft = GameObject.FindGameObjectWithTag("ScreenLeft").GetComponent<Button>();
-        screenRight = GameObject.FindGameObjectWithTag("ScreenRight").GetComponent<Button>();
     }
     // Update is called once per frame
     void Update()

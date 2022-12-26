@@ -45,6 +45,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject endGameCard;
     public GameObject resetButton;
     public GameObject adButton;
+    public GameObject touchScreenButtons;
     public bool adButtonBool;
     public bool resetButtonBool;
 
@@ -64,6 +65,7 @@ public class CanvasManager : MonoBehaviour
 
         playerCarsChange.SetActive(false);
         GameTutorialText.SetActive(false);
+        touchScreenButtons.SetActive(false);
         playScreenTimer.gameObject.SetActive(false);
         playScreenCops.gameObject.SetActive(false);
         playScreenCones.gameObject.SetActive(false);
@@ -86,6 +88,7 @@ public class CanvasManager : MonoBehaviour
 
             playerCarsChange.SetActive(true);
             GameTutorialText.SetActive(true);
+            touchScreenButtons.SetActive(true);
             playScreenTimer.gameObject.SetActive(true);
             playScreenCops.gameObject.SetActive(true);
             playScreenCones.gameObject.SetActive(true);
@@ -137,6 +140,7 @@ public class CanvasManager : MonoBehaviour
     {
         homeScreenUI.SetActive(false);
         playerCarsChange.SetActive(true);
+        touchScreenButtons.SetActive(true);
 
         //Show the tutorial and the car change buttons
         GameTutorialText.SetActive(true);
