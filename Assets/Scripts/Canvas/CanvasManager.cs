@@ -57,6 +57,8 @@ public class CanvasManager : MonoBehaviour
     private int endGameCardClickToPlayAgain;
 
     public GameObject GameTutorialText;
+    public TextMeshProUGUI ConesTutorialText;
+    public bool ConesTutorialTextBool;
     //
 
     // Start is called before the first frame update
