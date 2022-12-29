@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-namespace LincolnCpp.HUDIndicator {
-	public class IndicatorCanvasOnScreen : IndicatorCanvas {
+namespace LincolnCpp.HUDIndicator
+{
+    public class IndicatorCanvasOnScreen : IndicatorCanvas
+    {
 
         private IndicatorOnScreen indicatorOnScreen;
 
@@ -14,8 +16,9 @@ namespace LincolnCpp.HUDIndicator {
         private RectTransform rectTransform;
         private IndicatorIconStyle style;
 
-		public override void Create(Indicator indicator, IndicatorRenderer renderer) {
-			base.Create(indicator, renderer);
+        public override void Create(Indicator indicator, IndicatorRenderer renderer)
+        {
+            base.Create(indicator, renderer);
 
             indicatorOnScreen = indicator as IndicatorOnScreen;
 
@@ -38,43 +41,51 @@ namespace LincolnCpp.HUDIndicator {
             UpdateStyle();
         }
 
-		public override void Update() {
-            if(!active) return;
+        public override void Update()
+        {
+            if (!active) return;
 
-            if(IsVisible()) {
+            if (IsVisible())
+            {
                 UpdateStyle();
                 UpdatePosition();
             }
-			else {
-                if(gameObject.activeSelf) {
+            else
+            {
+                if (gameObject.activeSelf)
+                {
                     gameObject.SetActive(false);
-				}
+                }
             }
         }
 
-        private void UpdateStyle() {
+        private void UpdateStyle()
+        {
             rectTransform.sizeDelta = new Vector2(style.width, style.height);
             rawImage.texture = style.texture;
             rawImage.color = style.color;
         }
 
-        private void UpdatePosition() {
+        private void UpdatePosition()
+        {
             Rect rendererRect = renderer.GetRect();
             Vector3 pos = renderer.GetRectTransform().InverseTransformPoint(renderer.camera.WorldToScreenPoint(indicator.gameObject.transform.position));
 
             rendererRect.x += style.width / 2f;
-            rendererRect.y += style.height/ 2f;
+            rendererRect.y += style.height / 2f;
             rendererRect.width -= style.width;
             rendererRect.height -= style.height;
 
             // On-screen (Show)
-            if (pos.z >= 0 && pos.x >= rendererRect.x && pos.x <= rendererRect.x + rendererRect.width && pos.y >= rendererRect.y && pos.y <= rendererRect.y + rendererRect.height) {
+            if (pos.z >= 0 && pos.x >= rendererRect.x && pos.x <= rendererRect.x + rendererRect.width && pos.y >= rendererRect.y && pos.y <= rendererRect.y + rendererRect.height)
+            {
                 gameObject.SetActive(true);
-                
-                rectTransform.position = renderer.GetRectTransform().TransformPoint(new Vector3(pos.x, pos.y, 0));            
+
+                rectTransform.position = renderer.GetRectTransform().TransformPoint(new Vector3(pos.x, pos.y, 0));
             }
             // Off-screen (Hide)
-            else {
+            else
+            {
                 gameObject.SetActive(false);
             }
 
