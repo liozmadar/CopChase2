@@ -59,11 +59,15 @@ public class CanvasManager : MonoBehaviour
     public GameObject GameTutorialText;
     public TextMeshProUGUI ConesTutorialText;
     public bool ConesTutorialTextBool;
+
+
+    AsyncOperation loadingOperation;
     //
 
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.UnloadSceneAsync(0);
         instance = this;
 
         GameTutorialText = GameObject.Find("ShowHowToTheCarsTurn");
@@ -84,7 +88,7 @@ public class CanvasManager : MonoBehaviour
         endGameCardClickToPlayAgain = PlayerPrefs.GetInt("PlayAgain");
 
         //Stop the car from moveing
-      //  Time.timeScale = 0;
+        //  Time.timeScale = 0;
 
         //If 1 then you want to play again , after the game reset close the homeUI and and let the cars move
         if (endGameCardClickToPlayAgain == 1)
@@ -100,7 +104,7 @@ public class CanvasManager : MonoBehaviour
             playScreenBoost.gameObject.SetActive(true);
 
             PlayerPrefs.SetInt("PlayAgain", 0);
-         //   Time.timeScale = 1;
+            //   Time.timeScale = 1;
             for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
             {
                 if (PlayerPrefs.GetInt(CarsUI.instance.allCars[i].id.ToString()) == 1)
@@ -128,7 +132,7 @@ public class CanvasManager : MonoBehaviour
         homeScreenUI.SetActive(true);
         buyCarsScreenUI.SetActive(false);
         endGameCard.SetActive(false);
-      //  Time.timeScale = 0;
+        //  Time.timeScale = 0;
 
         for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
         {
@@ -156,7 +160,7 @@ public class CanvasManager : MonoBehaviour
         playScreenCones.gameObject.SetActive(true);
         playScreenBoost.gameObject.SetActive(true);
 
-      //  Time.timeScale = 1;
+        //  Time.timeScale = 1;
 
         for (int i = 0; i < CarsUI.instance.allCars.Count; i++)
         {
@@ -170,13 +174,17 @@ public class CanvasManager : MonoBehaviour
     public void TryAgainButton()
     {
         PlayerPrefs.SetInt("PlayAgain", 1);
-        SceneManager.LoadScene(0);
+        //  SceneManager.LoadScene(0);
+        // Here im pre
+        loadingOperation.allowSceneActivation = true;
     }
     //Reset the game and keep the first homeUI
     public void GoToHomeUIAfterTheEndCard()
     {
         PlayerPrefs.SetInt("PlayAgain", 0);
-        SceneManager.LoadScene(0);
+        // I set my preload scene to true
+        loadingOperation.allowSceneActivation = true;
+
     }
 
     public void AdButtonOpenClose()
@@ -191,7 +199,7 @@ public class CanvasManager : MonoBehaviour
             adButton.SetActive(false);
             adButtonBool = false;
         }
-        
+
     }
     public void ClickOnAdButton()
     {
@@ -237,6 +245,9 @@ public class CanvasManager : MonoBehaviour
         copsDestroyed.text = GameManager.instance.copsDestroyedNumber.ToString();
         coneCollected.text = Cones.instance.coneCollectedCount.ToString();
         coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
+        // Here im loading the same scene and set it false (like preload the next scene)
+        loadingOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+        loadingOperation.allowSceneActivation = false;
     }
     public void EndGameCardLose()
     {
@@ -250,6 +261,9 @@ public class CanvasManager : MonoBehaviour
         copsDestroyed.text = GameManager.instance.copsDestroyedNumber.ToString();
         coneCollected.text = Cones.instance.coneCollectedCount.ToString();
         coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
+        // Here im loading the same scene and set it false (like preload the next scene)
+        loadingOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+        loadingOperation.allowSceneActivation = false;
     }
     void MostConesCollectedCheck()
     {

@@ -18,7 +18,7 @@ public class Boost : MonoBehaviour
 
     private void Awake()
     {
-        boostImage = GameObject.FindGameObjectWithTag("BoostImage").GetComponent<Image>();
+
     }
     // Start is called before the first frame update
     void Start()
@@ -35,6 +35,10 @@ public class Boost : MonoBehaviour
             BoostAnim();
         }
         ClickBoost();
+        if (CanvasManager.instance.playScreenBoost.gameObject.activeSelf)
+        {
+            boostImage = GameObject.FindGameObjectWithTag("BoostImage").GetComponent<Image>();
+        }
     }
     void BoostAnim()
     {

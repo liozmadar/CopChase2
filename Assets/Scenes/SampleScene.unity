@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1cdfecff106d5724fb540ed60dff5979,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: d721b222fc37ede4f81473d4edce712a,
     type: 2}
 --- !u!196 &4
@@ -670,7 +671,7 @@ GameObject:
   - component: {fileID: 185835096}
   m_Layer: 0
   m_Name: Directional Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -985,9 +986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391f6e4f58f40af49b7973ec890ee676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameId: 5090837
-  mySurfacingId: Interstitial_Android
-  testMode: 1
 --- !u!114 &233333658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,9 +998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490ca65d1c31ecd4085c00c975e610fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameId: 5090837
-  mySurfacingId: Rewarded_Android
-  testMode: 1
 --- !u!114 &233333659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,9 +1010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd7715ca621f424fb373d455ef11244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameId: 5090837
-  mySurfacingId: Banner_Android
-  testMode: 1
 --- !u!1 &242435128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3591,7 +3583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &587754997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5773,9 +5765,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 233333658}
-        m_TargetAssemblyTypeName: AdsRewarded, Assembly-CSharp
-        m_MethodName: ShowRewardedVideo
+      - m_Target: {fileID: 255711916}
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: ClickOnAdButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7733,6 +7725,7 @@ GameObject:
   - component: {fileID: 1106369065}
   - component: {fileID: 1106369064}
   - component: {fileID: 1106369063}
+  - component: {fileID: 1106369067}
   m_Layer: 0
   m_Name: GroundFloor
   m_TagString: Untagged
@@ -7812,12 +7805,25 @@ Transform:
   m_GameObject: {fileID: 1106369062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.4393555, y: 0, z: 9.073195}
-  m_LocalScale: {x: 1000000, y: 1, z: 1000000}
+  m_LocalScale: {x: 2000, y: 1, z: 2000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1106369067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106369062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af273899d70fb94ca639797aa5d98c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &1120610672
 GameObject:
   m_ObjectHideFlags: 0

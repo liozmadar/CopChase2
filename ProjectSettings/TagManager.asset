@@ -20,6 +20,7 @@ TagManager:
   - Check
   - CarsBuyImage
   - notEnoughCoinsImagePrefab
+  - Light
   layers:
   - Default
   - TransparentFX
