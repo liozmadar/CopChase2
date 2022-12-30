@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements; //Assuming you imported the Advertisements from the "Package Manager"
@@ -29,4 +29,4 @@ public class AdsBanner : MonoBehaviour
         }
         Advertisement.Banner.Show(mySurfacingId);
     }
-}*/
+}
