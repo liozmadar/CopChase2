@@ -88,6 +88,7 @@ public class CanvasManager : MonoBehaviour
         TotalCoinsInGame.gameObject.SetActive(false);
 
         buyCarsScreenUI.SetActive(false);
+        endGameCard.SetActive(false);
         homeScreenUI.SetActive(true);
 
 
