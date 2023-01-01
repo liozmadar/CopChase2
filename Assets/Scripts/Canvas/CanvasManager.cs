@@ -62,7 +62,7 @@ public class CanvasManager : MonoBehaviour
 
 
     public int coinsFromCops;
-    public TextMeshProUGUI coinsFromCopsText;
+    public TextMeshProUGUI TotalCoinsInGame;
     public TextMeshProUGUI coinsFromCopsEndGameCardText;
     public int conesAndCopsEarnSum;
     public TextMeshProUGUI conesAndCopsEarnSumText;
@@ -85,7 +85,7 @@ public class CanvasManager : MonoBehaviour
         playScreenCops.gameObject.SetActive(false);
         playScreenCones.gameObject.SetActive(false);
         playScreenBoost.gameObject.SetActive(false);
-        coinsFromCopsText.gameObject.SetActive(false);
+        TotalCoinsInGame.gameObject.SetActive(false);
 
         buyCarsScreenUI.SetActive(false);
         homeScreenUI.SetActive(true);
@@ -109,7 +109,7 @@ public class CanvasManager : MonoBehaviour
             playScreenCops.gameObject.SetActive(true);
             playScreenCones.gameObject.SetActive(true);
             playScreenBoost.gameObject.SetActive(true);
-            coinsFromCopsText.gameObject.SetActive(true);
+            TotalCoinsInGame.gameObject.SetActive(true);
 
             PlayerPrefs.SetInt("PlayAgain", 0);
             //   Time.timeScale = 1;
@@ -127,9 +127,9 @@ public class CanvasManager : MonoBehaviour
     {
         CheckTheBestScoreNumber();
         CheckIfNewScore();
-        coinsFromCopsText.text = "<color=orange>+" + conesAndCopsEarnSum.ToString() + "</color> ";
 
         conesAndCopsEarnSum = coinsFromCops + Cones.instance.totalCoinsFromCones;
+        TotalCoinsInGame.text = "<color=orange>+" + conesAndCopsEarnSum.ToString() + "</color> ";
         conesAndCopsEarnSumText.text = "+" + conesAndCopsEarnSum.ToString();
     }
     //All UI screens
@@ -171,7 +171,7 @@ public class CanvasManager : MonoBehaviour
         playScreenCops.gameObject.SetActive(true);
         playScreenCones.gameObject.SetActive(true);
         playScreenBoost.gameObject.SetActive(true);
-        coinsFromCopsText.gameObject.SetActive(true);
+        TotalCoinsInGame.gameObject.SetActive(true);
 
         //  Time.timeScale = 1;
 
@@ -263,8 +263,7 @@ public class CanvasManager : MonoBehaviour
         //Add the coinsFromCops and fromCones and sum them
         coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
         coinsFromCopsEndGameCardText.text = "+" + coinsFromCops.ToString();
-        conesAndCopsEarnSum = coinsFromCops + Cones.instance.totalCoinsFromCones;
-        conesAndCopsEarnSumText.text = "+" + conesAndCopsEarnSum.ToString();
+
         //Add the coins i got from the game to the totalScorePoints
         ScoreSystem.instance.totalScorePoints += conesAndCopsEarnSum;
         PlayerPrefs.SetInt("totalScorePoints", ScoreSystem.instance.totalScorePoints);
@@ -284,7 +283,7 @@ public class CanvasManager : MonoBehaviour
         // Here im loading the same scene and set it false (like preload the next scene)
         loadingOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
         loadingOperation.allowSceneActivation = false;
-        //Add the coinsFromCops and fromCones and sum them
+        //Show the coinsFromCops and coinsFromCones
         coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
         coinsFromCopsEndGameCardText.text = "+" + coinsFromCops.ToString();
         

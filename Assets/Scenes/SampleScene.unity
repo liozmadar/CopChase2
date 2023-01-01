@@ -1708,7 +1708,7 @@ MonoBehaviour:
   ConesTutorialText: {fileID: 1024926165}
   ConesTutorialTextBool: 0
   coinsFromCops: 0
-  coinsFromCopsText: {fileID: 2039977272}
+  TotalCoinsInGame: {fileID: 2039977272}
   coinsFromCopsEndGameCardText: {fileID: 123265328}
   conesAndCopsEarnSum: 0
   conesAndCopsEarnSumText: {fileID: 403210681}
@@ -2928,12 +2928,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1942954842}
-  m_Father: {fileID: 930694263}
-  m_RootOrder: 4
+  m_Father: {fileID: 1904605172}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -121, y: -77}
+  m_AnchoredPosition: {x: -128.40001, y: -196.99997}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &403210681
@@ -6905,7 +6905,6 @@ RectTransform:
   - {fileID: 1359478344}
   - {fileID: 1798475898}
   - {fileID: 123265327}
-  - {fileID: 403210680}
   m_Father: {fileID: 1904605172}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7073,7 +7072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &947330479
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10184,7 +10183,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1904605172}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13799,6 +13798,7 @@ RectTransform:
   - {fileID: 930694263}
   - {fileID: 421576012}
   - {fileID: 2061497685}
+  - {fileID: 403210680}
   - {fileID: 1376422454}
   m_Father: {fileID: 1963322110}
   m_RootOrder: 0
@@ -14452,7 +14452,7 @@ GameObject:
   - component: {fileID: 2039977273}
   - component: {fileID: 2039977272}
   m_Layer: 5
-  m_Name: CoinsFromCops
+  m_Name: TotalCoinsInGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
