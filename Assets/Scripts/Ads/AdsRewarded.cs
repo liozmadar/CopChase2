@@ -29,7 +29,7 @@ public class AdsRewarded : MonoBehaviour, IUnityAdsListener
         if (showResult == ShowResult.Finished)
         {
             print("The Ad finished!!!");
-            int RewardedAdCoins = ScoreSystem.instance.totalScorePoints += 10;
+            int RewardedAdCoins = ScoreSystem.instance.totalScorePoints += 500;
             PlayerPrefs.SetInt("totalScorePoints", RewardedAdCoins);
             CanvasManager.instance.adButton.SetActive(false);
             CanvasManager.instance.adButtonBool = false;

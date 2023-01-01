@@ -196,7 +196,6 @@ public class CanvasManager : MonoBehaviour
         loadingOperation.allowSceneActivation = true;
 
     }
-
     public void AdButtonOpenClose()
     {
         if (!adButtonBool)
