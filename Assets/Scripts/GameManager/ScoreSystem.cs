@@ -23,7 +23,7 @@ public class ScoreSystem : MonoBehaviour
     void Update()
     {
         totalScorePoints = PlayerPrefs.GetInt("totalScorePoints");
-        totalScorePointsTextHomeScreen.text = "Total coins: " + totalScorePoints.ToString();
-        totalScorePointsTextCarsScreen.text = "Total coins: " + totalScorePoints.ToString();
+        totalScorePointsTextHomeScreen.text = totalScorePoints.ToString();
+        totalScorePointsTextCarsScreen.text = totalScorePoints.ToString();
     }
 }
