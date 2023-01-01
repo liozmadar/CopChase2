@@ -61,6 +61,12 @@ public class CanvasManager : MonoBehaviour
     public bool ConesTutorialTextBool;
 
 
+    public int coinsFromCops;
+    public TextMeshProUGUI coinsFromCopsText;
+    public TextMeshProUGUI coinsFromCopsEndGameCardText;
+    public int conesAndCopsEarnSum;
+    public TextMeshProUGUI conesAndCopsEarnSumText;
+
     AsyncOperation loadingOperation;
     //
 
@@ -79,6 +85,7 @@ public class CanvasManager : MonoBehaviour
         playScreenCops.gameObject.SetActive(false);
         playScreenCones.gameObject.SetActive(false);
         playScreenBoost.gameObject.SetActive(false);
+        coinsFromCopsText.gameObject.SetActive(false);
 
         buyCarsScreenUI.SetActive(false);
         homeScreenUI.SetActive(true);
@@ -102,6 +109,7 @@ public class CanvasManager : MonoBehaviour
             playScreenCops.gameObject.SetActive(true);
             playScreenCones.gameObject.SetActive(true);
             playScreenBoost.gameObject.SetActive(true);
+            coinsFromCopsText.gameObject.SetActive(true);
 
             PlayerPrefs.SetInt("PlayAgain", 0);
             //   Time.timeScale = 1;
@@ -119,6 +127,7 @@ public class CanvasManager : MonoBehaviour
     {
         CheckTheBestScoreNumber();
         CheckIfNewScore();
+        coinsFromCopsText.text = "<color=orange>+" + conesAndCopsEarnSum.ToString() + "</color> ";
     }
     //All UI screens
     public void ClickToGoToBuyCarsUI()
@@ -159,6 +168,7 @@ public class CanvasManager : MonoBehaviour
         playScreenCops.gameObject.SetActive(true);
         playScreenCones.gameObject.SetActive(true);
         playScreenBoost.gameObject.SetActive(true);
+        coinsFromCopsText.gameObject.SetActive(true);
 
         //  Time.timeScale = 1;
 
@@ -241,13 +251,21 @@ public class CanvasManager : MonoBehaviour
     {
         endGameCard.SetActive(true);
         headerText.text = "You win!";
+        //Change the text of time,copsDestroy and ConeCollected
         timerScore.text = Timer.instance.timerText.ToString();
         copsDestroyed.text = GameManager.instance.copsDestroyedNumber.ToString();
         coneCollected.text = Cones.instance.coneCollectedCount.ToString();
-        coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
         // Here im loading the same scene and set it false (like preload the next scene)
         loadingOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
         loadingOperation.allowSceneActivation = false;
+        //Add the coinsFromCops and fromCones and sum them
+        coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
+        coinsFromCopsEndGameCardText.text = "+" + coinsFromCops.ToString();
+        conesAndCopsEarnSum = coinsFromCops + Cones.instance.totalCoinsFromCones;
+        conesAndCopsEarnSumText.text = "+" + conesAndCopsEarnSum.ToString();
+        //Add the coins i got from the game to the totalScorePoints
+        ScoreSystem.instance.totalScorePoints += conesAndCopsEarnSum;
+        PlayerPrefs.SetInt("totalScorePoints", ScoreSystem.instance.totalScorePoints);
     }
     public void EndGameCardLose()
     {
@@ -257,13 +275,21 @@ public class CanvasManager : MonoBehaviour
     {
         endGameCard.SetActive(true);
         headerText.text = "Busted!";
+        //Change the text of time,copsDestroy and ConeCollected
         timerScore.text = Timer.instance.timerText.ToString();
         copsDestroyed.text = GameManager.instance.copsDestroyedNumber.ToString();
         coneCollected.text = Cones.instance.coneCollectedCount.ToString();
-        coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
         // Here im loading the same scene and set it false (like preload the next scene)
         loadingOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
         loadingOperation.allowSceneActivation = false;
+        //Add the coinsFromCops and fromCones and sum them
+        coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
+        coinsFromCopsEndGameCardText.text = "+" + coinsFromCops.ToString();
+        conesAndCopsEarnSum = coinsFromCops + Cones.instance.totalCoinsFromCones;
+        conesAndCopsEarnSumText.text = "+" + conesAndCopsEarnSum.ToString();
+        //Add the coins i got from the game to the totalScorePoints
+        ScoreSystem.instance.totalScorePoints += conesAndCopsEarnSum;
+        PlayerPrefs.SetInt("totalScorePoints", ScoreSystem.instance.totalScorePoints);
     }
     void MostConesCollectedCheck()
     {

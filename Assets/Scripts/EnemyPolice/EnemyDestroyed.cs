@@ -51,6 +51,18 @@ public class EnemyDestroyed : MonoBehaviour
             Destroy(gameObject, 5);
             GameManager.instance.copsDestroyedNumber++;
             Collect.instance.copsCountNumber--;
+            if (gameObject.name == "Cop1(Clone)")
+            {
+                CanvasManager.instance.coinsFromCops += 10;
+            }
+            else if (gameObject.name == "Cop2(Clone)")
+            {
+                CanvasManager.instance.coinsFromCops += 20;
+            }
+            else if (gameObject.name == "Cop3(Clone)")
+            {
+                CanvasManager.instance.coinsFromCops += 30;
+            }
         }
     }
 }

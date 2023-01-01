@@ -73,7 +73,7 @@ public class Cones : MonoBehaviour
             coneCollectedCount++;
             ScoreSystem.instance.totalScorePoints += 10;
             PlayerPrefs.SetInt("totalScorePoints", ScoreSystem.instance.totalScorePoints);
-            totalCoinsFromCones += 10;
+            totalCoinsFromCones += 100;
             Debug.Log(totalCoinsFromCones);
         }
     }
