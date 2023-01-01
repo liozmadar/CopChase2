@@ -1333,9 +1333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391f6e4f58f40af49b7973ec890ee676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameId: 5090837
-  mySurfacingId: Interstitial_Android
-  testMode: 1
 --- !u!114 &233333658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1348,9 +1345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 490ca65d1c31ecd4085c00c975e610fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameId: 5090837
-  mySurfacingId: Rewarded_Android
-  testMode: 1
 --- !u!114 &233333659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,9 +1357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd7715ca621f424fb373d455ef11244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameId: 5090837
-  mySurfacingId: Banner_Android
-  testMode: 1
 --- !u!1 &242435128
 GameObject:
   m_ObjectHideFlags: 0
@@ -6339,9 +6330,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 233333658}
-        m_TargetAssemblyTypeName: AdsRewarded, Assembly-CSharp
-        m_MethodName: ShowRewardedVideo
+      - m_Target: {fileID: 255711916}
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: ClickOnAdButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

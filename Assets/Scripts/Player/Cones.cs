@@ -71,7 +71,7 @@ public class Cones : MonoBehaviour
             Destroy(other);
             RandomConeLocatin();
             coneCollectedCount++;
-            ScoreSystem.instance.totalScorePoints += 10;
+            ScoreSystem.instance.totalScorePoints += 100;
             PlayerPrefs.SetInt("totalScorePoints", ScoreSystem.instance.totalScorePoints);
             totalCoinsFromCones += 100;
             Debug.Log(totalCoinsFromCones);

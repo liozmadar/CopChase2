@@ -128,6 +128,9 @@ public class CanvasManager : MonoBehaviour
         CheckTheBestScoreNumber();
         CheckIfNewScore();
         coinsFromCopsText.text = "<color=orange>+" + conesAndCopsEarnSum.ToString() + "</color> ";
+
+        conesAndCopsEarnSum = coinsFromCops + Cones.instance.totalCoinsFromCones;
+        conesAndCopsEarnSumText.text = "+" + conesAndCopsEarnSum.ToString();
     }
     //All UI screens
     public void ClickToGoToBuyCarsUI()
@@ -284,8 +287,7 @@ public class CanvasManager : MonoBehaviour
         //Add the coinsFromCops and fromCones and sum them
         coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
         coinsFromCopsEndGameCardText.text = "+" + coinsFromCops.ToString();
-        conesAndCopsEarnSum = coinsFromCops + Cones.instance.totalCoinsFromCones;
-        conesAndCopsEarnSumText.text = "+" + conesAndCopsEarnSum.ToString();
+        
         //Add the coins i got from the game to the totalScorePoints
         ScoreSystem.instance.totalScorePoints += conesAndCopsEarnSum;
         PlayerPrefs.SetInt("totalScorePoints", ScoreSystem.instance.totalScorePoints);
