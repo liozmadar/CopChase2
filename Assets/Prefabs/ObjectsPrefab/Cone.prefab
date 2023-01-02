@@ -4816,7 +4816,6 @@ GameObject:
   - component: {fileID: 6012812207315587323}
   - component: {fileID: 3946539004915970446}
   - component: {fileID: 2508057549398269668}
-  - component: {fileID: 5056023110791030672}
   - component: {fileID: -138212888024541349}
   - component: {fileID: 4542584059269134191}
   - component: {fileID: 8849629668216564801}
@@ -9694,19 +9693,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!65 &5056023110791030672
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4536707279986318857}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.49156123, y: 1.0175552, z: 0.43174458}
-  m_Center: {x: 0.021651601, y: 0.95537966, z: -0.002191019}
 --- !u!114 &-138212888024541349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9793,7 +9779,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metersPrefab: {fileID: 3761451616644754376, guid: c3b38bf15a2a38749ab0255fed3e9563,
     type: 3}
-  offSet: {x: 35, y: 20, z: 0}
 --- !u!1 &5947876614394631371
 GameObject:
   m_ObjectHideFlags: 0
