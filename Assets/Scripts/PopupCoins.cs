@@ -12,6 +12,7 @@ public class PopupCoins : MonoBehaviour
     {
         destroyTimer = 2;
         transform.position = transform.position + offSet;
+        transform.Rotate(45, 0, 0, Space.Self);
     }
 
     // Update is called once per frame
@@ -23,6 +24,5 @@ public class PopupCoins : MonoBehaviour
             Destroy(gameObject);
         }
         transform.position += Vector3.up * Speed;
-       // transform.LookAt(GameObject.FindGameObjectWithTag("MainCamera").transform.position);
     }
 }

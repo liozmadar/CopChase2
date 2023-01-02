@@ -38,7 +38,7 @@ public class Collect : MonoBehaviour
             SpawnCop();
         }
 
-        copsCountText.text = copsCountNumber.ToString();
+        copsCountText.text = GameManager.instance.copsDestroyedNumber.ToString();
     }
     void SpawnCop()
     {
