@@ -18,6 +18,7 @@ public class Cones : MonoBehaviour
     private int randomConeNumber = 30;
 
     private Vector3 randomPos;
+    public GameObject popupCoins;
 
     public int totalCoinsFromCones;
 
@@ -67,13 +68,17 @@ public class Cones : MonoBehaviour
     {
         if (other.gameObject.tag == "Cone")
         {
+            int coinsNumber = 100;
             Instantiate(coneCollected, other.transform.position, Quaternion.identity);
             Destroy(other);
             RandomConeLocatin();
             coneCollectedCount++;
             PlayerPrefs.SetInt("totalScorePoints", ScoreSystem.instance.totalScorePoints);
-            totalCoinsFromCones += 100;
+            totalCoinsFromCones += coinsNumber;
             Debug.Log(totalCoinsFromCones);
+
+            var popCoins = Instantiate(popupCoins, transform.position, Quaternion.identity);
+            popCoins.GetComponent<TextMeshPro>().text = "<color=orange>+" + coinsNumber + "</color>";
         }
     }
     public void AllConesCollected()

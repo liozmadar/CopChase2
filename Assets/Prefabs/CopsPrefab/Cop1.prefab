@@ -468,6 +468,8 @@ MonoBehaviour:
     type: 3}
   fire: {fileID: 7366903960507788339}
   smoke: {fileID: 1642320891540135}
+  popupCoins: {fileID: 7040444822010694810, guid: d7dd009f85567ce43ad4c1fc18ba4cdb,
+    type: 3}
 --- !u!95 &52208181
 Animator:
   serializedVersion: 4

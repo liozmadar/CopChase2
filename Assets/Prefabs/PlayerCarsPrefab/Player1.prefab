@@ -284,6 +284,8 @@ MonoBehaviour:
   coneShowTimer: 3
   coneCollectedCount: 0
   allConesCollected: 0
+  popupCoins: {fileID: 7040444822010694810, guid: d7dd009f85567ce43ad4c1fc18ba4cdb,
+    type: 3}
   totalCoinsFromCones: 0
 --- !u!1 &4580735234274101409
 GameObject:

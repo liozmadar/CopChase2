@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemyDestroyed : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class EnemyDestroyed : MonoBehaviour
     public GameObject fire;
     public GameObject smoke;
 
+    public GameObject popupCoins;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,15 +55,33 @@ public class EnemyDestroyed : MonoBehaviour
             Collect.instance.copsCountNumber--;
             if (gameObject.name == "Cop1(Clone)")
             {
-                CanvasManager.instance.coinsFromCops += 10;
+                if (popupCoins)
+                {
+                    int coinsNumber = 10;
+                    CanvasManager.instance.coinsFromCops += coinsNumber;
+                    var popCoins = Instantiate(popupCoins, transform.position, Quaternion.identity);
+                    popCoins.GetComponent<TextMeshPro>().text = "<color=orange>+" + coinsNumber + "</color>";
+                }
             }
             else if (gameObject.name == "Cop2(Clone)")
             {
-                CanvasManager.instance.coinsFromCops += 20;
+                if (popupCoins)
+                {
+                    int coinsNumber = 20;
+                    CanvasManager.instance.coinsFromCops += coinsNumber;
+                    var popCoins = Instantiate(popupCoins, transform.position, Quaternion.identity);
+                    popCoins.GetComponent<TextMeshPro>().text = "<color=orange>+" + coinsNumber + "</color>";
+                }
             }
             else if (gameObject.name == "Cop3(Clone)")
             {
-                CanvasManager.instance.coinsFromCops += 30;
+                if (popupCoins)
+                {
+                    int coinsNumber = 30;
+                    CanvasManager.instance.coinsFromCops += coinsNumber;
+                    var popCoins = Instantiate(popupCoins, transform.position, Quaternion.identity);
+                    popCoins.GetComponent<TextMeshPro>().text = "<color=orange>+" + coinsNumber + "</color>";
+                }
             }
         }
     }

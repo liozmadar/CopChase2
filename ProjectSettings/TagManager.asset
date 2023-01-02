@@ -21,6 +21,7 @@ TagManager:
   - CarsBuyImage
   - notEnoughCoinsImagePrefab
   - Light
+  - PopupContainer
   layers:
   - Default
   - TransparentFX
