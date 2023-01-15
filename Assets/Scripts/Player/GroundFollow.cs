@@ -14,12 +14,14 @@ public class GroundFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        if (GameObject.FindGameObjectWithTag("Player") == isActiveAndEnabled)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
 
-        var posX = player.transform.position.x;
-        var posZ = player.transform.position.z;
-        var newPos = new Vector3(posX, 0, posZ);
-        gameObject.transform.position = newPos;
+            var posX = player.transform.position.x;
+            var posZ = player.transform.position.z;
+            var newPos = new Vector3(posX, 0, posZ);
+            gameObject.transform.position = newPos;
+        }
     }
-    
 }

@@ -24,18 +24,22 @@ public class Cones : MonoBehaviour
 
     private void Awake()
     {
-        coneCountText = GameObject.FindGameObjectWithTag("ConeCountText").GetComponent<TextMeshProUGUI>();
+
     }
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.FindGameObjectWithTag("ConeCountText") == isActiveAndEnabled)
+        {
+            coneCountText = GameObject.FindGameObjectWithTag("ConeCountText").GetComponent<TextMeshProUGUI>();
+            coneCountText.text = ": " + coneCollectedCount.ToString();// + "/" + randomConeNumber;
+        }
         if (GameManager.instance.startTheGame)
         {
             ConeSpawn();
@@ -55,12 +59,11 @@ public class Cones : MonoBehaviour
             RandomConeLocatin();
             coneShowBool = false;
         }
-        coneCountText.text = ": " + coneCollectedCount.ToString();// + "/" + randomConeNumber;
     }
     void RandomConeLocatin()
     {
-        int randomPosX = Random.Range(-500, 500);
-        int randomPosZ = Random.Range(-500, 500);
+        int randomPosX = Random.Range(-400, 400);
+        int randomPosZ = Random.Range(-400, 400);
         randomPos = new Vector3(transform.position.x + randomPosX, -6, transform.position.z + randomPosZ);
         Instantiate(cone, randomPos, Quaternion.identity);
     }

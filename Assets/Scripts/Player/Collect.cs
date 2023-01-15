@@ -21,24 +21,27 @@ public class Collect : MonoBehaviour
 
     private void Awake()
     {
-        copsCountText = GameObject.FindGameObjectWithTag("CopsCountText").GetComponent<TextMeshProUGUI>();
+
     }
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.FindGameObjectWithTag("CopsCountText") == isActiveAndEnabled)
+        {
+            copsCountText = GameObject.FindGameObjectWithTag("CopsCountText").GetComponent<TextMeshProUGUI>();
+            copsCountText.text = GameManager.instance.copsDestroyedNumber.ToString();
+        }
         if (GameManager.instance.startTheGame)
         {
             SpawnCop();
         }
 
-        copsCountText.text = GameManager.instance.copsDestroyedNumber.ToString();
     }
     void SpawnCop()
     {
@@ -65,6 +68,6 @@ public class Collect : MonoBehaviour
                 copsCountNumber++;
             }
         }
-        
+
     }
 }
