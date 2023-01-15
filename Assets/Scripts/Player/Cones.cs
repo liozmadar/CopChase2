@@ -38,7 +38,7 @@ public class Cones : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("ConeCountText") == isActiveAndEnabled)
         {
             coneCountText = GameObject.FindGameObjectWithTag("ConeCountText").GetComponent<TextMeshProUGUI>();
-            coneCountText.text = ": " + coneCollectedCount.ToString();// + "/" + randomConeNumber;
+            coneCountText.text = ": " + coneCollectedCount.ToString();
         }
         if (GameManager.instance.startTheGame)
         {
@@ -51,11 +51,6 @@ public class Cones : MonoBehaviour
         coneShowTimer -= Time.deltaTime;
         if (coneShowTimer < 0 && coneShowBool)
         {
-            /*randomConeNumber = Random.Range(1, 2);
-            for (int i = 0; i < randomConeNumber; i++)
-            {
-               
-            }*/
             RandomConeLocatin();
             coneShowBool = false;
         }

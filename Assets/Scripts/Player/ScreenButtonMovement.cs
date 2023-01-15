@@ -13,6 +13,8 @@ public class ScreenButtonMovement : MonoBehaviour
     public Button screenLeft;
     public Button screenRight;
 
+    public bool onlyDisableOnTestMode;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -25,6 +27,13 @@ public class ScreenButtonMovement : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
+    {
+        if (onlyDisableOnTestMode)
+        {
+            FingerCount();
+        }
+    }
+    void FingerCount()
     {
         var fingerCount = 0;
         foreach (Touch touch in Input.touches)
@@ -43,21 +52,17 @@ public class ScreenButtonMovement : MonoBehaviour
     public void ClickLeftDown()
     {
         pressingLeft = true;
-       // trailRenderer.enabled = true;
     }
     public void ClickRightDown()
     {
         pressingRight = true;
-       // trailRenderer.enabled = true;
     }
     public void ClickLeftUp()
     {
         pressingLeft = false;
-        // trailRenderer.enabled = false;
     }
     public void ClickRightUp()
     {
         pressingRight = false;
-        //trailRenderer.enabled = false;
     }
 }

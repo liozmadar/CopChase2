@@ -346,7 +346,6 @@ GameObject:
   - component: {fileID: 321259013191436022}
   - component: {fileID: 321259013191435785}
   - component: {fileID: -7878587682576688033}
-  - component: {fileID: -1570013342687409778}
   m_Layer: 0
   m_Name: Cop2
   m_TagString: EnemyPolice
@@ -466,20 +465,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-1570013342687409778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321259013191435784}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ce2b2200663f6445895923c10237699, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: {fileID: 0}
-  rotationSpeed: 1000
 --- !u!1 &321259013645240587
 GameObject:
   m_ObjectHideFlags: 0

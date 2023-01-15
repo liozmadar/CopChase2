@@ -33,10 +33,6 @@ public class PlayerMovment : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         trailRenderer = GetComponent<TrailRenderer>();
         anim = GetComponentInChildren<Animator>();
-        // smokeEffect = GameObject.Find("smoke_thick");
-        // fireEffect = GameObject.Find("Fire");
-
-        //currentSpeed = speed;
     }
     // Update is called once per frame
     void Update()
