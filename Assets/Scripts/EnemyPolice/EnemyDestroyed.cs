@@ -14,6 +14,7 @@ public class EnemyDestroyed : MonoBehaviour
     public GameObject smoke;
 
     public GameObject popupCoins;
+    public GameObject bouncyWheelPref;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,15 @@ public class EnemyDestroyed : MonoBehaviour
             }
         }
     }
+    void SpawnWheelOnDestroy()
+    {
+        int randomSpawn = Random.Range(0, 3);
+        if (randomSpawn == 0)
+        {
+            Instantiate(bouncyWheelPref, transform.position, Quaternion.identity);
+        }
+        else return;
+    }
     void ReduceLife()
     {
         currentLife--;
@@ -53,6 +63,8 @@ public class EnemyDestroyed : MonoBehaviour
             Destroy(gameObject, 5);
             GameManager.instance.copsDestroyedNumber++;
             Collect.instance.copsCountNumber--;
+
+            SpawnWheelOnDestroy();
             if (gameObject.name == "Cop1(Clone)")
             {
                 if (popupCoins)

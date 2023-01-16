@@ -445,6 +445,8 @@ MonoBehaviour:
   smoke: {fileID: 6974083778174763654}
   popupCoins: {fileID: 7040444822010694810, guid: d7dd009f85567ce43ad4c1fc18ba4cdb,
     type: 3}
+  bouncyWheelPref: {fileID: 3250902792682817737, guid: 16b7280e8b0ac9e4ca9117f62cfe9d1c,
+    type: 3}
 --- !u!95 &-7878587682576688033
 Animator:
   serializedVersion: 4
