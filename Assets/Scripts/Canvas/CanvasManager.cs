@@ -188,16 +188,17 @@ public class CanvasManager : MonoBehaviour
     public void TryAgainButton()
     {
         PlayerPrefs.SetInt("PlayAgain", 1);
-        //  SceneManager.LoadScene(0);
-        // Here im pre
-        loadingOperation.allowSceneActivation = true;
+        SceneManager.LoadScene(0);
+        // Here im playing the preloading scene
+        // loadingOperation.allowSceneActivation = true;
     }
     //Reset the game and keep the first homeUI
     public void GoToHomeUIAfterTheEndCard()
     {
         PlayerPrefs.SetInt("PlayAgain", 0);
+        SceneManager.LoadScene(0);
         // I set my preload scene to true
-        loadingOperation.allowSceneActivation = true;
+        // loadingOperation.allowSceneActivation = true;
 
     }
     public void AdButtonOpenClose()
@@ -258,9 +259,11 @@ public class CanvasManager : MonoBehaviour
         timerScore.text = Timer.instance.timerText.ToString();
         copsDestroyed.text = GameManager.instance.copsDestroyedNumber.ToString();
         coneCollected.text = Cones.instance.coneCollectedCount.ToString();
+        //
         // Here im loading the same scene and set it false (like preload the next scene)
-        loadingOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
-        loadingOperation.allowSceneActivation = false;
+        /* loadingOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+         loadingOperation.allowSceneActivation = false;*/
+        //
         //Add the coinsFromCops and fromCones and sum them
         coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
         coinsFromCopsEndGameCardText.text = "+" + coinsFromCops.ToString();
@@ -281,13 +284,15 @@ public class CanvasManager : MonoBehaviour
         timerScore.text = Timer.instance.timerText.ToString();
         copsDestroyed.text = GameManager.instance.copsDestroyedNumber.ToString();
         coneCollected.text = Cones.instance.coneCollectedCount.ToString();
+        //
         // Here im loading the same scene and set it false (like preload the next scene)
-        loadingOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
-        loadingOperation.allowSceneActivation = false;
+        /* loadingOperation = SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive);
+         loadingOperation.allowSceneActivation = false;*/
+        //
         //Show the coinsFromCops and coinsFromCones
         coinsEarndFromConeCollected.text = "+" + Cones.instance.totalCoinsFromCones.ToString();
         coinsFromCopsEndGameCardText.text = "+" + coinsFromCops.ToString();
-        
+
         //Add the coins i got from the game to the totalScorePoints
         ScoreSystem.instance.totalScorePoints += conesAndCopsEarnSum;
         PlayerPrefs.SetInt("totalScorePoints", ScoreSystem.instance.totalScorePoints);
