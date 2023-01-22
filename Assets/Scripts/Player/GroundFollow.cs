@@ -17,6 +17,11 @@ public class GroundFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // SpawnGroundFloorTimer();
+        GroundFloorFollowPlayer();
+    }
+    void SpawnGroundFloorTimer()
+    {
         if (GameObject.FindGameObjectWithTag("Player") == isActiveAndEnabled)
         {
             player = GameObject.FindGameObjectWithTag("Player");
